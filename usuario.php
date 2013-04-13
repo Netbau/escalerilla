@@ -52,7 +52,7 @@
     </div>
 
      <div class="container-fluid">
-       <div class="row-fluid"><h2><center>ESTADIO ISRAELITA</center></h2></div>
+       <div class="row-fluid"><h2><center>Escalerilla Estadio Israelita 2013 <img src="img/LogoEimCompacto.jpg" height ="35" width="40"></center></h2></div>
 	   <div class="row-fluid">
         <div class="span3">
           <div class="well"><!--Formulario login-->
@@ -69,8 +69,8 @@
 		  
         </div><!--/span-->
         <div class="span9">
-          <div class="row-fluid"> <!--Retos Disponibles-->
-		   <div class="span12 hero-unit">
+          <div class="row-fluid"><!--Retos Disponibles-->
+		   <div class="span12 hero-unit"><center><h2>Retos Disponibles</h2></center>
 		   
 			<?php require("capaVistas/retosDisponibles.php"); ?>
 		   </div>
@@ -84,6 +84,16 @@
         </div><!--/span-->
       </div><!--/Row Fluid-->
 
+	  <div class="nav nav-list">
+			<li class="nav-header"><h4>Últimas Noticias</h4></li>
+			<li>Adidas</a></li>
+			<li><a href="#">Brooks</a></li>
+			<li><a href="#">Nike</a></li>
+			<li><a href="#">        </a></li>
+			<li><a href="#">Willson</a></li>
+		
+	  </div>
+	  
       <hr>
 
       <footer><!-- ARCHIVO footer-->
