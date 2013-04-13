@@ -67,6 +67,12 @@
 			
           </div><!--/.well -->
 		  
+		  <div class="well"><!--Publicidad-->
+            
+			Espacio Publicitario
+			
+          </div><!--/.well -->
+		  
         </div><!--/span-->
         <div class="span9">
           <div class="row-fluid"><!--Retos Disponibles-->
@@ -84,13 +90,9 @@
         </div><!--/span-->
       </div><!--/Row Fluid-->
 
-	  <div class="nav nav-list">
-			<li class="nav-header"><h4>Últimas Noticias</h4></li>
-			<li>Adidas</a></li>
-			<li><a href="#">Brooks</a></li>
-			<li><a href="#">Nike</a></li>
-			<li><a href="#">        </a></li>
-			<li><a href="#">Willson</a></li>
+	  <div class="well"><!--Últimas Noticias-->
+	  
+			<?php require("capaVistas/ultimasNoticias.php"); ?>
 		
 	  </div>
 	  
