@@ -69,10 +69,11 @@
 		  
         </div><!--/span-->
         <div class="span9">
-          <div class="hero-unit"><!--Retos Disponibles-->
+          <div class="row-fluid"> <!--Retos Disponibles-->
+		   <div class="span12 hero-unit">
 		   
 			<?php require("capaVistas/retosDisponibles.php"); ?>
-		   
+		   </div>
           </div>
 		  
           <div class="row-fluid"><!--Ranking-->
@@ -93,7 +94,6 @@
 
     </div><!--/.fluid-container-->
 
-</div>
   
   </body>
 </html>
