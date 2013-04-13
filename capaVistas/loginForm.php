@@ -12,17 +12,14 @@
 
 <script type='text/javascript'>
 $('#ingresar').click(function(){
+    var data = '14659205-8';
     $.ajax({
-            url: 'capaAjax/mostrar.php',
-            type: post,
-            data: 14659205 - 8,
+            url: 'capaAjax/datosUsuario.php',
+            type: 'post',
+            data: {'data':data},
             success: function(output){
-    alert(output);
-    }
-
-
-
-
-    });
+            alert(output);
+            }
+    }); //end ajax
 });
 </script>  
