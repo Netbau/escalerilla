@@ -94,6 +94,22 @@
     </div><!--/.fluid-container-->
 
 </div>
-  
+<script>
+//    $.ajax({
+//        url: 'capaAjax/mostrar.php',
+//        type: post,
+//        data: 14659205-8,
+//        success: function(output){
+//            alert(output);
+//            
+//            
+//            
+//        }
+//        
+//        
+//        
+//        
+//    });
+</script>  
   </body>
 </html>
