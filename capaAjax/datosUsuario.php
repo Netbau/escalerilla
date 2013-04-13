@@ -1,7 +1,4 @@
 <?php
-print_r($_POST);
-session_start();
-
 $rut = explode('-',$_POST['data']);
 $rut = $rut[0];
 

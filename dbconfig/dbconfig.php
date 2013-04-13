@@ -11,8 +11,13 @@ DEFINE ('contrasena', '');
 DEFINE ('baseDeDatos', 'BD_REMEL');
 
 */
-$servidor = 'netbaucl.ipagemysql.com';
-$nombre_usuario = 'escalerilla';
-$contrasena = 'papitas.69';
+//$servidor = 'netbaucl.ipagemysql.com';
+//$nombre_usuario = 'escalerilla';
+//$contrasena = 'papitas.69';
+//$base_de_datos = 'netbau_escalerillas';
+
+$servidor = 'localhost';
+$nombre_usuario = 'root';
+$contrasena = '';
 $base_de_datos = 'netbau_escalerillas';
 
