@@ -75,6 +75,12 @@ class Usuarios {
         }
         return $resultArray;
     }
+    
+    public static function actualizarDatos(){
+        /*
+         * funcion de actualizacion por definir
+         */
+    }
 
 }
 
