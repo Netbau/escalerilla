@@ -52,7 +52,7 @@
         </div>
 
         <div class="container-fluid">
-            <div class="row-fluid"><h2><center>ESTADIO ISRAELITA</center></h2></div>
+            <div class="row-fluid"><h2><center>Escalerilla Estadio Israelita 2013 <img src="img/LogoEimCompacto.jpg" height ="35" width="40"></center></h2></div>
             <div class="row-fluid">
                 <div class="span3">
                     <div class="well"><!--Formulario login-->
@@ -69,7 +69,7 @@
 
                 </div><!--/span-->
                 <div class="span9">
-                    <div class="hero-unit"><!--Ranking-->
+                    <div class="hero-unit"><center><h2>Ranking</h2></center><!--Ranking-->
 
                         <?php require("capaVistas/ranking.php"); ?>
 

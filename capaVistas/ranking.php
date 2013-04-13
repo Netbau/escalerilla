@@ -24,28 +24,28 @@
 					</tr>
 					<tr class="success">
 						<td><center>1</center></td>
-						<td><center><img src="#" height ="35" width="35"></center></td>
+						<td><center><img src="http://thesocialmediapro.co/wp-content/uploads/2011/11/facebook-profile-picture.jpg" height ="150" width="150"></center></td>
 						<td><center>Andr&eacute;s Silverstain</center></td>
 						<td><center>324</center></td>
 						<td><center>1<i class="icon icon-arrow-up"></i></center></td>
 					</tr>
 					<tr class="error">
 						<td><center>2</center></td>
-						<td><center><img src="#" height ="35" width="35"></center></td>
+						<td><center><img src="http://thesocialmediapro.co/wp-content/uploads/2011/11/facebook-profile-picture.jpg" height ="100" width="100"></center></td>
 						<td><center>Le&oacute;n Steuermann</center></td>
 						<td><center>123</center></td>
 						<td><center>1<i class="icon icon-arrow-down"></center></td>
 					</tr>
 					<tr class="error">
 						<td><center>3</center></td>
-						<td><center><img src="#" height ="35" width="35"></center></td>
+						<td><center><img src="http://thesocialmediapro.co/wp-content/uploads/2011/11/facebook-profile-picture.jpg" height ="150" width="150"></center></td>
 						<td><center>Ricardo Segal</center></td>
 						<td><center>100</center></td>
 						<td><center>1<i class="icon icon-arrow-down"></center></td>
 					</tr>
 					<tr >
 						<td><center>4</center></td>
-						<td><center><img src="#" height ="35" width="35"></center></td>
+						<td><center><img src="http://thesocialmediapro.co/wp-content/uploads/2011/11/facebook-profile-picture.jpg" height ="75" width="75"></center></td>
 						<td><center>Jorge Urrea</center></td>
 						<td><center>15</center></td>
 						<td><center>-----</center></td>
