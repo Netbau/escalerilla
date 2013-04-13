@@ -50,10 +50,10 @@ class Usuarios {
         else
             return true;
     }
-    
+
     //devuelve los datos personales (sin privados) de una persona
-    
-    public static function Datos($rut){
+
+    public static function Datos($rut) {
         $queryString = "SELECT 
                               nombre,
                               segundoNombre,
@@ -68,15 +68,15 @@ class Usuarios {
                               sexo
                         FROM usuarios
                         WHERE idUsuarios = $rut";
-       $result = CallQuery($queryString);
-       $resultArray = array();
+        $result = CallQuery($queryString);
+        $resultArray = array();
         while ($fila = $result->fetch_assoc()) {
             $resultArray[] = $fila;
         }
         return $resultArray;
     }
-    
-    public static function actualizarDatos(){
+
+    public static function actualizarDatos() {
         /*
          * funcion de actualizacion por definir
          */
