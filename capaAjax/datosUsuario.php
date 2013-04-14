@@ -1,6 +1,7 @@
 <?php
-$rut = explode('-',$_POST['data']);
+$rut = explode('-',$_POST['usuario']);
 $rut = $rut[0];
+$password = $_POST['password'];
 
 
 require_once('../capaControladores/usuarios.php');
