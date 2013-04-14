@@ -9,17 +9,3 @@
     <br>
     <a href="#">¿Olvid&oacute; su contrase&ntilde;a?</a>
 </div>
-
-<script type='text/javascript'>
-$('#ingresar').click(function(){
-    var data = '14659205-8';
-    $.ajax({
-            url: 'capaAjax/datosUsuario.php',
-            type: 'post',
-            data: {'data':data},
-            success: function(output){
-            alert(output);
-            }
-    }); //end ajax
-});
-</script>  
