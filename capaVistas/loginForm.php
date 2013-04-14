@@ -27,7 +27,7 @@
                         $('#loginEstado').html('<div class="alert alert-danger"><center>Error en envio de datos!</center></div>');
                     }
                     else if (output == 2) {
-                        $('#loginEstado').html('<div class="alert alert-success"><center>Logeado!</center></div>');
+                        window.location = 'usuario.php';
                     }
                     $('#ingresar').button('reset');
                 }
