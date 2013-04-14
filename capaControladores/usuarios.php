@@ -43,7 +43,8 @@ class Usuarios {
     //devuelve verdadero o falso
     public static function VerificarClave($rut, $pass) {
         $pass = md5($pass);
-        $queryString = "SELECT * FROM Personas WHERE RUN = '$rut' AND Clave = '$pass';";
+        $queryString = "SELECT * FROM usuarios WHERE idUsuarios = '$rut' AND password = '$pass';";
+        
         if (CallQuery($queryString)->num_rows != 1) {
             return false;
         }
