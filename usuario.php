@@ -26,7 +26,7 @@
         </div><!--/span-->
         <div class="span9">
           <div class="row-fluid"><!--Retos Disponibles-->
-		   <div class="span12 hero-unit"><center><h2>Retos Disponibles</h2></center>
+		   <div class="span12 well"><center><h2>Retos Disponibles</h2></center>
 		   
 			<?php require("capaVistas/retosDisponibles.php"); ?>
 		   </div>

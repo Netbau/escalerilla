@@ -2,11 +2,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
         <title>Rama de Tenis, Estadio Israelita</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
+
 
         <!-- Le styles -->
         <link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet"><!-- css jQuery UI-->
@@ -15,8 +13,8 @@
         <style type="text/css">
 
             body {
-                padding-top: 60px;
-                padding-bottom: 40px;
+                padding-top: 0px;
+                padding-bottom: 15px;
             }
             .sidebar-nav {
                 padding: 9px;
@@ -42,11 +40,11 @@
 
 
     </head>
-
     <body>
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
-
+        <div class="navbar navbar-inverse"><!-- barra de navegacion -->
             <?php include("capaVistas/navbar.php"); ?>
-
         </div>
+        <div class="container-fluid">
+            <div class="row-fluid"><!-- titulo -->
+                <h2><center>Escalerilla Estadio Israelita 2013 <img src="img/LogoEimCompacto.jpg" height ="35" width="40"></center></h2>
+            </div>
