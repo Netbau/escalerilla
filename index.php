@@ -1,10 +1,4 @@
 <?php require('capaVistas/header.php');?>
-        <div class="container-fluid">
-            <div class="row-fluid"><!-- titulo -->
-                <h2><center>Escalerilla Estadio Israelita 2013 <img src="img/LogoEimCompacto.jpg" height ="35" width="40"></center></h2>
-            </div>
-
-
             <div class="row-fluid"><!-- row de contenido -->
                 <div class="span3">
 

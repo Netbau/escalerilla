@@ -12,10 +12,10 @@
         <link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet"><!-- css jQuery UI-->
         <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"><!-- css bootstrap-->
         <link href="css/estilo.css" rel="stylesheet"><!-- css personalizados -->
-        
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-        
+
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -38,3 +38,7 @@
                 </div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row-fluid"><!-- titulo -->
+                <h2><center><img src="img/logoeim.jpg">Escalerilla Estadio Israelita 2013</center></h2>
+            </div>

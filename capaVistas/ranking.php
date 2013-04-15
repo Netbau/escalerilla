@@ -25,7 +25,7 @@
 					<tr class="success">
 						<td><center>1</center></td>
 						<td><center><img class="img img-rounded" src="http://thesocialmediapro.co/wp-content/uploads/2011/11/facebook-profile-picture.jpg" height ="200" width="200"></center></td>
-						<td><center>Andr&eacute;s Silverstain</center></td>
+						<td><center>Andr&eacute;s Silberstein</center></td>
 						<td><center>324</center></td>
 						<td><center>1<i class="icon icon-arrow-up"></i></center></td>
 					</tr>
@@ -53,13 +53,13 @@
 				</table>
 				</div>
 				<div id="pane2" class="tab-pane">
-				<!--Aquí va el contenido-->
+				<!--Aquï¿½ va el contenido-->
 				</div>
 				<div id="pane3" class="tab-pane">
-				<!--Aquí va el contenido-->
+				<!--Aquï¿½ va el contenido-->
 				</div>
 				<div id="pane4" class="tab-pane">
-				<!--Aquí va el contenido-->
+				<!--Aquï¿½ va el contenido-->
 				</div>
 			</div><!-- /.tab-content -->
 			</div><!-- /.tabbable -->

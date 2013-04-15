@@ -2,21 +2,31 @@
     <div class="span12">
         <?php $usuario = $_SESSION['usuario'][0]; ?>
         <div class="row-fluid">
+           <center>
            <strong>
-                    <?php echo $usuario['nombre'] . ' ' . $usuario['segundoNombre'] . ' ' . $usuario['apellido'] . ' ' . $usuario['segundoApellido']; ?> 
+                    <h4><?php 
+                        echo $usuario['nombre'];
+                        if($usuario['segundoNombre']!= null){ echo ' '.$usuario['segundoNombre'];}
+                        echo ' '.$usuario['apellido'];
+                        if($usuario['segundoApellido']!= null){echo ' ' . $usuario['segundoApellido'];} ?>
+                    </h4> 
            </strong>
+           </center>
         </div> 
-        <div class="row-fluid">
-            <?php echo $usuario['correo']; ?>
-        </div>
         <div class="row-fluid">
             <center><img src="<?php echo $usuario['foto']; ?>" class="img-rounded"></center>
         </div>
         <div class="row-fluid">
-            Mi Categor&iacute;a: 
+            <strong>Mi Correo:</strong> <?php echo $usuario['correo']; ?>
         </div>
         <div class="row-fluid">
-            Mi Ranking: 
+            <strong>Mi Categor&iacute;a:</strong> 
+        </div>
+        <div class="row-fluid">
+            <strong>Mi Ranking:</strong> 
+        </div>
+        <div class="row-fluid">
+            <a class="btn btn-info btn-block btn-small" id="editar" data-loadig-text="cargando..." disabled="disabled">Editar mis datos</a> 
         </div>
         <div class="row-fluid">
             <a class="btn btn-danger btn-block btn-small" id="logout" data-loading-text="cargando...">Salir</a>
