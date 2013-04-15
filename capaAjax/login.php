@@ -5,8 +5,12 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
     $rut = explode('-', $_POST['usuario']);
     $rut = $rut[0];
     $password = $_POST['password'];
-
-    $datos = usuarios::VerificarClave($rut, $password);
+    
+    echo $extensionMYSQL;
+    $usuario = new Usuarios($extensionMYSQL);
+    $datos = $usuario->VerificarClave($rut,$password);
+    
+    //$datos = usuarios::VerificarClave($rut, $password);
     if ($datos) {
         $_SESSION['usuario'] = usuarios::Datos($rut);
         echo '2';//todo ok
@@ -16,4 +20,5 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
 } else {
     echo '0'; // no se ingreso usuario o password
 }
+ 
 ?>

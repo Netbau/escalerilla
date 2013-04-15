@@ -9,13 +9,18 @@ class Usuarios {
 
     static $nombreTabla = "usuarios";
     static $nombreIdTabla = "idUsuarios";
-
+    public $extensionMYSQL = 'mysqli';
     /**
      * Insertar
      * 
      * Inserta una nueva entrada
      * 
      */
+    function Usuarios($extensionMYSQL){
+        $this->$extensionMYSQL = $extensionMYSQL;
+        
+    }
+    
     public static function Insertar($run, $nombre, $apellido, $correo, $telefono, $fechaNacimiento, $sexo, $segundoNombre = 'null', $segundoApellido = 'null', $telefono2 = 'null') {
         $password = $nombre[0] . $apellido[0] . $run[0] . $run[1] . $run[2] . $run[3];
 
@@ -44,12 +49,21 @@ class Usuarios {
     public static function VerificarClave($rut, $pass) {
         $pass = md5($pass);
         $queryString = "SELECT * FROM usuarios WHERE idUsuarios = '$rut' AND password = '$pass';";
-        
-        if (CallQuery($queryString)->num_rows != 1) {
-            return false;
+
+        if ($extensionMYSQL == 'mysqli') {
+            if (CallQuery($queryString)->num_rows != 1) {
+                return false;
+            }
+            else
+                return true;
         }
-        else
-            return true;
+        elseif ($extensionMYSQL == 'mysql') {
+            if (mysql_num_rows(CallQuery($queryString)) != 1) {
+                return false;
+            }
+            else
+                return true;
+        }
     }
 
     //devuelve los datos personales (sin privados) de una persona
@@ -71,9 +85,16 @@ class Usuarios {
                         WHERE idUsuarios = $rut";
         $result = CallQuery($queryString);
         $resultArray = array();
-        while ($fila = $result->fetch_assoc()) {
-            $resultArray[] = $fila;
+        if ($extensionMYSQL == 'mysqli') {
+            while ($fila = $result->fetch_assoc()) {
+                $resultArray[] = $fila;
+            }
+        } elseif ($extensionMYSQL == 'mysql') {
+            while ($fila = mysql_fetch_assoc($result)) {
+                $resultArray[] = $fila;
+            }
         }
+
         return $resultArray;
     }
 
