@@ -1,13 +1,13 @@
 ﻿<div class="form-signin">
-    <h3 class="form-signin-heading">Conectarse</h3>
+    <center><h3 class="form-signin-heading">Conectarse</h3></center>
     <input type="text" name='user' class="input-block-level" placeholder="Ej: 15035156-k">
     <input type="password" name='password' class="input-block-level" placeholder="Contrase&ntilde;a">
     <label class="checkbox">
         <input type="checkbox" value="remember-me"> Recordarme
     </label>
-    <button class="btn btn-large btn-primary" id='ingresar' data-loading-text="cargando..." type="submit">Ingresar</button><div id="loginEstado"></div>
+    <button class="btn btn-large btn-primary btn-block" id='ingresar' data-loading-text="cargando..." type="submit">Ingresar</button><div id="loginEstado"></div>
     <br>
-    <a href="#">¿Olvid&oacute; su contrase&ntilde;a?</a>
+    <center><a href="#">¿Olvid&oacute; su contrase&ntilde;a?</a></center>
 </div>
 <script>
     $('#ingresar').click(function() {

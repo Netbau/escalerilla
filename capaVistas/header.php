@@ -31,6 +31,7 @@
                         <ul class="nav">
                             <li><a href="#proximos">Pr&oacute;ximos Encuentros</a></li>
                             <li><a href="#reglamento">Reglamento</a></li>
+                            <li><a href="#noticias">Noticias</a></li>
                             <li><a href="#premios">Premios</a></li>
                             <li><a href="#contacto">Contacto</a></li>
                         </ul>

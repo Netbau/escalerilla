@@ -22,7 +22,7 @@
                         <?php require("capaVistas/ranking.php"); ?>
                     </div>
 
-                    <div class="well">
+                    <div class="hero-unit">
                         <div class="row-fluid"><center><h3>Últimos Ganadores</h3></center><!--Últimos Ganadores-->
                             <?php require("capaVistas/ultimosGanadores.php"); ?>
                         </div><!--/row-->
