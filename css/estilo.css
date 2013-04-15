@@ -16,9 +16,8 @@ body {
 .tab-content{
     max-height: 220px;
 }
-.peque{
+.small{
     max-height: 200px;
-    border: 10px black;
 }
 @media (max-width: 980px) {
     /* Enable use of floated navbar text */
