@@ -16,7 +16,7 @@
         var password = $('input[name="password"]').val();
         if (usuario !== '' && password !== '') {
             $.ajax({
-                url: "capaAjax/datosUsuario.php",
+                url: "capaAjax/login.php",
                 data: {"usuario": usuario, "password": password},
                 type: "post",
                 success: function(output) {

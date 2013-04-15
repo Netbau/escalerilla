@@ -8,7 +8,7 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
 
     $datos = usuarios::VerificarClave($rut, $password);
     if ($datos) {
-        $_SESSION['usuario'] = $datos;
+        $_SESSION['usuario'] = usuarios::Datos($rut);
         echo '2';
     } else {
         echo '1';
