@@ -22,4 +22,4 @@ $servidor = 'localhost';
 $nombre_usuario = 'root';
 $contrasena = '';
 $base_de_datos = 'netbau_escalerillas';
-$extensionMYSQL = 'mysqli';
+?>
