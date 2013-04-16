@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../capaControladores/usuarios.php');
+require_once('../capaControladores/jugadores.php');
 if (isset($_POST['usuario']) && isset($_POST['password'])) {
     $rut = explode('-', $_POST['usuario']);
     $rut = $rut[0];
@@ -11,8 +12,7 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
         $datos = usuarios::Datos($rut);
         if ($datos[0]['nombre']!= '') {
             $_SESSION['usuario'] = $datos[0];
-            $jugador = Jugadores::Datos($rut);
-            if($jugador){$_SESSION['jugador']= $jugador;}
+            if($jugador = Jugadores::Datos($rut)){$_SESSION['jugador']= $jugador;}
             echo '2'; //todo ok
         } else {
             echo '3';// nose guardo la sesion
