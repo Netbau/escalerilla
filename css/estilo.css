@@ -27,3 +27,9 @@ body {
         padding-right: 5px;
     }
 }
+textarea{
+    width: 98%;
+}
+input{
+    width: 98%
+}

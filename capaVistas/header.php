@@ -38,7 +38,7 @@
                             <li><a href="reglamento.php">Reglamento</a></li>
                             <li><a href="#noticias">Noticias</a></li>
                             <li><a href="premios.php">Premios</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
+                            <li><a href="contacto.php">Contacto</a></li>
                             <?php if(isset($_SESSION)){if($_SESSION['usuario']['nivel'] >= 3){echo "<li><a href='#administrar'><i class='icon-wrench icon-white'></i><strong>Administrar</strong></a></li>";}}?>
                         </ul>
                     </div><!--/.nav-collapse -->
