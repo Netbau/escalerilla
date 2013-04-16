@@ -22,25 +22,27 @@
                 async: false,
                 success: function(output) {
                     if (output == 1) {
-                        $('#loginEstado').html('<div class="alert alert-danger"><center>Usuario y password no coinciden!</center></div>');
+                        $('#loginEstado').html('<div class="alert alert-danger"><center>¡Usuario y password no coinciden!</center></div>');
                     }
                     else if (output == 0) {
-                        $('#loginEstado').html('<div class="alert alert-danger"><center>Error en envio de datos!</center></div>');
+                        $('#loginEstado').html('<div class="alert alert-danger"><center>¡Error en envio de datos!</center></div>');
                     }
                     else if (output == 2) {
 //                        alert(output);
                         window.location = 'usuario.php';
                     }
                     else if (output == 3) {
-                        $('#loginEstado').html('<div class="alert alert-danger"><center>No se guardo la sesion!</center></div>');
-                    }else{alert(output);}
+                        $('#loginEstado').html('<div class="alert alert-danger"><center>¡No se guardo la sesion!</center></div>');
+                    } else {
+                        alert(output);
+                    }
                     $('#ingresar').button('reset');
                 },
-                error: function(output){
-                    if (output == 500){
-                       $('#loginEstado').html('<div class="alert alert-danger"><center>El servidor presenta problemas, Intentalo denuevo!</center></div>'); 
+                statusCode: {
+                    500: function() {
+                        $('#loginEstado').html('<div class="alert alert-danger"><center>El servidor presenta problemas, ¡Intentalo denuevo!</center></div>');
+                        $('#ingresar').button('reset');
                     }
-                    
                 }
 
 
