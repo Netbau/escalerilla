@@ -37,7 +37,7 @@
                              <?php if(isset($_SESSION['jugador'])){echo "<li><a href='#administrar'><i class='icon-screenshot icon-white'></i><strong>Retar!</strong></a></li>";}?>
                             <li><a href="reglamento.php">Reglamento</a></li>
                             <li><a href="#noticias">Noticias</a></li>
-                            <li><a href="#premios">Premios</a></li>
+                            <li><a href="premios.php">Premios</a></li>
                             <li><a href="#contacto">Contacto</a></li>
                             <?php if($_SESSION['usuario']['nivel'] >= 3){echo "<li><a href='#administrar'><i class='icon-wrench icon-white'></i><strong>Administrar</strong></a></li>";}?>
                         </ul>
