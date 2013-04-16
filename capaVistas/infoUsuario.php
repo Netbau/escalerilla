@@ -19,12 +19,13 @@
         <div class="row-fluid">
             <strong>Mi Correo:</strong> <?php echo $usuario['correo']; ?>
         </div>
+        <?php if(isset($_SESSION['jugador'])){
+        echo '<div class="row-fluid">
+            <strong>Mi Categor&iacute;a:</strong> '.$jugador['categoria'].'</div>
         <div class="row-fluid">
-            <strong>Mi Categor&iacute;a:</strong> <?php echo $jugador['categoria']; ?>
-        </div>
-        <div class="row-fluid">
-            <strong>Mi Ranking:</strong> <?php echo $jugador['ranking']; ?> 
-        </div>
+            <strong>Mi Ranking:</strong> '.$jugador['ranking'].' 
+        </div>';}?>
+        
         <div class="row-fluid">
             <a class="btn btn-info btn-block btn-small" id="editar" data-loadig-text="cargando..." disabled="disabled">Editar mis datos</a> 
         </div>
