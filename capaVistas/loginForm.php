@@ -28,8 +28,8 @@
                         $('#loginEstado').html('<div class="alert alert-danger"><center>Error en envio de datos!</center></div>');
                     }
                     else if (output == 2) {
-                        alert(output);
-//                        window.location = 'usuario.php';
+//                        alert(output);
+                        window.location = 'usuario.php';
                     }
                     else if (output == 3) {
                         $('#loginEstado').html('<div class="alert alert-danger"><center>No se guardo la sesion!</center></div>');
