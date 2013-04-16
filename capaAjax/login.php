@@ -11,7 +11,6 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
         $datos = usuarios::Datos($rut);
         if ($datos[0]['nombre']!= '') {
             $_SESSION['usuario'] = $datos;
-            print_r($_SESSION);
             echo '2'; //todo ok
         } else {
             echo '3';// nose guardo la sesion
