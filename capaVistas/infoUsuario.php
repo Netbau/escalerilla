@@ -1,6 +1,6 @@
 <div class="row-fluid">
     <div class="span12">
-        <?php $usuario = $_SESSION['usuario']; ?>
+        <?php $usuario = $_SESSION['usuario']; $jugador = $_SESSION['jugador'];?>
         <div class="row-fluid">
            <center>
            <strong>
@@ -20,10 +20,10 @@
             <strong>Mi Correo:</strong> <?php echo $usuario['correo']; ?>
         </div>
         <div class="row-fluid">
-            <strong>Mi Categor&iacute;a:</strong> 
+            <strong>Mi Categor&iacute;a:</strong> <?php echo $jugador['categoria']; ?>
         </div>
         <div class="row-fluid">
-            <strong>Mi Ranking:</strong> 
+            <strong>Mi Ranking:</strong> <?php echo $jugador['ranking']; ?> 
         </div>
         <div class="row-fluid">
             <a class="btn btn-info btn-block btn-small" id="editar" data-loadig-text="cargando..." disabled="disabled">Editar mis datos</a> 

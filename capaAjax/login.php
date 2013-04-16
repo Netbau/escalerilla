@@ -12,7 +12,7 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
         $datos = usuarios::Datos($rut);
         if ($datos[0]['nombre']!= '') {
             $_SESSION['usuario'] = $datos[0];
-            if($jugador = Jugadores::Datos($rut)){$_SESSION['jugador']= $jugador;}
+            if($jugador = Jugadores::Datos($rut)){$_SESSION['jugador']= $jugador[0];}
             echo '2'; //todo ok
         } else {
             echo '3';// nose guardo la sesion
