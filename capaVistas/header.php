@@ -35,7 +35,7 @@
                         <ul class="nav">
                             <li><a href="#proximos">Pr&oacute;ximos Encuentros</a></li>
                              <?php if(isset($_SESSION['jugador'])){echo "<li><a href='#administrar'><i class='icon-screenshot icon-white'></i><strong>Retar!</strong></a></li>";}?>
-                            <li><a href="#reglamento">Reglamento</a></li>
+                            <li><a href="reglamento.php">Reglamento</a></li>
                             <li><a href="#noticias">Noticias</a></li>
                             <li><a href="#premios">Premios</a></li>
                             <li><a href="#contacto">Contacto</a></li>
