@@ -9,13 +9,17 @@
         <meta name="author" content="">
 
         <!-- Le styles -->
-        <link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet"><!-- css jQuery UI-->
-        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"><!-- css bootstrap-->
+        <!--<link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet"><!-- css jQuery UI-->
+        <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"><!-- css bootstrap-->
+        <link href="css/bootstrap.css" rel="stylesheet"><!--css bootstrap-->
+        <link href="css/bootstrap-responsive.css"><!--bootsrap responsive-->
         <link href="css/estilo.css" rel="stylesheet"><!-- css personalizados -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><!-- JQUERY-->
+        <script src="js/jquery-1.9.1.js"></script>
+        <!--<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><!-- bootstrap js -->
+        <script src="js/bootstrap.js"></script>
+        
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
