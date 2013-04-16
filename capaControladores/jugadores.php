@@ -33,7 +33,6 @@ class Jugadores {
     public static function Datos($rut) {
         $queryString = "SELECT 
                               idJugadores,
-                              idUsuarios,
                               categoria,
                               ranking,
                               alDia

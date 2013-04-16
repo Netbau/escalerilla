@@ -38,6 +38,7 @@
                             <li><a href="#noticias">Noticias</a></li>
                             <li><a href="#premios">Premios</a></li>
                             <li><a href="#contacto">Contacto</a></li>
+                            <?php if($_SESSION['usuario']['nivel'] >= 3){echo "<li><a href='#contacto'>Administrar</a></li>";}?>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

@@ -1,6 +1,6 @@
 <div class="row-fluid">
     <div class="span12">
-        <?php $usuario = $_SESSION['usuario'][0]; ?>
+        <?php $usuario = $_SESSION['usuario']; ?>
         <div class="row-fluid">
            <center>
            <strong>
