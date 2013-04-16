@@ -1,4 +1,4 @@
-﻿<div class="hero-unit">
+﻿<div class="well">
 
 <h2><center>REGLAMENTO TORNEO ESCALERILLA</h2></center><br>
 
