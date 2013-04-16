@@ -9,9 +9,8 @@
 
 function CallQuery($queryString) {
     include('dbconfig.php');
-    $mysqlCon = new mysqli($servidor, $nombre_usuario, $contrasena, $base_de_datos);
+    $mysqlCon = new mysqli($servidor, $nombre_usuario, $contrasena, $base_de_datos, $puerto);
     $mysqlCon->set_charset("utf8");
-
     if ($mysqlCon->errno) {
         printf("Conexion fallida: %s\n", $mysqli->connect_error);
         exit();
@@ -36,7 +35,7 @@ function CallQuery($queryString) {
 
 function CallQueryReturnID($queryString) {
     include('dbconfig.php');
-    $mysqlCon = new mysqli($servidor, $nombre_usuario, $contrasena, $base_de_datos);
+    $mysqlCon = new mysqli($servidor, $nombre_usuario, $contrasena, $base_de_datos, $puertos);
     $mysqlCon->set_charset("utf8");
 
     if ($mysqlCon->errno) {
