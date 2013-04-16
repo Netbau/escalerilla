@@ -12,10 +12,10 @@ DEFINE ('baseDeDatos', 'BD_REMEL');
 
 */
 
-//$servidor = 'netbaucl.ipagemysql.com';
-//$nombre_usuario = 'escalerilla';
-//$contrasena = 'papitas.69';
-//$base_de_datos = 'netbau_escalerillas';
+$servidor = 'netbaucl.ipagemysql.com';
+$nombre_usuario = 'escalerillas';
+$contrasena = 'papitas.69';
+$base_de_datos = 'netbau_escalerillas';
 
 
 //$servidor = 'localhost';
@@ -23,9 +23,9 @@ DEFINE ('baseDeDatos', 'BD_REMEL');
 //$contrasena = '';
 //$base_de_datos = 'netbau_escalerillas';
 
-$servidor = '200.54.168.133';
-$nombre_usuario = 'root';
-$contrasena = 'pepito.P789';
-$base_de_datos = 'netbau_escalerillas';
+//$servidor = '200.54.168.133';
+//$nombre_usuario = 'root';
+//$contrasena = 'pepito.P789';
+//$base_de_datos = 'netbau_escalerillas';
 
 ?>
