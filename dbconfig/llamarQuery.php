@@ -8,7 +8,7 @@
  */
 
 function CallQuery($queryString) {
-    include_once(dirname(__FILE__) . '/../dbconfig/dbconfig.php');
+    include('dbconfig.php');
     $mysqlCon = new mysqli($servidor, $nombre_usuario, $contrasena, $base_de_datos);
     $mysqlCon->set_charset("utf8");
 
@@ -35,7 +35,7 @@ function CallQuery($queryString) {
  */
 
 function CallQueryReturnID($queryString) {
-    include_once(dirname(__FILE__) . '/../dbconfig/dbconfig.php');
+    include('dbconfig.php');
     $mysqlCon = new mysqli($servidor, $nombre_usuario, $contrasena, $base_de_datos);
     $mysqlCon->set_charset("utf8");
 
