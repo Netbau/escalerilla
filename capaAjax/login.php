@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once('../capaControladores/usuarios.php');
 if (isset($_POST['usuario']) && isset($_POST['password'])) {
@@ -10,11 +9,12 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
     $login = usuarios::VerificarClave($rut, $password);
     if ($login) {
         $datos = usuarios::Datos($rut);
-        if ($datos) {
+        if ($datos[0]['nombre']!= '') {
             $_SESSION['usuario'] = $datos;
+            print_r($_SESSION);
             echo '2'; //todo ok
         } else {
-            echo '3';
+            echo '3';// nose guardo la sesion
         }
     } else {
         echo '1'; //password no coincide

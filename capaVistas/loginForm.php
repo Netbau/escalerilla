@@ -5,7 +5,7 @@
     <label class="checkbox">
         <input type="checkbox" value="remember-me"> Recordarme
     </label>
-    <button class="btn btn-large btn-primary btn-block" id='ingresar' data-loading-text="cargando..." type="submit">Ingresar</button><div id="loginEstado"></div>
+    <button class="btn btn-large btn-primary btn-block" id='ingresar' data-loading-text="cargando...">Ingresar</button><div id="loginEstado"></div>
     <br>
     <center><a href="#">¿Olvid&oacute; su contrase&ntilde;a?</a></center>
 </div>
@@ -19,6 +19,7 @@
                 url: "capaAjax/login.php",
                 data: {"usuario": usuario, "password": password},
                 type: "post",
+                async: false,
                 success: function(output) {
                     if (output == 1) {
                         $('#loginEstado').html('<div class="alert alert-danger"><center>Usuario y password no coinciden!</center></div>');
@@ -27,8 +28,12 @@
                         $('#loginEstado').html('<div class="alert alert-danger"><center>Error en envio de datos!</center></div>');
                     }
                     else if (output == 2) {
-                        window.location = 'usuario.php';
+                        alert(output);
+//                        window.location = 'usuario.php';
                     }
+                    else if (output == 3) {
+                        $('#loginEstado').html('<div class="alert alert-danger"><center>No se guardo la sesion!</center></div>');
+                    }else{alert(output);}
                     $('#ingresar').button('reset');
                 }
 

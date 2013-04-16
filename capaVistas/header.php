@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+session_start();
+print_r($_SESSION);
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,9 +22,14 @@
         <script src="js/jquery191.js"></script>
         <!--<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><!-- bootstrap js -->
         <script src="js/bootstrap.js"></script>
-        
+
     </head>
     <body>
+        <?php if (!isset($_SESSION['counter']))
+            $_SESSION['counter'] = 0;
+        echo "Refreshed " . $_SESSION['counter']++ . " times.<br>
+        <a href=" . $_SERVER['PHP_SELF'] . '?' . session_name() . '=' . session_id() . ">refresh</a>";
+        ?>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner"><!-- navbar -->
                 <div class="container-fluid">
