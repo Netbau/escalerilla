@@ -35,6 +35,12 @@
                         $('#loginEstado').html('<div class="alert alert-danger"><center>No se guardo la sesion!</center></div>');
                     }else{alert(output);}
                     $('#ingresar').button('reset');
+                },
+                error: function(output){
+                    if (output == 500){
+                       $('#loginEstado').html('<div class="alert alert-danger"><center>El servidor presenta problemas, Intentalo denuevo!</center></div>'); 
+                    }
+                    
                 }
 
 

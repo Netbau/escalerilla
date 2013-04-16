@@ -30,15 +30,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="brand" href="#">Ranking</a>
+                    <a class="brand" href="index.php">Ranking</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li><a href="#proximos">Pr&oacute;ximos Encuentros</a></li>
+                             <?php if(isset($_SESSION['jugador'])){echo "<li><a href='#administrar'><i class='icon-screenshot icon-white'></i><strong>Retar!</strong></a></li>";}?>
                             <li><a href="#reglamento">Reglamento</a></li>
                             <li><a href="#noticias">Noticias</a></li>
                             <li><a href="#premios">Premios</a></li>
                             <li><a href="#contacto">Contacto</a></li>
-                            <?php if($_SESSION['usuario']['nivel'] >= 3){echo "<li><a href='#contacto'>Administrar</a></li>";}?>
+                            <?php if($_SESSION['usuario']['nivel'] >= 3){echo "<li><a href='#administrar'><i class='icon-wrench icon-white'></i><strong>Administrar</strong></a></li>";}?>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
