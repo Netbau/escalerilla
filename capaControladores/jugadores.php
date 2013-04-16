@@ -71,4 +71,32 @@ class Jugadores {
         $result = CallQuery($queryString);
         return $result;
     }
+    public static function getCategorias(){
+        $queryString = "SELECT distinct(categoria) FROM jugadores";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+    }
+    public static function getRankingPorCategoria($categoria){
+        $queryString = "SELECT nombre,
+                               segundoNombre,
+                               apellido,
+                               segundoApellido,
+                               foto,
+                               ranking,
+                               categoria
+                        FROM usuarios u, jugadores j
+                        WHERE j.idUsuarios = u.idUsuarios AND
+                              categoria = '$categoria'
+                        ORDER BY ranking ASC";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+    }
 }
