@@ -40,4 +40,15 @@ class Desafios {
         return $resultArray;
     }
     
+    public static function getDesafiosPorFecha($fecha){
+        $queryString = "SELECT *
+                        FROM desafio d
+                        WHERE fecha = '$fecha'";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+    }
 } 
