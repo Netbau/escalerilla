@@ -1,5 +1,3 @@
-﻿<div class="well">
-
 <h2><center>REGLAMENTO TORNEO ESCALERILLA</h2></center><br>
 
 <h4>1.- OBJETIVO</h4><br>
@@ -60,4 +58,3 @@ Para todas aquellas materias o casos de dificultades que se presenten entre los 
 o entre los directores que digan relación con este Reglamento, existirá un Tribunal de Honor y Mediación compuesto por los directores de la
 rama señores Jorge Urrea, Andrés Silberstein y el Sr. Alan Krausz. El Tribunal de Honor conocerá de todas las materias que este Reglamento 
 someta a su conocimiento, y resolverán al amparo de estos estatutos, teniendo presente los valores y ética de la cultura y tradiciones del pueblo judío.
-</div>

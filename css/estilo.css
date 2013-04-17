@@ -33,3 +33,10 @@ textarea{
 input{
     width: 98%
 }
+table img{
+    height: 100px;
+    
+}
+.span3 img{
+    height: 100px;
+}
