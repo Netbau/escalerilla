@@ -17,12 +17,11 @@ if (isset($_POST)) {
             - Desafiado: " . $desafiado['nombre'] . ' ' . $desafiado['apellido'] . '
                 ->E-mail: ' . $desafiado['correo'] . '
                 ->Telefono: ' . $desafiado['telefono'] . '
-            - Desafiante; ' . $desafiante['nombre'] . ' ' . $desafiante['apellido'] . '
+            - Desafiante: ' . $desafiante['nombre'] . ' ' . $desafiante['apellido'] . '
                 ->E-mail: ' . $desafiante['correo'] . '
                 ->Telefono: ' . $desafiante['telefono'] . '
         El desafio se encuentra actualmente en caracter de pendiente.            
-        La hora y fecha del encuentro estan sujetas a disponibilidad de las canchas y acuerdo
-        de las partes con el administrador.';
+        La hora y fecha del encuentro estan sujetas a disponibilidad de las canchas y acuerdo de las partes con el administrador.';
         $headers = "Nuevo Desafio Escalerilla " . $from . ":";
         $envio = mail($to, $subject, $message, $headers);
         if ($envio) {

@@ -35,6 +35,13 @@
     </div>
 </div>
 <script>
+    var modalBody = $('.modal-body').html();
+    $('#myModal').on('hidden', function() {
+        $('.modal-body').html(modalBody);
+        $('.confirmarDesafio').show().button('reset');
+    });
+</script>
+<script>
     $('.desafiar').click(function() {
         $(this).button('loading');
         var desafiado = $(this).attr('idJugadores');
@@ -45,14 +52,14 @@
             async: false,
             success: function(output) {
                 data = JSON.parse(output);
-                
+
                 $('.desafiado')
                         .attr('idJugadores', data.idJugadores)
                         .attr('nombre', data.nombre)
                         .attr('apellido', data.apellido)
                         .attr('correo', data.correo)
                         .attr('telefono', data.telefono);
-                $('#contrincante').text('('+data.nombre+' '+data.apellido+')');
+                $('#contrincante').text('(' + data.nombre + ' ' + data.apellido + ')');
                 $('#myModal').modal('show');
                 $('.desafiar').button('reset');
 
@@ -66,38 +73,42 @@
     });
 </script>
 <script>
-$('.confirmarDesafio').click(function(){
-    $(this).button('loading');
-    var desafiado = {
-        "idJugadores": $('.desafiado').attr('idJugadores'),
-        "nombre": $('.desafiado').attr('nombre'),
-        "apellido":$('.desafiado').attr('apellido'),
-        "correo": $('.desafiado').attr('correo'),
-        "telefono":$('.desafiado').attr('telefono')
-    };
-    var desafiante = {
-        "idJugadores": $('.desafiante').attr('idJugadores'),
-        "nombre": $('.desafiante').attr('nombre'),
-        "apellido":$('.desafiante').attr('apellido'),
-        "correo": $('.desafiante').attr('correo'),
-        "telefono":$('.desafiante').attr('telefono')
-    };
-    $.ajax({
-        data: {"desafiado":desafiado, "desafiante":desafiante},
-        url: 'capaAjax/enviarDesafio.php',
-        type: 'post',
-        success: function(output){
-            if(output=='1'){
-                $('.modal-body').text('Desaf&iacute;o enviado!.')
+    $('.confirmarDesafio').click(function() {
+        $(this).button('loading');
+        var desafiado = {
+            "idJugadores": $('.desafiado').attr('idJugadores'),
+            "nombre": $('.desafiado').attr('nombre'),
+            "apellido": $('.desafiado').attr('apellido'),
+            "correo": $('.desafiado').attr('correo'),
+            "telefono": $('.desafiado').attr('telefono')
+        };
+        var desafiante = {
+            "idJugadores": $('.desafiante').attr('idJugadores'),
+            "nombre": $('.desafiante').attr('nombre'),
+            "apellido": $('.desafiante').attr('apellido'),
+            "correo": $('.desafiante').attr('correo'),
+            "telefono": $('.desafiante').attr('telefono')
+        };
+        $.ajax({
+            data: {"desafiado": desafiado, "desafiante": desafiante},
+            url: 'capaAjax/enviarDesafio.php',
+            type: 'post',
+            success: function(output) {
+                if (output == '1') {
+                    $('.modal-body').text('Desafio enviado!.');
+                    $('.confirmarDesafio').button('reset').hide();
+                }
+                else {
+                    $('.modal-body').text('Hubo un error en el envio de la informacion, intentalo denuevo.');
+                    $('.confirmarDesafio').button('reset');
+                }
+            },
+            500: function() {
+                alert('ups! , hubo un error con el servidor. Intentalo denuevo!.');
+                $('.confirmarDesafio').button('reset');
             }
-            
-        },
-        500: function(){
-            alert('ups! , hubo un error con el servidor. Intentalo denuevo!.');
-            $('.confirmarDesafio').button('reset');
-        }
+        });
+
     });
-    
-});
 
 </script>
