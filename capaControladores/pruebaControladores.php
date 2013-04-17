@@ -2,12 +2,11 @@
 session_start();
 include('desafios.php');
 include('jugadores.php');
+$idJugadores = 3;
+$datos = Jugadores::getUsuarioPorJugador($idJugadores);
+$idJugadores1 = 6; 
 
-$ranking = 3;
-$categoria = 'A';
-
-$desafiosDisponibles = Jugadores::getDesafiosDisponibles($ranking, $categoria);
-
-print_r($desafiosDisponibles);
-    
+$desafio = Desafios::Insertar($idJugadores, $idJugadores1);
+if($desafio)
+    {echo 'insertadp';}    
 ?>

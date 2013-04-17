@@ -16,11 +16,10 @@ class Desafios {
      * Inserta una nueva entrada
      * 
      */
-    public static function Insertar($idJugadores, $idJugadores1, $fecha) {
+    public static function Insertar($idJugadores, $idJugadores1) {
         $datosCreacion = array(
             array('idJugadores', $idJugadores),
             array('idJugadores1', $idJugadores1),
-            array('fecha', $fecha)
             );
 
         $queryString = QueryStringAgregar($datosCreacion, self::$nombreTabla);

@@ -22,13 +22,13 @@ class Jugadores {
             array('ranking', $ranking),
             array('categoria', $categoria),
             array('alDia', 1)
-            );
+        );
 
         $queryString = QueryStringAgregar($datosCreacion, self::$nombreTabla);
         $query = CallQuery($queryString);
         return $query;
     }
-    
+
     //devuelve los datos personales (sin privados) de una persona
     public static function Datos($rut) {
         $queryString = "SELECT 
@@ -45,33 +45,34 @@ class Jugadores {
         }
         return $resultArray;
     }
-    
+
     // cambia el valor de si esta al dia
-    public static function setAlDia($rut, $alDia){
+    public static function setAlDia($rut, $alDia) {
         $queryString = "UPDATE jugadores
                         SET alDia = '$alDia'
                         WHERE idUsuarios = '$rut'";
         $result = CallQuery($queryString);
         return $result;
     }
-    
+
     //cambia la categoria del jugador
-    public static function setCategoria($rut, $categoria){
+    public static function setCategoria($rut, $categoria) {
         $queryString = "UPDATE jugadores
                         SET categoria = '$categoria'
                         WHERE idUsuarios = '$rut'";
         $result = CallQuery($queryString);
-        return $result ;
+        return $result;
     }
-    
-    public static function setRanking($rut, $ranking){
+
+    public static function setRanking($rut, $ranking) {
         $queryString = "UPDATE jugadores
                         SET ranking = '$ranking'
                         WHERE idUsuarios = '$rut'";
         $result = CallQuery($queryString);
         return $result;
     }
-    public static function getCategorias(){
+
+    public static function getCategorias() {
         $queryString = "SELECT distinct(categoria) FROM jugadores";
         $result = CallQuery($queryString);
         $resultArray = array();
@@ -80,7 +81,8 @@ class Jugadores {
         }
         return $resultArray;
     }
-    public static function getRankingPorCategoria($categoria){
+
+    public static function getRankingPorCategoria($categoria) {
         $queryString = "SELECT nombre,
                                segundoNombre,
                                apellido,
@@ -99,7 +101,8 @@ class Jugadores {
         }
         return $resultArray;
     }
-    public static function getNombrePorID($idJugadores){
+
+    public static function getNombrePorID($idJugadores) {
         $queryString = "SELECT nombre, apellido
                         FROM jugadores j, usuarios u
                         WHERE j.idUsuarios = u.idUsuarios
@@ -110,9 +113,9 @@ class Jugadores {
             $resultArray[] = $fila;
         }
         return $resultArray;
-        
     }
-    public static function getDesafiosDisponibles($ranking,$categoria){
+
+    public static function getDesafiosDisponibles($ranking, $categoria) {
         $queryString = "SELECT *
                         FROM usuarios u, jugadores j
                         WHERE j.idUsuarios = u.idUsuarios
@@ -126,4 +129,18 @@ class Jugadores {
         }
         return $resultArray;
     }
+
+    public static function getUsuarioPorJugador($idJugadores) {
+        $queryString = "SELECT *
+                        FROM usuarios u, jugadores j
+                        WHERE j.idUsuarios = u.idUsuarios
+                        AND idJugadores = '$idJugadores'";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+    }
+
 }
