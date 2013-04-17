@@ -73,7 +73,7 @@ class Jugadores {
     }
 
     public static function getCategorias() {
-        $queryString = "SELECT distinct(categoria) FROM jugadores";
+        $queryString = "SELECT distinct(categoria) FROM jugadores ORDER BY categoria ASC";
         $result = CallQuery($queryString);
         $resultArray = array();
         while ($fila = $result->fetch_assoc()) {
