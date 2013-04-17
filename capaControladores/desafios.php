@@ -7,7 +7,7 @@ require_once(dirname(__FILE__) . '/../dbconfig/generadorStringQuery.php');
 
 class Desafios {
 
-    static $nombreTabla = "desafios";
+    static $nombreTabla = "desafio";
     static $nombreIdTabla = "idJugadores";
     static $nombreIdTabla2 = "idJugadores1";
     /**
