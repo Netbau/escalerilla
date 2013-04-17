@@ -1,0 +1,43 @@
+<?php
+
+/*
+ * Clase desafios con sus respectivas funciones 
+ */
+require_once(dirname(__FILE__) . '/../dbconfig/generadorStringQuery.php');
+
+class Desafios {
+
+    static $nombreTabla = "desafios";
+    static $nombreIdTabla = "idJugadores";
+    static $nombreIdTabla2 = "idJugadores1";
+    /**
+     * Insertar
+     * 
+     * Inserta una nueva entrada
+     * 
+     */
+    public static function Insertar($idJugadores, $idJugadores1, $fecha) {
+        $datosCreacion = array(
+            array('idJugadores', $idJugadores),
+            array('idJugadores1', $idJugadores1),
+            array('fecha', $fecha)
+            );
+
+        $queryString = QueryStringAgregar($datosCreacion, self::$nombreTabla);
+        $query = CallQuery($queryString);
+        return $query;
+    }
+    
+    public static function getDesafiosPorEstado($estado){
+        $queryString = "SELECT *
+                        FROM desafio d
+                        WHERE estado = '$estado'";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+    }
+    
+} 

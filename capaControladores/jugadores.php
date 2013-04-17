@@ -99,4 +99,17 @@ class Jugadores {
         }
         return $resultArray;
     }
+    public static function getNombrePorID($idJugadores){
+        $queryString = "SELECT nombre, apellido
+                        FROM jugadores j, usuarios u
+                        WHERE j.idUsuarios = u.idUsuarios
+                        AND idJugadores = '$idJugadores'";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+        
+    }
 }
