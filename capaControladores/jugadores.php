@@ -112,4 +112,18 @@ class Jugadores {
         return $resultArray;
         
     }
+    public static function getDesafiosDisponibles($ranking,$categoria){
+        $queryString = "SELECT *
+                        FROM usuarios u, jugadores j
+                        WHERE j.idUsuarios = u.idUsuarios
+                        AND categoria = '$categoria' AND
+                        ranking < $ranking
+                        LIMIT 4";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+    }
 }

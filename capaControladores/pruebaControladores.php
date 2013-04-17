@@ -3,6 +3,11 @@ session_start();
 include('desafios.php');
 include('jugadores.php');
 
-$estado = '0';
-$desafios = Desafios::getDesafiosPorEstado($estado);
+$ranking = 3;
+$categoria = 'A';
+
+$desafiosDisponibles = Jugadores::getDesafiosDisponibles($ranking, $categoria);
+
+print_r($desafiosDisponibles);
+    
 ?>

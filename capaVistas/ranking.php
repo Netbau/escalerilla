@@ -1,7 +1,7 @@
 ﻿<div class="tabbable">
     <ul class="nav nav-tabs">
         <?php
-        include 'capaControladores/jugadores.php';
+        include_once 'capaControladores/jugadores.php';
         $categorias = Jugadores::getCategorias();
         $contador = 0;
         foreach ($categorias as $categoria) {
@@ -34,11 +34,11 @@
                 <th><center>Victorias</center></th>
                 <th><center>Cambios</center></th>
                 </tr>';
-            foreach($ranking as $jugador){
+            foreach($ranking as $player){
                 echo '<tr>';
-                echo '<td><center>'.$jugador['ranking'].'</center></td>';
-                echo '<td><center><img class="img img-rounded" src="'.$jugador['foto'].'" height ="100" width="100"></center></td>';
-                echo '<td><center>'.$jugador['nombre'].' '.$jugador['apellido'].'</center></td>';
+                echo '<td><center>'.$player['ranking'].'</center></td>';
+                echo '<td><center><img class="img img-rounded" src="'.$player['foto'].'" height ="100" width="100"></center></td>';
+                echo '<td><center>'.$player['nombre'].' '.$player['apellido'].'</center></td>';
                 echo '<td><center>0</center></td>';
                 echo '<td><center>--</center></td>';
                 echo '</tr>';
@@ -48,45 +48,6 @@
             $contador2++;
         }
         ?>
-        <div id="pane1" class="tab-pane">
-            <!--<h4>Puede ir un T&iacute;tulo</h4>-->
-            <table class="table table-hover table-bordered table-condensed">
-                <tr class="">
-                    <th><center>Posici&oacute;n</center></th>
-                <th><center>Foto</center></th>
-                <th><center>Nombre Jugador</center></th>
-                <th><center>Victorias</center></th>
-                <th><center>Cambios</center></th>
-                </tr>
-                <tr class="success">
-                    <td><center>1</center></td>
-                <td><center><img class="img img-rounded" src="http://thesocialmediapro.co/wp-content/uploads/2011/11/facebook-profile-picture.jpg" height ="200" width="200"></center></td>
-                <td><center>Andr&eacute;s Silberstein</center></td>
-                <td><center>324</center></td>
-                <td><center>1<i class="icon icon-arrow-up"></i></center></td>
-                </tr>
-                <tr class="error">
-                    <td><center>2</center></td>
-                <td><center><img class="img img-rounded" src="http://thesocialmediapro.co/wp-content/uploads/2011/11/facebook-profile-picture.jpg" height ="100" width="100"></center></td>
-                <td><center>Le&oacute;n Steuermann</center></td>
-                <td><center>123</center></td>
-                <td><center>1<i class="icon icon-arrow-down"></center></td>
-                </tr>
-                <tr class="error">
-                    <td><center>3</center></td>
-                <td><center><img class="img img-rounded" src="http://thesocialmediapro.co/wp-content/uploads/2011/11/facebook-profile-picture.jpg" height ="150" width="150"></center></td>
-                <td><center>Ricardo Segal</center></td>
-                <td><center>100</center></td>
-                <td><center>1<i class="icon icon-arrow-down"></center></td>
-                </tr>
-                <tr >
-                    <td><center>4</center></td>
-                <td><center><img class="img img-rounded" src="http://thesocialmediapro.co/wp-content/uploads/2011/11/facebook-profile-picture.jpg" height ="75" width="75"></center></td>
-                <td><center>Jorge Urrea</center></td>
-                <td><center>15</center></td>
-                <td><center>-----</center></td>
-                </tr>
-            </table>
-        </div>
+        
     </div><!-- /.tab-content -->
 </div><!-- /.tabbable -->

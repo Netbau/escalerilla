@@ -22,9 +22,9 @@
                 </div><!--/span-->
                 <div class="span9">
                     <div class="row-fluid"><!--Retos Disponibles-->
-                        <div class="span12 well"><center><h2>Desafios Disponibles</h2></center>
+                        <div class="span12 well"><center><h2>T&uacute; puedes desafiar a:</h2></center>
 
-                            <?php require("capaVistas/retosDisponibles.php"); ?>
+                            <?php if(isset($_SESSION['jugador'])){require("capaVistas/retosDisponibles.php");}else{echo '<div class="alert alert-danger">Debes ingresar con tu cuenta para poder desafiar!</div>';} ?>
                         </div>
                     </div>
 

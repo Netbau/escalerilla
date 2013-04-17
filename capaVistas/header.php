@@ -47,5 +47,5 @@
         </div>
         <div class="container-fluid">
             <div class="row-fluid"><!-- titulo -->
-                <h2><center><img src="img/logoeim.jpg">Escalerilla Estadio Israelita 2013</center></h2>
+                <h2><img src="img/LogoEimCompacto.jpg" class="pull-left"><center>Escalerilla Estadio Israelita 2013</center></h2>
             </div>
