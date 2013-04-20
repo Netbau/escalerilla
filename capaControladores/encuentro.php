@@ -147,6 +147,26 @@ class Encuentro
             $resultArray[] = $fila;
         }
         return $resultArray;
+		
+    }
+	
+	/**
+     * Get
+     * ResultadoEnceuntro
+     * Por ID
+     * Encuentro
+     */
+	
+	public static function getResultadoEncuentroPorIdEncuentro($idEncuentro) {
+        $queryString = "SELECT *
+                        FROM resultadoEncuentro as re
+                        WHERE re.idEncuentro = $idEncuentro";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
     }
 	
 	}
