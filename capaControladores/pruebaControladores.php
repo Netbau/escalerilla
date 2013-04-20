@@ -1,12 +1,12 @@
 <?php
 session_start();
-include('desafios.php');
+include('encuentro.php');
 include('jugadores.php');
-$idJugadores = 3;
-//$datos = Jugadores::getUsuarioPorJugador($idJugadores);
-$idJugadores1 = 6; 
+include('usuarios.php');
 
-$desafio = Desafios::Insertar($idJugadores, $idJugadores1);
+
+
+$desafio = Encuentro::ultimosGanadores();
 if($desafio)
-    {echo 'insertadp';}    
+    {print_r($desafio);}    
 ?>
