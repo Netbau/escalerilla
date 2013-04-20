@@ -39,7 +39,7 @@ class Encuentro {
 
         $datosCreacion = array(
             array('idSet', $idSet),
-            array('idEncuentro', $idEcuentro),
+            array('idEncuentro', $idEncuentro),
             array('puntuacion', $puntuacion)
         );
     }
