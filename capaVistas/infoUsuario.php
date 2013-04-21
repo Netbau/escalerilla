@@ -1,6 +1,7 @@
 <div class="row-fluid">
     <div class="span12">
-        <?php $usuario = $_SESSION['usuario']; $jugador = $_SESSION['jugador'];?>
+        <?php $usuario = $_SESSION['usuario']; 
+        if(isset($_SESSION['jugador'])){$jugador = $_SESSION['jugador'];}?>
         <div class="row-fluid">
            <center>
            <strong>

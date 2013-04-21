@@ -94,7 +94,6 @@ class Jugadores {
                         WHERE j.idUsuarios = u.idUsuarios AND
                               categoria = '$categoria'
                         ORDER BY ranking ASC";
-        echo $queryString;
         $result = CallQuery($queryString);
         $resultArray = array();
         while ($fila = $result->fetch_assoc()) {
