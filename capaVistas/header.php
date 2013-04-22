@@ -53,5 +53,5 @@
         </div>
         <div class="container-fluid">
             <div class="row-fluid"><!-- titulo -->
-                <h2><img src="img/LogoEimCompacto.jpg" class="pull-left"><center>Escalerilla Estadio Israelita 2013</center></h2>
+                <h1><img src="img/LogoEimCompacto.jpg" class="pull-left"><center><small>Escalerilla Estadio Israelita 2013</small></center></h1>
             </div>

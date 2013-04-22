@@ -1,7 +1,7 @@
 <div class="nav-header">
     <h4>Últimas Noticias</h4>
 </div>
-<div class="well small" style="overflow: auto;">
+<div class="well well-small small" style="overflow: auto;">
     <div class="noticia">
         <div>
             <h5>21-04-2013</h5>

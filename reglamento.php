@@ -1,7 +1,7 @@
 <?php require('capaVistas/header.php'); ?>
 <div class="row-fluid">
     <div class="span3">
-        <div class="well"><!--Formulario login-->
+        <div class="well well-small"><!--Formulario login-->
 
             <?php
             if (!isset($_SESSION['usuario'])) {
@@ -11,30 +11,30 @@
             }
             ?>
 
-        </div><!--/.well -->
+        </div><!--/.well well-small -->
 
-        <div class="well"><!--Convenios-->
+        <div class="well well-small"><!--Convenios-->
 
             <?php require("capaVistas/convenios.php"); ?>
 
-        </div><!--/.well -->
+        </div><!--/.well well-small -->
 
-        <div class="well"><!--Publicidad-->
+        <div class="well well-small"><!--Publicidad-->
 
             Espacio Publicitario
 
-        </div><!--/.well -->
+        </div><!--/.well well-small -->
 
     </div><!--/span-->
     <div class="span9">
-        <div class="well">
+        <div class="well well-small">
 
             <?php require("capaVistas/documentoReglamento.php"); ?>
 
         </div> 
     </div><!--/span-->
 </div><!--/Row Fluid-->
-<div class="well"><!--Últimas Noticias-->
+<div class="well well-small"><!--Últimas Noticias-->
     <?php require("capaVistas/ultimasNoticias.php"); ?>
 </div>
 

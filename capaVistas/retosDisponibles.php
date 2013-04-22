@@ -4,7 +4,7 @@
     $desafiosDisponibles = Jugadores::getDesafiosDisponibles($jugador['ranking'], $jugador['categoria']);
     if (count($desafiosDisponibles) != 0) {
         foreach ($desafiosDisponibles as $desafio) {
-            echo '<div class="span3 well"><!--1ra persona-->
+            echo '<div class="span3 well well-small"><!--1ra persona-->
         <center><img class="img img-rounded" src="' . $desafio['foto'] . '" height="150" width="100"></center>
         <center><strong>' . $desafio['nombre'] . ' ' . $desafio['apellido'] . '</strong></center>
         <center>Ranking #' . $desafio['ranking'] . '</center>

@@ -1,2 +1,2 @@
-<div class="well"﻿>
+<div class="well well-small"﻿>
 </div>
