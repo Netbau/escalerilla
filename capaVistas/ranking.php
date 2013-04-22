@@ -26,7 +26,7 @@
             }
             $letra = $categoria['categoria'];
             $ranking = Jugadores::getRankingPorCategoria($letra);
-            echo '<table class="table table-hover table-bordered table-condensed">
+            echo '<table class="table table-condensed">
                 <tr class="">
                 <th><center>Posici&oacute;n</center></th>
                 <th><center>Foto</center></th>

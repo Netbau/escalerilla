@@ -22,7 +22,7 @@
 
     </head>
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-info navbar-fixed-top">
             <div class="navbar-inner"><!-- navbar -->
                 <div class="container-fluid">
                     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -30,7 +30,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="brand" href="index.php">Ranking</a>
+                    <a class="brand" href="index.php">Escalerilla Estadio Israelita 2013</a>
+                    <img src="img/LogoEimCompacto.jpg" width="35" height="35" class="pull-left">
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li><a href="#proximos">Pr&oacute;ximos Encuentros</a></li>
@@ -53,5 +54,5 @@
         </div>
         <div class="container-fluid">
             <div class="row-fluid"><!-- titulo -->
-                <h1><img src="img/LogoEimCompacto.jpg" class="pull-left"><center><small>Escalerilla Estadio Israelita 2013</small></center></h1>
+                <h1><center><small>Escalerilla Estadio Israelita 2013</small></center></h1>
             </div>

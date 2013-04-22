@@ -1,5 +1,5 @@
-﻿<div class="form-signin">
-    <center><h3 class="form-signin-heading">Conectarse</h3></center>
+﻿<div class="">
+    <center><h1><small>Conectarse</small></h1></center>
     <input type="text" name='user' class="input-block-level" placeholder="Ej: 15035156-k">
     <input type="password" name='password' class="input-block-level" placeholder="Contrase&ntilde;a">
     <label class="checkbox">

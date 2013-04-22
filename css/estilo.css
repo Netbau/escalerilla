@@ -9,6 +9,8 @@
 body {
     padding-top: 40px;
     padding-bottom: 40px;
+    background-image:url('../img/tennis2.jpg');
+    
 }
 .sidebar-nav {
     padding: 9px 0;
@@ -31,22 +33,30 @@ textarea{
     width: 98%;
 }
 input{
-    width: 98%
+    width: 98%;
 }
 table img{
-    height: 100px;
+    width: 50px;
+    height: 70px;
     
 }
 .span3 img{
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
-h1,
-h2,
-h3,
-h4,
-h5 {
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small{
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+    color: #00b2ff;
+}
+footer p{
+    color: #0075ff;
+    
 }
