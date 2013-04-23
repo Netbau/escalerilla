@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Clase usuarios con sus respectivas funciones 
+ * Clase usuarios con sus respectivas funciones
  */
 include_once(dirname(__FILE__) . '/../dbconfig/generadorStringQuery.php');
 
@@ -12,9 +12,9 @@ class Usuarios {
 
     /**
      * Insertar
-     * 
+     *
      * Inserta una nueva entrada
-     * 
+     *
      */
     public static function Insertar($run, $nombre, $apellido, $correo, $telefono, $fechaNacimiento, $sexo, $segundoNombre = 'null', $segundoApellido = 'null', $telefono2 = 'null') {
         $password = $nombre[0] . $apellido[0] . $run[0] . $run[1] . $run[2] . $run[3];
@@ -53,7 +53,7 @@ class Usuarios {
 
     //devuelve los datos personales (sin privados) de una persona
     public static function Datos($rut) {
-        $queryString = "SELECT 
+        $queryString = "SELECT
                               nombre,
                               segundoNombre,
                               apellido,
@@ -67,6 +67,20 @@ class Usuarios {
                               sexo
                         FROM usuarios
                         WHERE idUsuarios = $rut";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+
+        return $resultArray;
+    }
+
+    //devuelve los datos crudos de todos los usuarios
+    public static function Crude() {
+        $queryString = "SELECT *
+                        FROM usuarios";
         $result = CallQuery($queryString);
         $resultArray = array();
 
