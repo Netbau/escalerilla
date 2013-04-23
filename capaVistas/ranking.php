@@ -26,28 +26,34 @@
             }
             $letra = $categoria['categoria'];
             $ranking = Jugadores::getRankingPorCategoria($letra);
-            echo '<table class="table table-condensed">
-                <tr class="">
-                <th><center>Posici&oacute;n</center></th>
-                <th><center>Foto</center></th>
-                <th><center>Nombre Jugador</center></th>
-                <th><center>Victorias</center></th>
-                <th><center>Cambios</center></th>
-                </tr>';
+            echo '
+            <table class="table table-condensed table-striped">
+                <thead>
+                    <tr class="">
+                    <th><center>Posici&oacute;n</center></th>
+                    <th><center>Foto</center></th>
+                    <th><center>Nombre Jugador</center></th>
+                    <th><center>Victorias</center></th>
+                    <th><center>Cambios</center></th>
+                    </tr>
+                </thead>
+                <tbody>';
             foreach($ranking as $player){
                 echo '<tr>';
-                echo '<td><center>'.$player['ranking'].'</center></td>';
+                echo '<td data-title="Ranking"><center>'.$player['ranking'].'</center></td>';
                 echo '<td><center><img class="img img-rounded" src="'.$player['foto'].'" height ="100" width="100"></center></td>';
-                echo '<td><center>'.$player['nombre'].' '.$player['apellido'].'</center></td>';
-                echo '<td><center>0</center></td>';
-                echo '<td><center>--</center></td>';
+                echo '<td data-title="Nombre"><center>'.$player['nombre'].' '.$player['apellido'].'</center></td>';
+                echo '<td data-title="Victorias"><center>0</center></td>';
+                echo '<td data-title="Cambios"><center>--</center></td>';
                 echo '</tr>';
             }
-            echo '</table>';
+            echo '
+                </tbody>
+                </table>';
             echo '</div>';
             $contador2++;
         }
         ?>
-        
+
     </div><!-- /.tab-content -->
 </div><!-- /.tabbable -->

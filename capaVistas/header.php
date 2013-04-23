@@ -44,7 +44,7 @@
                             <li><a href="contacto.php">Contacto</a></li>
                             <?php if (isset($_SESSION['usuario'])) {
                                 if ($_SESSION['usuario']['nivel'] >= 3) {
-                                    echo "<li><a href='#administrar'><i class='icon-wrench'></i><strong>Administrar</strong></a></li>";
+                                    echo "<li><a href='admin.php'><i class='icon-wrench'></i><strong>Administrar</strong></a></li>";
                                 }
                             } ?>
                         </ul>

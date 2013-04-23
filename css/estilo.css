@@ -1,4 +1,4 @@
-/* 
+/*
     Document   : estilo
     Created on : Apr 14, 2013, 6:46:18 PM
     Author     : Cesar
@@ -10,7 +10,7 @@ body {
     padding-top: 40px;
     padding-bottom: 40px;
     background-image:url('../img/tennis2.jpg');
-    
+
 }
 .sidebar-nav {
     padding: 9px 0;
@@ -36,9 +36,9 @@ input{
     width: 98%;
 }
 table img{
-    width: 50px;
+    width: 65px;
     height: 70px;
-    
+
 }
 .span3 img{
     width: 70px;
@@ -58,5 +58,83 @@ h5 small{
 }
 footer p{
     color: #0075ff;
-    
+
 }
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 14px/1.4 Georgia, Serif;
+}
+#page-wrap {
+	margin: 50px;
+}
+p {
+	margin: 20px 0;
+}
+
+	/*
+	Generic Styling, for Desktops/Laptops
+	*/
+
+        @media
+	only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		tr { border: 1px solid #ccc; }
+
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+
+		/*
+		Label the data
+		*/
+		td:before { content: attr(data-title); }
+	}
+
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 480px) {
+		body {
+			padding: 0;
+			margin: 0;
+			width: 320px; }
+		}
+
+	/* iPads (portrait and landscape) ----------- */
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+		body {
+			width: 495px;
+		}
+	}
