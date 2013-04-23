@@ -36,7 +36,7 @@
                         <ul class="nav">
                             <li><a href="#proximos">Pr&oacute;ximos Encuentros</a></li>
                             <?php if (isset($_SESSION['jugador'])) {
-                                echo "<li><a href='usuario.php'><i class='icon-screenshot icon-white'></i><strong>Desafiar!</strong></a></li>";
+                                echo "<li><a href='usuario.php'><i class='icon-screenshot'></i><strong>Desafiar!</strong></a></li>";
                             } ?>
                             <li><a href="reglamento.php">Reglamento</a></li>
                             <li><a href="#noticias">Noticias</a></li>
@@ -44,7 +44,7 @@
                             <li><a href="contacto.php">Contacto</a></li>
                             <?php if (isset($_SESSION['usuario'])) {
                                 if ($_SESSION['usuario']['nivel'] >= 3) {
-                                    echo "<li><a href='#administrar'><i class='icon-wrench icon-white'></i><strong>Administrar</strong></a></li>";
+                                    echo "<li><a href='#administrar'><i class='icon-wrench'></i><strong>Administrar</strong></a></li>";
                                 }
                             } ?>
                         </ul>
