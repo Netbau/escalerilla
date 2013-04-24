@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /*
  * Clase usuarios con sus respectivas funciones

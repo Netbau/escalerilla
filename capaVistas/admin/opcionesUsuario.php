@@ -1,4 +1,4 @@
-<a href="#modalUsuario" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
+﻿<a href="#modalUsuario" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
 <a class="btn btn-small btn-inverse"><i class="icon-refresh icon-white"></i></a><br><br>
 <div class="row-fluid">
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">

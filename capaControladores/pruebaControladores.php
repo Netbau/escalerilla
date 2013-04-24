@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 include('encuentro.php');
 include('jugadores.php');

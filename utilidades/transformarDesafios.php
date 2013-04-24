@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /*
  * Funcion que transforma el id de un jugador en un nombre+apellido 

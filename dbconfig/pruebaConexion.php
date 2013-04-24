@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include('dbconfig.php');
  
 $link = mysql_connect($servidor, $nombre_usuario, $contrasena); 

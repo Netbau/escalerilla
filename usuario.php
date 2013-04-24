@@ -1,4 +1,4 @@
-<?php require('capaVistas/header.php'); ?>
+﻿<?php require('capaVistas/header.php'); ?>
 <div class="row-fluid">
     <div class="span3">
         <div class="well well-small"><!--Formulario login-->
