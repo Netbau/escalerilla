@@ -1,4 +1,4 @@
-﻿<h2><center>REGLAMENTO TORNEO ESCALERILLA</h2></center><br>
+<h2><center>REGLAMENTO TORNEO ESCALERILLA</h2></center><br>
 
 <h4>1.- OBJETIVO</h4><br>
 	

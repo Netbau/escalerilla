@@ -1,4 +1,4 @@
-﻿<div class="nav-header">
+<div class="nav-header">
     <h4>Últimas Noticias</h4>
 </div>
 <div class="well well-small small" style="overflow: auto;">

@@ -1,4 +1,4 @@
-﻿<a class="btn btn-small btn-info newPlayer"><strong>Nuevo Jugador</strong></a>
+<a class="btn btn-small btn-info newPlayer"><strong>Nuevo Jugador</strong></a>
 <a class="btn btn-small btn-inverse refresh"><i class="icon-refresh icon-white"></i></a><br><br>
 <div class="row-fluid"><center>
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">

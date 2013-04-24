@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /*
  * Clase desafios con sus respectivas funciones 

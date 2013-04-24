@@ -1,53 +1,47 @@
-﻿<?php require('capaVistas/header.php'); ?>
-<div class="row-fluid">
-    <div class="span3">
-        <div class="well well-small"><!--Formulario login-->
+<?php require('capaVistas/header.php');?>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well well-small"><!--Formulario login-->
 
-            <?php
-            if (!isset($_SESSION['usuario'])) {
-                require("capaVistas/loginForm.php");
-            } else {
-                require("capaVistas/infoUsuario.php");
-            }
-            ?>
+                        <?php if(!isset($_SESSION['usuario'])){require("capaVistas/loginForm.php");}else{require("capaVistas/infoUsuario.php");} ?>
 
-        </div><!--/.well well-small -->
+                    </div><!--/.well well-small -->
 
-        <div class="well well-small"><!--Convenios-->
+                    <div class="well well-small"><!--Convenios-->
 
-            <?php require("capaVistas/convenios.php"); ?>
+                        <?php require("capaVistas/convenios.php"); ?>
 
-        </div><!--/.well well-small -->
+                    </div><!--/.well well-small -->
 
-        <div class="well well-small"><!--Publicidad-->
+                    <div class="well well-small"><!--Publicidad-->
 
-            Espacio Publicitario
+                        Espacio Publicitario
 
-        </div><!--/.well well-small -->
+                    </div><!--/.well well-small -->
 
-    </div><!--/span-->
-    <div class="span9">
-        <div class="well well-small">
+                </div><!--/span-->
+                <div class="span9">
+                    <div class="row-fluid"><!--Reglamento-->
+                        
+					<?php require("capaVistas/documentoPremios.php"); ?>
+						
+                    </div><!--well well-small-->
+                </div><!--/span-->
+            </div><!--/Row Fluid-->
+            <div class="well well-small"><!--Últimas Noticias-->
+                <?php require("capaVistas/ultimasNoticias.php"); ?>
+            </div>
 
-            <?php require("capaVistas/documentoReglamento.php"); ?>
+            <hr>
 
-        </div> 
-    </div><!--/span-->
-</div><!--/Row Fluid-->
-<div class="well well-small"><!--Últimas Noticias-->
-    <?php require("capaVistas/ultimasNoticias.php"); ?>
-</div>
+            <footer><!-- ARCHIVO footer-->
 
-<hr>
+                <?php require("capaVistas/footer.php"); ?>
 
-<footer><!-- ARCHIVO footer-->
+            </footer><!-- ARCHIVO footer-->
 
-    <?php require("capaVistas/footer.php"); ?>
-
-</footer><!-- ARCHIVO footer-->
-
-</div><!--/.fluid-container-->
+        </div><!--/.fluid-container-->
 
 
-</body>
+    </body>
 </html>

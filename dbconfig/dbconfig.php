@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /*
  * Descripcion: Archivo de configuracion de MySQL

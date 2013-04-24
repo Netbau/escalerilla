@@ -1,4 +1,4 @@
-﻿<form method=post>
+<form method=post>
     <table class='table table-striped'>
         <center>
             <tr>
