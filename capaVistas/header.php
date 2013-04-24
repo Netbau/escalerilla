@@ -30,7 +30,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="brand" href="index.php">Escalerilla Estadio Israelita 2013</a>
+                    <a class="brand" href="index.php">Escalerilla EIM 2013</a>
                     <img src="img/LogoEimCompacto.jpg" width="35" height="35" class="pull-left">
                     <div class="nav-collapse collapse">
                         <ul class="nav">
@@ -54,5 +54,5 @@
         </div>
         <div class="container-fluid">
             <div class="row-fluid"><!-- titulo -->
-                <h1><center><small>Escalerilla Estadio Israelita 2013</small></center></h1>
+                <h1><center><small><strong>Escalerilla Estadio Israelita 2013</strong></small></center></h1>
             </div>

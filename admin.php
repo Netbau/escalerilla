@@ -48,12 +48,41 @@
                         </a>
                     </div>
                     <div id="collapseTwo" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            Manejo de Jugadores
-                        </div>
+                        <div class="accordion-inner"><!-- opciones de jugadores-->
+                            <?php
+                            if (isset($_SESSION['usuario']) && $usuario['nivel'] >= 3) {
+                                include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesJugador.php');
+                            }
+                            ?>
+                        </div><!-- opciones de usuarios-->
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="btn btn-small accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                            <strong>Registro de Desafios</strong>
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="accordion-body collapse">
+                        <div class="accordion-inner"><!-- opciones de jugadores-->
+
+                        </div><!-- opciones de usuarios-->
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="btn btn-small accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                            <strong>Registro de Encuentros</strong>
+                        </a>
+                    </div>
+                    <div id="collapseFour" class="accordion-body collapse">
+                        <div class="accordion-inner"><!-- opciones de jugadores-->
+
+                        </div><!-- opciones de usuarios-->
                     </div>
                 </div>
             </div>
+
         </div>
     </div><!--/span-->
 </div><!--/Row Fluid-->

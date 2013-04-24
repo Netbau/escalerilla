@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Clase usuarios con sus respectivas funciones 
+ * Clase usuarios con sus respectivas funciones
  */
 require_once(dirname(__FILE__) . '/../dbconfig/generadorStringQuery.php');
 
@@ -12,9 +12,9 @@ class Jugadores {
 
     /**
      * Insertar
-     * 
+     *
      * Inserta una nueva entrada
-     * 
+     *
      */
     public static function Insertar($ranking, $categoria, $idUsuarios) {
         $datosCreacion = array(
@@ -31,7 +31,7 @@ class Jugadores {
 
     //devuelve los datos personales (sin privados) de una persona
     public static function Datos($rut) {
-        $queryString = "SELECT 
+        $queryString = "SELECT
                               idJugadores,
                               categoria,
                               ranking,
@@ -143,4 +143,24 @@ class Jugadores {
         return $resultArray;
     }
 
+    //devuelve los datos crudos de todos los usuarios
+    public static function Crude() {
+        $queryString = "SELECT nombre,
+                               segundoNombre,
+                               apellido,
+                               segundoApellido,
+                               ranking,
+                               categoria
+                        FROM usuarios u, jugadores j
+                        WHERE u.idUsuarios = j.idUsuarios
+                        ORDER BY categoria, ranking";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+
+        return $resultArray;
+    }
 }

@@ -1,7 +1,7 @@
-<a class="btn btn-small btn-inverse"><strong>Nuevo Usuario</strong></a>
-<a class="btn btn-small btn-inverse"><i class="icon-refresh icon-white"></i></a><br>
-
-<table class="table-condensed table-striped table-hover table-bordered">
+<a class="btn btn-small btn-info"><strong>Nuevo Usuario</strong></a>
+<a class="btn btn-small btn-inverse"><i class="icon-refresh icon-white"></i></a><br><br>
+<div class="row-fluid">
+<table class="table-condensed table-striped table-hover table-bordered" width="100%">
     <thead>
         <tr>
             <th>Nombre</th>
@@ -11,6 +11,7 @@
             <th>E-mail</th>
             <th>Telefono</th>
             <th>Foto</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,7 @@
                   <td>".$usuario['correo']."</td>
                   <td>".$usuario['telefono']."</td>
                   <td>".$usuario['foto']."</td>
+                  <td><a class='btn btn-small btn-block'><i class='icon-remove-sign'></i></a></td>
                ";
 
             echo '</tr>
@@ -35,3 +37,4 @@
         ?>
     </tbody>
 </table>
+</div>
