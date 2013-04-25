@@ -1,5 +1,5 @@
 <a href="#modalUsuario" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
-<a class="btn btn-small btn-inverse"><i class="icon-refresh icon-white"></i></a><br><br>
+<br><br>
 <div class="row-fluid">
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">
         <thead>
@@ -16,7 +16,7 @@
         </thead>
         <tbody>
             <?php
-            include_once('capaAjax/getUsuarios.php');
+            include_once(dirname(__FILE__) . '/../../capaAjax/getUsuarios.php');
             foreach ($usuarios as $usuario) {
                 echo '<tr>
                 ';
@@ -45,6 +45,7 @@
         <h3 id="modalUsuarioLabel">Ingresar nuevo usuario</h3>
     </div>
     <div class="modal-body">
+        <div class="estadoIngreso"></div>
         <form method="post" action="" id="ingresoUsuarioForm">
             <table class="table-condensed table-striped table-hover table-bordered" width="100%">
                 <tr>
@@ -87,11 +88,23 @@
         <button class="btn btn-info" id="nuevoUsuario" data-loading-text="Cargando..." type="submit"><strong>Ingresar</strong></button>
     </div>
 </div>
-
 <script>
-    $(document).ready(function() {
-        $('#ingresoUsuarioForm').validate();
+    $('#modalUsuario').on('hide', function() {
+        $('#ingresoUsuarioForm').collapse('show');
+        $('.estadoIngreso').html('');
+        $('#nuevoUsuario').show('');
+        $('input[name="rut"]').val('');
+        $('input[name="nombre"]').val('');
+        $('input[name="segundoNombre"]').val('');
+        $('input[name="apellido"]').val('');
+        $('input[name="segundoApellido"]').val('');
+        $('input[name="fechaNacimiento"]').val('');
+        $('input[name="telefono"]').val('');
+        $('input[name="telefono2"]').val('');
+        $('input[name="correo"]').val('');
     });
+</script>
+<script>
     $('#nuevoUsuario').click(function() {
         $(this).button('loading');
         var rut = $('input[name="rut"]').val();
@@ -122,12 +135,19 @@
             "type": "post",
             "async": false,
             success: function(output) {
-                alert(output);
+                if (output == 1) {
+                    $('#ingresoUsuarioForm').collapse('hide');
+                    $('.estadoIngreso').html('<div class="alert alert-success">Usuario Ingresado Correctamente</div>');
+                    $('#nuevoUsuario').hide();
+                } else if(output==0) {
+                    $('.estadoIngreso').html('<div class="alert alert-danger">Faltan datos!</div>');
+                } else if(output==2) {
+                    $('.estadoIngreso').html('<div class="alert alert-danger">Usuario Ya Registrado!</div>');
+                }else{
+                    alert(output);
+                }
                 $('#nuevoUsuario').button('reset');
             }
-
         });
-
-
     });
 </script>

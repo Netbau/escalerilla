@@ -17,9 +17,14 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><!-- JQUERY-->
         <!--<script src="js/jquery191.js"></script><!-- JQUERY-->
+        <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script><!-- JQUERY UI-->
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><!-- bootstrap js -->
         <!--<script src="js/bootstrap.js"></script><!-- bootstrap js -->
-
+        <script>
+            $(document).ready(function() {
+                $('.datepicker').datepicker({ dateFormat: "yy-mm-dd", yearRange: "1950:2000",changeYear: true, changeMonth: true });
+            });
+        </script>
     </head>
     <body>
         <div class="navbar navbar-info navbar-fixed-top">
@@ -35,18 +40,22 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li><a href="#proximos">Pr&oacute;ximos Encuentros</a></li>
-                            <?php if (isset($_SESSION['jugador'])) {
+                            <?php
+                            if (isset($_SESSION['jugador'])) {
                                 echo "<li><a href='usuario.php'><i class='icon-screenshot'></i><strong>Desafiar!</strong></a></li>";
-                            } ?>
+                            }
+                            ?>
                             <li><a href="reglamento.php">Reglamento</a></li>
                             <li><a href="#noticias">Noticias</a></li>
                             <li><a href="premios.php">Premios</a></li>
                             <li><a href="contacto.php">Contacto</a></li>
-                            <?php if (isset($_SESSION['usuario'])) {
+                            <?php
+                            if (isset($_SESSION['usuario'])) {
                                 if ($_SESSION['usuario']['nivel'] >= 3) {
                                     echo "<li><a href='admin.php'><i class='icon-wrench'></i><strong>Administrar</strong></a></li>";
                                 }
-                            } ?>
+                            }
+                            ?>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

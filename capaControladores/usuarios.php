@@ -35,7 +35,11 @@ class Usuarios {
 
         $queryString = QueryStringAgregar($datosCreacion, self::$nombreTabla);
         $query = CallQuery($queryString);
-        return $query;
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //verifica la clave del usuario con su rut y clave ingresada

@@ -15,7 +15,7 @@
 
         <div class="well well-small"><!--Convenios-->
 
-            <?php require("capaVistas/convenios.php"); ?>
+            <?php require(dirname(__FILE__) . "../capaVistas/convenios.php"); ?>
 
         </div><!--/.well well-small -->
 
@@ -32,13 +32,24 @@
                         </a>
                     </div>
                     <div id="collapseOne" class="accordion-body collapse in">
-                        <div class="accordion-inner"><!-- opciones de usuarios-->
-                            <?php
-                            if (isset($_SESSION['usuario']) && $usuario['nivel'] >= 3) {
-                                include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesUsuario.php');
-                            }
-                            ?>
-                        </div><!-- opciones de usuarios -->
+                        <div class="accordion-inner">
+                            <a class="btn btn-small btn-inverse refreshUsuarios pull-left"><i class="icon-refresh icon-white"></i></a>
+                            <div id="opcionesUsuario"><!-- opciones de usuarios-->
+                                <?php
+                                if (isset($_SESSION['usuario']) && $usuario['nivel'] >= 3) {
+                                    include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesUsuario.php');
+                                }
+                                ?>
+
+                                <script>
+                                    $('.refreshUsuarios').click(function() {
+                                        $('#opcionesUsuario').load('capaVistas/admin/opcionesUsuario.php', function() {
+                                            //accion al refrescar
+                                        });
+                                    });
+                                </script>
+                            </div><!-- opciones de usuarios -->
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-group">
@@ -49,12 +60,22 @@
                     </div>
                     <div id="collapseTwo" class="accordion-body collapse">
                         <div class="accordion-inner"><!-- opciones de jugadores-->
-                            <?php
-                            if (isset($_SESSION['usuario']) && $usuario['nivel'] >= 3) {
-                                include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesJugador.php');
-                            }
-                            ?>
-                        </div><!-- opciones de usuarios-->
+                            <a class="btn btn-small btn-inverse refreshJugadores pull-left"><i class="icon-refresh icon-white"></i></a>
+                            <div id="opcionesJugador"><!-- opciones de usuarios-->
+                                <?php
+                                if (isset($_SESSION['usuario']) && $usuario['nivel'] >= 3) {
+                                    include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesJugador.php');
+                                }
+                                ?>
+                                <script>
+                                    $('.refreshJugadores').click(function() {
+                                        $('#opcionesJugador').load('capaVistas/admin/opcionesJugador.php', function() {
+                                            //accion al refrescar
+                                        });
+                                    });
+                                </script>
+                            </div><!-- opciones de usuarios-->
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-group">
@@ -87,14 +108,14 @@
     </div><!--/span-->
 </div><!--/Row Fluid-->
 <div class="well well-small"><!--Últimas Noticias-->
-<?php require("capaVistas/ultimasNoticias.php"); ?>
+    <?php require("capaVistas/ultimasNoticias.php"); ?>
 </div>
 
 <hr>
 
 <footer><!-- ARCHIVO footer-->
 
-<?php require("capaVistas/footer.php"); ?>
+    <?php require("capaVistas/footer.php"); ?>
 
 </footer><!-- ARCHIVO footer-->
 

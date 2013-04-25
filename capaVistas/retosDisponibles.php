@@ -1,6 +1,6 @@
 ﻿<center>
     <?php
-    include_once('capaControladores/jugadores.php');
+    include_once(dirname(__FILE__) . '/../capaControladores/jugadores.php');
     $desafiosDisponibles = Jugadores::getDesafiosDisponibles($jugador['ranking'], $jugador['categoria']);
     if (count($desafiosDisponibles) != 0) {
         foreach ($desafiosDisponibles as $desafio) {
@@ -14,7 +14,7 @@
     } else {
         echo '<div class="alert alert-success"><strong>Felicitaciones!</strong>, eres n&uacute;mero uno en tu categor&iacute;a. Sigue atento a los desaf&iacute;os que te har&aacute;n.</div>';
     }
-    ?>    
+    ?>
 </center>
 <!-- Modal -->
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

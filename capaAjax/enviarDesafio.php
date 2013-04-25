@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST)) {
-    include_once '../capaControladores/desafios.php';
+    include_once (dirname(__FILE__) . '/../capaControladores/desafios.php');
     $desafiado = $_POST['desafiado'];
     $desafiante = $_POST['desafiante'];
 
@@ -20,7 +20,7 @@ if (isset($_POST)) {
             - Desafiante: ' . $desafiante['nombre'] . ' ' . $desafiante['apellido'] . '
                 ->E-mail: ' . $desafiante['correo'] . '
                 ->Telefono: ' . $desafiante['telefono'] . '
-        El desafio se encuentra actualmente en caracter de pendiente.            
+        El desafio se encuentra actualmente en caracter de pendiente.
         La hora y fecha del encuentro estan sujetas a disponibilidad de las canchas y acuerdo de las partes con el administrador.';
         $headers = "Nuevo Desafio Escalerilla " . $from . ":";
         $envio = mail($to, $subject, $message, $headers);

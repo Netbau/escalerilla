@@ -1,5 +1,4 @@
-<a class="btn btn-small btn-info newPlayer"><strong>Nuevo Jugador</strong></a>
-<a class="btn btn-small btn-inverse refresh"><i class="icon-refresh icon-white"></i></a><br><br>
+<a class="btn btn-small btn-info newPlayer"><strong>Nuevo Jugador</strong></a><br><br>
 <div class="row-fluid"><center>
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">
         <thead>
@@ -14,7 +13,7 @@
         </thead>
         <tbody>
             <?php
-            include_once('capaAjax/getJugadores.php');
+            include_once(dirname(__FILE__) . '/../../capaAjax/getJugadores.php');
             foreach ($jugadores as $jugador) {
                 if ($jugador['ranking'] == 1) {
                     echo "<tr><td colspan='8'><center><strong>Categoria " . $jugador['categoria'] . "</strong></center></td></tr>";

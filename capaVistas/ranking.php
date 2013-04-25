@@ -1,7 +1,7 @@
 ﻿<div class="tabbable">
     <ul class="nav nav-tabs">
         <?php
-        include_once 'capaControladores/jugadores.php';
+        include_once (dirname(__FILE__) . '/../capaControladores/jugadores.php');
         $categorias = Jugadores::getCategorias();
         $contador = 0;
         foreach ($categorias as $categoria) {
