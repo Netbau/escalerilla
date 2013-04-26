@@ -1,13 +1,14 @@
-<?php require('capaVistas/header.php'); ?>
+<?php
+require(dirname(__FILE__) .'/capaVistas/header.php'); ?>
 <div class="row-fluid">
     <div class="span3">
         <div class="well well-small"><!--Formulario login-->
 
             <?php
             if (!isset($_SESSION['usuario'])) {
-                require("capaVistas/loginForm.php");
+                require_once(dirname(__FILE__) ."/capaVistas/loginForm.php");
             } else {
-                require("capaVistas/infoUsuario.php");
+                require_once(dirname(__FILE__) ."/capaVistas/infoUsuario.php");
             }
             ?>
 
@@ -15,7 +16,7 @@
 
         <div class="well well-small"><!--Convenios-->
 
-            <?php require(dirname(__FILE__) . "../capaVistas/convenios.php"); ?>
+            <?php require_once(dirname(__FILE__) . "/capaVistas/convenios.php"); ?>
 
         </div><!--/.well well-small -->
 
@@ -36,7 +37,7 @@
                             <a class="btn btn-small btn-inverse refreshUsuarios pull-left"><i class="icon-refresh icon-white"></i></a>
                             <div id="opcionesUsuario"><!-- opciones de usuarios-->
                                 <?php
-                                if (isset($_SESSION['usuario']) && $usuario['nivel'] >= 3) {
+                                if (isset($_SESSION['usuario']) && $_SESSION['usuario']['nivel'] >= 3) {
                                     include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesUsuario.php');
                                 }
                                 ?>
@@ -63,7 +64,7 @@
                             <a class="btn btn-small btn-inverse refreshJugadores pull-left"><i class="icon-refresh icon-white"></i></a>
                             <div id="opcionesJugador"><!-- opciones de usuarios-->
                                 <?php
-                                if (isset($_SESSION['usuario']) && $usuario['nivel'] >= 3) {
+                                if (isset($_SESSION['usuario']) && $_SESSION['usuario']['nivel'] >= 3) {
                                     include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesJugador.php');
                                 }
                                 ?>
