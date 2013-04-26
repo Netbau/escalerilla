@@ -29,6 +29,7 @@
     <body>
         <div class="navbar navbar-info navbar-fixed-top">
             <div class="navbar-inner"><!-- navbar -->
+                <?php print_r($_SESSION);?>
                 <div class="container-fluid">
                     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
