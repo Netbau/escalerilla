@@ -4,12 +4,16 @@
     include_once(dirname(__FILE__) . '/../capaControladores/encuentro.php');
 	include_once(dirname(__FILE__) . '/../utilidades/transformarDesafios.php');
     $ultimosEncuentros = Encuentro::getPróximosEncuentros($limite = 1);
-	$ultimosEnmcuentros = transformaDesafios($ultimosEncuentros);
+	$ultimosEncuentros = transformaDesafios($ultimosEncuentros);
 	
     if (count($ultimosEncuentros) != 0) {
         foreach ($ultimosEncuentros as $encuentro) {
+			
+			$fecha = explode(' ',$encuentro['fecha']);
+
+		
             echo '<div class="span6 well well-small"><!--1er Encuentro-->
-        <center><strong>' . $encuentro['fecha'] . ' ' . $encuentro['idJugadores'] . ' ' . $encuentro['idJugadores1'] . '</center>
+        <center><strong>' . $encuentro['$fecha[0]'] . ' ' . $encuentro['idJugadores'] . ' ' . $encuentro['idJugadores1'] . '</center>
     </div>';
         }
     } else {
