@@ -22,10 +22,12 @@
 
     </div><!--/span-->
 
-    <div class="span9"><!--Últimos Encuentros-->
+    <div class="span9"><!--Próximos Encuentros-->
+		<div class="well well-small">
+        
+		<?php require("capaVistas/proximosEncuentrosGenerado.php"); ?>
 
-        <?php require("capaVistas/proximosEncuentrosGenerado.php"); ?>
-
+		</div>
         <div class="well well-small">
             <div class="row-fluid">
                 <center><h3>Últimos Ganadores</h3></center><!--Últimos Ganadores-->

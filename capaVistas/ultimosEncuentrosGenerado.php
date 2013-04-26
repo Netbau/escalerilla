@@ -7,7 +7,7 @@
         foreach ($ultimosEncuentros as $encuentros) {
             echo '
                 <div class="span6 well well-small"><!--1er Encuentro-->
-                    <center><strong>' . $encuentros['fecha'] . ' ' . $encuentros['idJugadores'] . ' ' . $encuentros['idJugadores1'] . '</center>
+                    <center>' . $encuentros['fecha'] . ' ' . $encuentros['idJugadores'] . ' ' . $encuentros['idJugadores1'] . '</center>
                 </div>';
         }
     } else {
