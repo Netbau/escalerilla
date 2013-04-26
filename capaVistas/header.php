@@ -22,7 +22,7 @@
         <!--<script src="js/bootstrap.js"></script><!-- bootstrap js -->
         <script>
             $(document).ready(function() {
-                $('.datepicker').datepicker({ dateFormat: "yy-mm-dd", yearRange: "1950:2000",changeYear: true, changeMonth: true });
+                $('.datepicker').datepicker({dateFormat: "yy-mm-dd", yearRange: "1950:2000", changeYear: true, changeMonth: true});
             });
         </script>
     </head>

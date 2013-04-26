@@ -13,7 +13,7 @@
         </div><!--/.well well-small -->
 
         <div class="well well-small"><!--Convenios-->
-<?php require("capaVistas/convenios.php"); ?>
+            <?php require("capaVistas/convenios.php"); ?>
         </div><!--/.well well-small -->
 
         <div class="well well-small"><!--Publicidad-->
@@ -24,12 +24,12 @@
 
     <div class="span9"><!--Últimos Encuentros-->
 
-	<?php require("capaVistas/proximosEncuentrosGenerado.php");?>       
+        <?php require("capaVistas/proximosEncuentrosGenerado.php"); ?>
 
         <div class="well well-small">
             <div class="row-fluid">
                 <center><h3>Últimos Ganadores</h3></center><!--Últimos Ganadores-->
-				<?php require("capaVistas/ultimosGanadoresGenerado.php"); ?>
+                <?php require("capaVistas/ultimosGanadoresGenerado.php"); ?>
             </div><!--/row-->
         </div><!--well well-small-->
 
@@ -37,12 +37,12 @@
 
 
     <div class="well well-small"><!--Últimas Noticias-->
-<?php require("capaVistas/ultimasNoticias.php"); ?>
+        <?php require("capaVistas/ultimasNoticias.php"); ?>
     </div>
 
     <hr>
     <footer><!-- ARCHIVO footer-->
-    <?php require("capaVistas/footer.php"); ?>
+        <?php require("capaVistas/footer.php"); ?>
     </footer>
 
 </div><!--/row-->

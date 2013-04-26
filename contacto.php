@@ -3,11 +3,13 @@
     <div class="span3">
         <div class="well well-small"><!--Formulario login-->
 
-            <?php if (!isset($_SESSION['usuario'])) {
+            <?php
+            if (!isset($_SESSION['usuario'])) {
                 require("capaVistas/loginForm.php");
             } else {
                 require("capaVistas/infoUsuario.php");
-            } ?>
+            }
+            ?>
 
         </div><!--/.well well-small -->
 
@@ -27,8 +29,8 @@
     <div class="span9">
         <div class="well well-small"><!--Reglamento-->
 
-					
-			<?php require("capaVistas/formularioContacto.php"); ?>
+
+<?php require("capaVistas/formularioContacto.php"); ?>
 
         </div><!--well well-small-->
     </div><!--/span-->
