@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+﻿<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,7 +42,7 @@
                             <li><a href="#proximos">Pr&oacute;ximos Encuentros</a></li>
                             <?php
                             if (isset($_SESSION['jugador'])) {
-                                echo "<li><a href='usuario.php'><i class='icon-screenshot'></i><strong>Desafiar!</strong></a></li>";
+                                echo "<li><a href='proximosEncuentros.php'><i class='icon-screenshot'></i><strong>¡Desafiar!</strong></a></li>";
                             }
                             ?>
                             <li><a href="reglamento.php">Reglamento</a></li>

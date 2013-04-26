@@ -1,6 +1,6 @@
 ﻿<center>
     <?php
-    include_once('capaControladores/jugadores.php');
+    include_once('capaControladores/encuentro.php');
     $ultimosGanadores = Encuentro::ultimosGanadores();
     if (count($ultimosGanadores) != 0) {
         foreach ($ultimosGanadores as $Ganadores) {
@@ -11,9 +11,7 @@
     </div>';
         }
     } else {
-        echo '<div class="alert alert-warning"><strong>No hay ganadores.</strong>,
-		eres n&uacute;mero uno en tu categor&iacute;a. Sigue atento a los desaf&iacute;os
-		que te har&aacute;n.</div>';
+        echo '<div class="alert alert-warning"><strong>No hay ganadores.</strong></div>';
     }
     ?>    
 </center>
