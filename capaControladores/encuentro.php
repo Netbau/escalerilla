@@ -146,10 +146,10 @@ class Encuentro {
      * Por
      * Fecha
      */
-    public static function getPróximosEncuentros($limite = 1) {
+    public static function getPróximosEncuentros($limite = 3) {
         $queryString = "SELECT *
-                        FROM encuentro as e
-                        ORDER BY e.fecha ASC LIMIT $limite";
+                        FROM desafio as d
+                        ORDER BY d.fecha ASC LIMIT $limite";
         $result = CallQuery($queryString);
         $resultArray = array();
         while ($fila = $result->fetch_assoc()) {
