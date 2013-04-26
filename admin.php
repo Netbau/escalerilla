@@ -78,6 +78,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <a class="btn btn-small accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
@@ -87,9 +88,10 @@
                     <div id="collapseThree" class="accordion-body collapse">
                         <div class="accordion-inner"><!-- opciones de jugadores-->
 
-                        </div><!-- opciones de usuarios-->
+                        </div><!-- opciones de jugadores-->
                     </div>
                 </div>
+
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <a class="btn btn-small accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
@@ -102,7 +104,8 @@
                         </div><!-- opciones de usuarios-->
                     </div>
                 </div>
-            </div>
+
+            </div><!-- accordion -->
 
         </div>
     </div><!--/span-->

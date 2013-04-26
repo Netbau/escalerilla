@@ -95,6 +95,19 @@ class Usuarios {
         return $resultArray;
     }
 
+    public static function getNotJugadores(){
+        $queryString = "SELECT *
+                        FROM usuarios
+                        WHERE idUsuarios NOT IN (SELECT idUsuarios FROM jugadores)";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+    }
+
     public static function actualizarDatos() {
         /*
          * funcion de actualizacion por definir
