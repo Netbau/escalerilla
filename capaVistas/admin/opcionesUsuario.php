@@ -34,7 +34,7 @@
                 echo '</tr>
                 ';
             }
-            unset($usuarios);
+            unset($usuario);
             ?>
         </tbody>
     </table>
