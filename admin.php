@@ -112,9 +112,23 @@
                         </a>
                     </div>
                     <div id="collapseFive" class="accordion-body collapse">
-                        <div class="accordion-inner"><!-- opciones de jugadores-->
-
-                        </div><!-- opciones de usuarios-->
+                        <div class="accordion-inner"><!-- opciones de premios-->
+                            <a class="btn btn-small btn-inverse refreshPremios pull-left"><i class="icon-refresh icon-white"></i></a>
+                            <div id="opcionesPremio"><!-- opciones de premios-->
+                                <?php
+                                if (isset($_SESSION['usuario']) && $_SESSION['usuario']['nivel'] >= 3) {
+                                    include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesPremio.php');
+                                }
+                                ?>
+                                <script>
+                                    $('.refreshJugadores').click(function() {
+                                        $('#opcionesPremio').load('capaVistas/admin/opcionesPremio.php', function() {
+                                            //accion al refrescar
+                                        });
+                                    });
+                                </script>
+                            </div><!-- opciones depremios-->
+                        </div>
                     </div>
                 </div>
 
