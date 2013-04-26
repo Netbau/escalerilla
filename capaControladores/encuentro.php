@@ -124,6 +124,42 @@ class Encuentro {
 
     /**
      * Get
+     * Últimos Encuetros
+     * Por
+     * Fecha
+     */
+    public static function getUltimosEncuentros($limite = 1) {
+        $queryString = "SELECT *
+                        FROM encuentro as e
+                        ORDER BY e.fecha DESC LIMIT $limite";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+	}
+	
+    /**
+     * Get
+     * Próximos Encuetros
+     * Por
+     * Fecha
+     */
+    public static function getPróximosEncuentros($limite = 1) {
+        $queryString = "SELECT *
+                        FROM encuentro as e
+                        ORDER BY e.fecha ASC LIMIT $limite";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+	}
+	
+    /**
+     * Get
      * Encuetro
      * Por ID
      * Cancha

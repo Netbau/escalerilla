@@ -22,32 +22,14 @@
 
     </div><!--/span-->
 
-    <div class="span9">
+    <div class="span9"><!--Últimos Encuentros-->
 
-        
-		<center>
-    <?php
-    include_once(dirname(__FILE__) . '/../capaControladores/encuentro.php');
-    $ultimosEncuentros = Enceuntro::getEncuentroPorFecha($fecha, $limite = 1);
-    if (count($ultimosEncunetros) != 0) {
-        foreach ($ultimosEncuentros as $encuentros) {
-            echo '<div class="span6 well well-small"><!--1er Encuentro-->
-        <center><strong>' . $encuentro['fecha'] . ' ' .$encuentro['idJugadores'] . ' ' . $encuentro['idJugadores1']'</center>
-    </div>';
-        }
-    }
-	
-	else {
-        echo '<div class="alert alert-warning"><strong>Error :D</strong></div>';
-    }
-    ?>
-		</center>
-        
+	<?php require("capaVistas/proximosEncuentrosGenerado.php");?>       
 
         <div class="well well-small">
             <div class="row-fluid">
                 <center><h3>Últimos Ganadores</h3></center><!--Últimos Ganadores-->
-<?php require("capaVistas/ultimosGanadores.php"); ?>
+<?php require("capaVistas/ultimosGanadoresGenerado.php"); ?>
             </div><!--/row-->
         </div><!--well well-small-->
 

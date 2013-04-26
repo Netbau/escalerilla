@@ -39,10 +39,10 @@
                     <img src="img/LogoEimCompacto.jpg" width="35" height="35" class="pull-left">
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li><a href="#proximos">Pr&oacute;ximos Encuentros</a></li>
+                            <li><a href="proximosEncuentros.php">Pr&oacute;ximos Encuentros</a></li>
                             <?php
                             if (isset($_SESSION['jugador'])) {
-                                echo "<li><a href='proximosEncuentros.php'><i class='icon-screenshot'></i><strong>¡Desafiar!</strong></a></li>";
+                                echo "<li><a href='usuario.php'><i class='icon-screenshot'></i><strong>¡Desafiar!</strong></a></li>";
                             }
                             ?>
                             <li><a href="reglamento.php">Reglamento</a></li>
