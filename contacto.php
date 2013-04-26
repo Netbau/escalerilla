@@ -1,13 +1,13 @@
-<?php require('capaVistas/header.php'); ?>
+<?php require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
 <div class="row-fluid">
     <div class="span3">
         <div class="well well-small"><!--Formulario login-->
 
             <?php
             if (!isset($_SESSION['usuario'])) {
-                require("capaVistas/loginForm.php");
+                require(dirname(__FILE__) . "/capaVistas/loginForm.php");
             } else {
-                require("capaVistas/infoUsuario.php");
+                require(dirname(__FILE__) . "/capaVistas/infoUsuario.php");
             }
             ?>
 
@@ -15,7 +15,7 @@
 
         <div class="well well-small"><!--Convenios-->
 
-<?php require("capaVistas/convenios.php"); ?>
+<?php require(dirname(__FILE__) . "/capaVistas/convenios.php"); ?>
 
         </div><!--/.well well-small -->
 
@@ -30,20 +30,20 @@
         <div class="well well-small"><!--Reglamento-->
 
 
-<?php require("capaVistas/formularioContacto.php"); ?>
+<?php require(dirname(__FILE__) . "/capaVistas/formularioContacto.php"); ?>
 
         </div><!--well well-small-->
     </div><!--/span-->
 </div><!--/Row Fluid-->
 <div class="well well-small"><!--Últimas Noticias-->
-<?php require("capaVistas/ultimasNoticias.php"); ?>
+<?php require(dirname(__FILE__) . "/capaVistas/ultimasNoticias.php"); ?>
 </div>
 
 <hr>
 
 <footer><!-- ARCHIVO footer-->
 
-<?php require("capaVistas/footer.php"); ?>
+<?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
 
 </footer><!-- ARCHIVO footer-->
 

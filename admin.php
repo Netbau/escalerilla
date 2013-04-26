@@ -1,14 +1,13 @@
-<?php
-require(dirname(__FILE__) .'/capaVistas/header.php'); ?>
+<?php require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
 <div class="row-fluid">
     <div class="span3">
         <div class="well well-small"><!--Formulario login-->
 
             <?php
             if (!isset($_SESSION['usuario'])) {
-                require_once(dirname(__FILE__) ."/capaVistas/loginForm.php");
+                require_once(dirname(__FILE__) . "/capaVistas/loginForm.php");
             } else {
-                require_once(dirname(__FILE__) ."/capaVistas/infoUsuario.php");
+                require_once(dirname(__FILE__) . "/capaVistas/infoUsuario.php");
             }
             ?>
 
@@ -138,14 +137,14 @@ require(dirname(__FILE__) .'/capaVistas/header.php'); ?>
     </div><!--/span-->
 </div><!--/Row Fluid-->
 <div class="well well-small"><!--Últimas Noticias-->
-    <?php require("capaVistas/ultimasNoticias.php"); ?>
+    <?php require(dirname(__FILE__) . "/capaVistas/ultimasNoticias.php"); ?>
 </div>
 
 <hr>
 
 <footer><!-- ARCHIVO footer-->
 
-    <?php require("capaVistas/footer.php"); ?>
+    <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
 
 </footer><!-- ARCHIVO footer-->
 
