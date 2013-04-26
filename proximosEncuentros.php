@@ -29,7 +29,7 @@
         <div class="well well-small">
             <div class="row-fluid">
                 <center><h3>Últimos Ganadores</h3></center><!--Últimos Ganadores-->
-<?php require("capaVistas/ultimosGanadoresGenerado.php"); ?>
+				<?php require("capaVistas/ultimosGanadoresGenerado.php"); ?>
             </div><!--/row-->
         </div><!--well well-small-->
 

@@ -5,7 +5,7 @@
     include_once(dirname(__FILE__) . '/../capaControladores/encuentro.php');
     $ultimosEncuentros = Encuentro::getPróximosEncuentros($limite= 1);
     if (count($ultimosEncuentros) != 0) {
-        foreach ($ultimosEncuentros as $encuentros) {
+        foreach ($ultimosEncuentros as $encuentro) {
             echo '<div class="span6 well well-small"><!--1er Encuentro-->
         <center><strong>' . $encuentro['fecha'] . ' ' .$encuentro['idJugadores'] . ' ' . $encuentro['idJugadores1'].'</center>
     </div>';
