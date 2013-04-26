@@ -32,14 +32,17 @@
         <div class="well well-small">
             <div class="row-fluid">
                 <center><h3>Últimos Ganadores</h3></center><!--Últimos Ganadores-->
-                <?php require("capaVistas/ultimosGanadoresGenerado.php"); ?>
+                <?php require("capaVistas/ultimosGanadores.php"); ?>
             </div><!--/row-->
         </div><!--well well-small-->
 
     </div><!--/span-->
 
 
-    <div class="well well-small"><!--Últimas Noticias-->
+    
+
+</div><!--/row-->
+<div class="well well-small"><!--Últimas Noticias-->
         <?php require("capaVistas/ultimasNoticias.php"); ?>
     </div>
 
@@ -47,8 +50,6 @@
     <footer><!-- ARCHIVO footer-->
         <?php require("capaVistas/footer.php"); ?>
     </footer>
-
-</div><!--/row-->
 </div><!--/row-->
 </div><!--/.fluid-container-->
 </body>
