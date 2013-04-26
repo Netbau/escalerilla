@@ -31,7 +31,7 @@
                             <strong>Creacion y Eliminacion de Usuarios</strong>
                         </a>
                     </div>
-                    <div id="collapseOne" class="accordion-body collapse in">
+                    <div id="collapseOne" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <a class="btn btn-small btn-inverse refreshUsuarios pull-left"><i class="icon-refresh icon-white"></i></a>
                             <div id="opcionesUsuario"><!-- opciones de usuarios-->
@@ -99,6 +99,32 @@
                         </a>
                     </div>
                     <div id="collapseFour" class="accordion-body collapse">
+                        <div class="accordion-inner"><!-- opciones de jugadores-->
+
+                        </div><!-- opciones de usuarios-->
+                    </div>
+                </div>
+
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="btn btn-small accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                            <strong>Premios</strong>
+                        </a>
+                    </div>
+                    <div id="collapseFive" class="accordion-body collapse">
+                        <div class="accordion-inner"><!-- opciones de jugadores-->
+
+                        </div><!-- opciones de usuarios-->
+                    </div>
+                </div>
+
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="btn btn-small accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+                            <strong>Noticias</strong>
+                        </a>
+                    </div>
+                    <div id="collapseSix" class="accordion-body collapse">
                         <div class="accordion-inner"><!-- opciones de jugadores-->
 
                         </div><!-- opciones de usuarios-->

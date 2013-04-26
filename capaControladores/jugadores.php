@@ -82,6 +82,16 @@ class Jugadores {
         return $resultArray;
     }
 
+    public static function getUltimoRanking($categoria) {
+        $queryString = "SELECT ranking FROM jugadores WHERE categoria = '$categoria' ORDER BY ranking DESC LIMIT 1";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+    }
+
     public static function getRankingPorCategoria($categoria) {
         $queryString = "SELECT nombre,
                                segundoNombre,
@@ -145,7 +155,8 @@ class Jugadores {
 
     //devuelve los datos crudos de todos los usuarios
     public static function Crude() {
-        $queryString = "SELECT nombre,
+        $queryString = "SELECT idJugadores,
+                               nombre,
                                segundoNombre,
                                apellido,
                                segundoApellido,
@@ -163,4 +174,5 @@ class Jugadores {
 
         return $resultArray;
     }
+
 }

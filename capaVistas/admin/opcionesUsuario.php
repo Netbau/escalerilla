@@ -28,7 +28,7 @@
                   <td>" . $usuario['correo'] . "</td>
                   <td>" . $usuario['telefono'] . "</td>
                   <td>" . $usuario['foto'] . "</td>
-                  <td><a class='btn btn-small btn-block'><i class='icon-remove-sign'></i></a></td>
+                  <td><a class='btn btn-small btn-block borrarUsuario' idUsuarios='".$usuario['idUsuarios']."'><i class='icon-remove-sign'></i></a></td>
                ";
 
                 echo '</tr>
@@ -54,13 +54,13 @@
                 </tr>
                 <tr>
                     <td>Nombres</td>
-                    <td><input type="text" name="nombre" placeholder="primer nombre(*)" class="required"></td>
-                    <td><input type="text" name="segundoNombre"placeholder="segundo nombre"></td>
+                    <td><input type="text" name="nombre" placeholder="primer nombre(*)" class="required" onKeyUp="this.value=this.value.toUpperCase();"></td>
+                    <td><input type="text" name="segundoNombre"placeholder="segundo nombre" onKeyUp="this.value=this.value.toUpperCase();"></td>
                 </tr>
                 <tr>
                     <td>Apellidos</td>
-                    <td><input type="text" name="apellido" placeholder="apellido paterno(*)" class="required"></td>
-                    <td><input type="text" name="segundoApellido" placeholder="apellido materno"></td>
+                    <td><input type="text" name="apellido" placeholder="apellido paterno(*)" class="required" onKeyUp="this.value=this.value.toUpperCase();"></td>
+                    <td><input type="text" name="segundoApellido" placeholder="apellido materno" onKeyUp="this.value=this.value.toUpperCase();"></td>
                 </tr>
                 <tr>
                     <td>Fecha de Nacimiento(*)</td>

@@ -1,4 +1,5 @@
-<a href="#modalJugadores" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Jugador</strong></a><br>
+<a href="#modalJugadores" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Jugador</strong></a>
+<br><br>
 <div class="row-fluid">
     <center>
         <table class="table-condensed table-striped table-hover table-bordered" width="100%">
@@ -30,10 +31,10 @@
                   <td>
                   ";
                     if ($jugador['ranking'] > 1) {
-                        echo "<a class='btn btn-small btn-block'><i class='icon-circle-arrow-up'></i></a>";
+                        echo "<a class='btn btn-small btn-block cambiarRanking' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-circle-arrow-up'></i></a>";
                     }
                     echo "</td>
-                <td><a class='btn btn-small btn-block'><i class='icon-remove-sign'></i></a></td>
+                <td><a class='btn btn-small btn-block borrarJugador' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-remove-sign'></i></a></td>
                 ";
 
                     echo '</tr>
@@ -50,57 +51,96 @@
         <h3 id="myModalLabel">Asignar nuevo Jugador</h3>
     </div>
     <div class="modal-body">
-        <p>Usuarios Disponibles para convertir en jugadores<br>
-        <div class="input-append">
-            <select name="noJugadores">
-                <?php
-                include_once(dirname(__FILE__) . '/../../capaAjax/usuariosNoJugadores.php');
-                ?>
-            </select>
-            <a class="btn btn-inverse refreshNoJugadores"><i class="icon-refresh icon-white"></i></a>
+        <div class='estadoJugadores'></div>
+        <div id='datosIngreso'>
+            Usuarios Disponibles para convertir en jugadores<br>
+            <div class="input-append">
+                <select name="noJugadores">
+                    <?php
+                    include_once(dirname(__FILE__) . '/../../capaAjax/usuariosNoJugadores.php');
+                    ?>
+                </select>
+                <a class="btn btn-inverse refreshNoJugadores"><i class="icon-refresh icon-white"></i></a>
+            </div>
+            <table class="table" width="70%">
+                <tr>
+                    <td>Asignar Categoria</td>
+                    <td>
+                        <select name="categorias"  class="span6">
+                            <?php
+                            include_once(dirname(__FILE__) . '/../../capaAjax/getCategorias.php');
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        o Crear nueva categoria
+                    </td>
+                    <td>
+                        <input type="text" name="nuevaCategoria" placeholder="Ej: D" class="span6" maxlength='1' onKeyUp="this.value = this.value.toUpperCase();">
+                    </td>
+                </tr>
+            </table>
+            <div class='alert alert-warning'>
+                <strong>*Nota:</strong> se asignara automaticamente el ultimo ranking de la categoria seleccionada. Puede Cambiarlo
+                posteriormente.
+            </div>
+            <script>
+                            $('.refreshNoJugadores').click(function() {
+                                $('select[name="noJugadores"]').load('capaAjax/usuariosNoJugadores.php', function() {
+                                    //accion al refrescar
+                                });
+                            });
+            </script>
         </div>
-        <table class="table" width="70%">
-            <tr>
-                <td>Asignar Categoria</td>
-                <td>
-                    <select name="categorias"  class="span6">
-                        <?php
-                        include_once(dirname(__FILE__) . '/../../capaAjax/getCategorias.php');
-                        ?>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    o Crear nueva categoria
-                </td>
-                <td>
-                    <input type="text" name="nuevaCategoria" placeholder="Ej: D" class="span6" maxlength='1'>
-                </td>
-            </tr>
-        </table>
-        <div class='alert alert-warning'>
-            Nota: se asignara automaticamente el ultimo ranking de la categoria seleccionada. Puede Cambiarlo
-            posteriormente.
-        </div>
-        <script>
-            $('.refreshNoJugadores').click(function() {
-                $('select[name="noJugadores"]').load('capaAjax/usuariosNoJugadores.php', function() {
-                    //accion al refrescar
-                });
-            });
-        </script>
-        </p>
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
-        <button class="btn btn-primary">Ingresar</button>
+        <button class="btn btn-info nuevoJugador"><strong>Ingresar</strong></button>
     </div>
 </div>
 
-
+<script>
+    $('#modalJugadores').on('hide', function() {
+        $('#datosIngreso').collapse('show');
+        $('.estadoJugadores').html('');
+        $('.nuevoJugador').show('');
+        $('input[name="nuevaCategoria"]').val('');
+    });
+</script>
 
 <script>
+    $('.nuevoJugador').click(function() {
+        $(this).button('loading');
+        var idUsuarios = $('select[name="noJugadores"]').val();
+        if ($('input[name="nuevaCategoria"]').val() !== '') {
+            var categoria = $('input[name="nuevaCategoria"]').val();
+        }
+        else {
+            var categoria = $('select[name="categorias"]').val();
+        }
 
+        $.ajax({
+            "url": 'capaAjax/insertarNuevoJugador.php',
+            data: {"idUsuarios": idUsuarios, "categoria": categoria},
+            type: "post",
+            async: false,
+            success: function(output) {
+                if (output == 1) {
+                    $('#datosIngreso').collapse('hide');
+                    $('.estadoJugadores').html('<div class="alert alert-success">Jugador asignado Correctamente</div>');
+                    $('.nuevoJugador').hide();
+                }
+                else if (output == 0) {
+                    $('.estadoJugadores').html('<div class="alert alert-danger">Asignacion presenta errores</div>');
+                }
+                else {
+                    alert(output);
+                }
+                $('.nuevoJugador').button('reset');
+            }
+        });
 
+    });
 </script>
