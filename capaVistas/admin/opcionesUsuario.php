@@ -17,24 +17,24 @@
         <tbody>
             <?php
             include_once(dirname(__FILE__) . '/../../capaAjax/getUsuarios.php');
-            foreach ($usuarios as $usuario) {
+            foreach ($todos as $uno) {
                 echo '<tr>
                 ';
 
-                echo "<td>" . $usuario['nombre'] . "</td>
-                  <td>" . $usuario['segundoNombre'] . "</td>
-                  <td>" . $usuario['apellido'] . "</td>
-                  <td>" . $usuario['segundoApellido'] . "</td>
-                  <td>" . $usuario['correo'] . "</td>
-                  <td>" . $usuario['telefono'] . "</td>
-                  <td>" . $usuario['foto'] . "</td>
-                  <td><a class='btn btn-small btn-block borrarUsuario' idUsuarios='".$usuario['idUsuarios']."'><i class='icon-remove-sign'></i></a></td>
-               ";
+                echo "
+                  <td>" . $uno['nombre'] . "</td>
+                  <td>" . $uno['segundoNombre'] . "</td>
+                  <td>" . $uno['apellido'] . "</td>
+                  <td>" . $uno['segundoApellido'] . "</td>
+                  <td>" . $uno['correo'] . "</td>
+                  <td>" . $uno['telefono'] . "</td>
+                  <td>" . $uno['foto'] . "</td>
+                  <td><a class='btn btn-small btn-block borrarUsuario' idUsuarios='".$uno['idUsuarios']."'><i class='icon-remove-sign'></i></a></td>
+                  ";
 
                 echo '</tr>
                 ';
             }
-            unset($usuario);
             ?>
         </tbody>
     </table>

@@ -1,7 +1,7 @@
 ﻿<center>
     <?php
     include_once(dirname(__FILE__) . '/../capaControladores/jugadores.php');
-    $desafiosDisponibles = Jugadores::getDesafiosDisponibles($jugador['ranking'], $jugador['categoria']);
+    $desafiosDisponibles = Jugadores::getDesafiosDisponibles($_SESSION['jugador']['ranking'], $_SESSION['jugador']['categoria']);
     if (count($desafiosDisponibles) != 0) {
         foreach ($desafiosDisponibles as $desafio) {
             echo '<div class="span3 well well-small"><!--1ra persona-->
