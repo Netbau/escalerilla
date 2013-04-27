@@ -15,7 +15,7 @@
 
         <div class="well well-small"><!--Convenios-->
 
-<?php require(dirname(__FILE__) . "/capaVistas/convenios.php"); ?>
+            <?php require(dirname(__FILE__) . "/capaVistas/convenios.php"); ?>
 
         </div><!--/.well well-small -->
 
@@ -29,20 +29,20 @@
     <div class="span9">
         <div class="row-fluid"><!--Reglamento-->
 
-<?php require(dirname(__FILE__) . "/capaVistas/documentoPremios.php"); ?>
+            <?php require(dirname(__FILE__) . "/capaVistas/documentoPremios.php"); ?>
 
         </div><!--well well-small-->
     </div><!--/span-->
 </div><!--/Row Fluid-->
 <div class="well well-small"><!--Últimas Noticias-->
-<?php require(dirname(__FILE__) . "/capaVistas/ultimasNoticias.php"); ?>
+    <?php require(dirname(__FILE__) . "/capaVistas/ultimasNoticias.php"); ?>
 </div>
 
 <hr>
 
 <footer><!-- ARCHIVO footer-->
 
-<?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
+    <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
 
 </footer><!-- ARCHIVO footer-->
 

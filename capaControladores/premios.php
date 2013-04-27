@@ -36,5 +36,16 @@ class Premio {
         }
         return $resultArray;
     }
+    public static function getActivos(){
+        $queryString = 'SELECT *
+                        FROM '.self::$nombreTabla.'
+                        WHERE estado = 1';
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+    }
 }
 ?>
