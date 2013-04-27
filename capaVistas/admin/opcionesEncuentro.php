@@ -52,7 +52,7 @@
                 </tr>
                 <tr>
                     <td>Jugador 2</td>
-                    <td colspan="2"><select name="jugador2">
+                    <td colspan="2"><select name="jugador2" class="jugador">
 					<option label="Seleccione un Jugador"></option>
 					<?php include(dirname(__FILE__) . '/../../capaAjax/listadoJugadores.php');
 					?>
@@ -72,8 +72,8 @@
                 <tr>
                     <td>Ganador</td>
                     <td>
-					<select class="ganadorGenerado" colspan="2">
-					<option label="Seleccione al Ganador"></option>
+					<select class="ganadorGenerado">
+					
 					</select>
 					</td>
                 </tr>
@@ -117,12 +117,9 @@ $('.setsGenerado').html(sets);
 </script>
 <script>
 $('.jugador').change(function(){
-var jugadores = $(this).val();
-var ganador="";
-for($i=0; $i<jugadores; $i++){
-ganador+='<option value="'+i+'" placeholder="Escoja al Ganador">'jugadores'</option>';
-}
-$('.ganadorGenerado').html(ganador);
+var jugador1 = '<option value="'+$('select[name="jugador1"]').val()+'">'+$('select[name="jugador1"] option:selected').text()+'</option>';
+var jugador2 = '<option value="'+$('select[name="jugador2"]').val()+'">'+$('select[name="jugador2"] option:selected').text()+'</option>';
+$('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jugador1+jugador2);
 });
 
 
