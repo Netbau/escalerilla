@@ -1,6 +1,6 @@
 ﻿<?php
 /*
- * Clase usuarios con sus respectivas funciones 
+ * Clase usuarios con sus respectivas funciones
  */
 require_once(dirname(__FILE__) . '/../dbconfig/generadorStringQuery.php');
 
@@ -10,7 +10,7 @@ class Encuentro {
 
     /**
      * Insertar
-     * 
+     *
      * Inserta una nueva entrada
      * En encuentro
      */
@@ -31,7 +31,7 @@ class Encuentro {
 
     /**
      * Insertar
-     * 
+     *
      * Inserta una nueva entrada
      * En resultadoEncuentro
      */
@@ -45,17 +45,17 @@ class Encuentro {
     }
 
     /**
-     * 
-     * 
+     *
+     *
      * Últimos Ganadores
-     *  
+     *
      */
     public static function ultimosGanadores() {
         $queryString = "SELECT *
                         FROM usuarios as u, jugadores as j, encuentro as e
-                        WHERE e.idGanador = e.idJugadores AND 
-						e.idJugadores = j.idJugadores AND 
-						j.idJugadores = u.idUsuarios 
+                        WHERE e.idGanador = e.idJugadores AND
+						e.idJugadores = j.idJugadores AND
+						j.idJugadores = u.idUsuarios
 						ORDER BY e.fecha DESC LIMIT 4";
         $result = CallQuery($queryString);
         $resultArray = array();
@@ -138,8 +138,8 @@ class Encuentro {
             $resultArray[] = $fila;
         }
         return $resultArray;
-	}
-	
+    }
+
     /**
      * Get
      * Próximos Encuetros
@@ -156,8 +156,8 @@ class Encuentro {
             $resultArray[] = $fila;
         }
         return $resultArray;
-	}
-	
+    }
+
     /**
      * Get
      * Encuetro

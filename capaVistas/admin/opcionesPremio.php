@@ -4,11 +4,14 @@
 <?php
 require_once(dirname(__FILE__).'/../../capaControladores/premios.php');
 $premios = Premio::Crud();
-print_r($premios);
+foreach($premios as $premio){
+    echo '<embed src="'.$premio['urlpdf'].'" width="500" height="375">';
+
+}
 
 
 ?>
-
+<!--<embed src="http://yoursite.com/the.pdf" width="500" height="375"><!-- premio -->
 
 
 
