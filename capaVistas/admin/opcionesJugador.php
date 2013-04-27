@@ -82,7 +82,7 @@
                     </td>
                 </tr>
             </table>
-            <div class='alert alert-warning'>
+            <div class='alert alert-info'>
                 <strong>*Nota:</strong> se asignara automaticamente el ultimo ranking de la categoria seleccionada. Puede Cambiarlo
                 posteriormente.
             </div>

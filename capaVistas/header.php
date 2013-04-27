@@ -17,6 +17,7 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><!-- JQUERY-->
         <!--<script src="js/jquery191.js"></script><!-- JQUERY-->
+        <script src="http://malsup.github.com/jquery.form.js"></script><!-- ajax FORMS -->
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script><!-- JQUERY UI-->
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><!-- bootstrap js -->
         <!--<script src="js/bootstrap.js"></script><!-- bootstrap js -->
