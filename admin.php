@@ -113,9 +113,23 @@
                         </a>
                     </div>
                     <div id="collapseFour" class="accordion-body collapse">
-                        <div class="accordion-inner"><!-- opciones de jugadores-->
-
-                        </div><!-- opciones de usuarios-->
+                        <div class="accordion-inner"><!-- opciones de encuentro-->
+                            <a class="btn btn-small btn-inverse refreshEncuentro pull-left"><i class="icon-refresh icon-white"></i></a>
+                            <div id="opcionesEncuentro"><!-- opciones de encuentro-->
+                                <?php
+                                if (isset($_SESSION['usuario']) && $_SESSION['usuario']['nivel'] >= 3) {
+                                    include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesEncuentro.php');
+                                }
+                                ?>
+                                <script>
+                                    $('.refreshEncuentro').click(function() {
+                                        $('#opcionesEncuentro').load('capaVistas/admin/opcionesEncuentro.php', function() {
+                                            //accion al refrescar
+                                        });
+                                    });
+                                </script>
+                            </div><!-- opciones de Encuentro-->
+                        </div><!-- opciones de Encuentro-->
                     </div>
                 </div>
 
