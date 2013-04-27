@@ -52,6 +52,7 @@ class Premio {
                         FROM ".self::$nombreTabla."
                         WHERE titulo = '".trim($titulo)."' AND
                         descripcion ='".trim($descripcion)."'";
+        echo $queryString;
         if (CallQuery($queryString)->num_rows >= 0) {
             return true;
         }

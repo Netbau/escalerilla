@@ -61,7 +61,7 @@
 </div>
 
 <script>
-    $(document).ready(function() {
+    $('#nuevoPremio').click(function() {
         var uploaderpdf = new ss.SimpleUpload({
             button: 'upload-btn',
             url: 'capaAjax/Upload.php',
@@ -69,13 +69,10 @@
             data: {
                 "titulo": $('input[name="titulo"]').val(),
                 "descripcion": $('input[name="descripcion"]').val(),
-                "tipo": "premio",
-                "autoSubmit": false
+                "tipo": "premio"
             }
         });
-        $('#nuevoPremio').click(function() {
-            uploaderpdf.submit();
-        });
-    });
+        alert(uploaderpdf);
 
+    });
 </script>
