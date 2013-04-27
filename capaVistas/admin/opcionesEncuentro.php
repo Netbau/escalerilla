@@ -44,7 +44,7 @@
             <table class="table-condensed table-striped table-hover table-bordered" width="100%">
                 <tr>
                     <td>Jugador 1</td>
-                    <td colspan="2"><select name="jugador1">
+                    <td colspan="2"><select name="jugador1" class="jugador">
 					<option label="Seleccione un Jugador"></option>
 					<?php include(dirname(__FILE__) . '/../../capaAjax/listadoJugadores.php');
 					?>
@@ -71,7 +71,11 @@
                 </tr>
                 <tr>
                     <td>Ganador</td>
-                    <td><select></select></td>
+                    <td>
+					<select class="ganadorGenerado" colspan="2">
+					<option label="Seleccione al Ganador"></option>
+					</select>
+					</td>
                 </tr>
                 <tr>
                     <td>Fecha</td>
@@ -103,7 +107,6 @@
 <script>
 $('.sets').change(function(){
 var numeroSets = $(this).val();
-alert(numeroSets);
 var sets="";
 for($i=0; $i<numeroSets; $i++){
 sets+='<input type="text" name="set'+i+'" placeholder="Ej: 6-2">';
@@ -113,7 +116,14 @@ $('.setsGenerado').html(sets);
 });
 </script>
 <script>
-
+$('.jugador').change(function(){
+var jugadores = $(this).val();
+var ganador="";
+for($i=0; $i<jugadores; $i++){
+ganador+='<option value="'+i+'" placeholder="Escoja al Ganador">'jugadores'</option>';
+}
+$('.ganadorGenerado').html(ganador);
+});
 
 
 </script>
