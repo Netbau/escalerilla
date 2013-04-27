@@ -53,8 +53,7 @@ class Desafios {
 	
 	public static function Crud() {
 		$queryString = "SELECT *
-                        FROM desafio d
-                        ";
+                        FROM desafio d";
         $result = CallQuery($queryString);
         $resultArray = array();
         while ($fila = $result->fetch_assoc()) {

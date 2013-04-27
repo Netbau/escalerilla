@@ -194,6 +194,17 @@ class Encuentro {
         }
         return $resultArray;
     }
-
+	
+	public static function Crud() {
+		$queryString = "SELECT *
+                        FROM encuentro";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+	
+	}
 }
 ?>

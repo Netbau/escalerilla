@@ -6,7 +6,8 @@
                 <th>Jugador</th>
                 <th>Jugador</th>
                 <th>Fecha</th>
-                <th>Estado</th>
+                <th>Cancha</th>
+				<th>Ganador</th>
                 <th></th>
             </tr>
         </thead>
