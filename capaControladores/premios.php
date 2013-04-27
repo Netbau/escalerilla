@@ -47,5 +47,17 @@ class Premio {
         }
         return $resultArray;
     }
+    public static function yaExiste($titulo, $descripcion){
+        $queryString = "SELECT *
+                        FROM ".self::$nombreTabla."
+                        WHERE titulo = '".trim($titulo)."' AND
+                        descripcion ='".trim($descripcion)."'";
+        if (CallQuery($queryString)->num_rows >= 0) {
+            return true;
+        }
+        else
+            return false;
+    }
+
 }
 ?>
