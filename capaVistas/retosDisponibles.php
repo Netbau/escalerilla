@@ -1,6 +1,8 @@
 ﻿<center>
     <?php
+    if(!isset($_SESSION)){session_start();}
     include_once(dirname(__FILE__) . '/../capaControladores/jugadores.php');
+    include_once(dirname(__FILE__) . '/../capaControladores/desafios.php');
     $desafiosDisponibles = Jugadores::getDesafiosDisponibles($_SESSION['jugador']['ranking'], $_SESSION['jugador']['categoria']);
     if (count($desafiosDisponibles) != 0) {
         foreach ($desafiosDisponibles as $desafio) {
@@ -8,9 +10,19 @@
         <div class="span3 well well-small"><!--1ra persona-->
         <center><img class="img img-rounded" src="' . $desafio['foto'] . '" height="150" width="100"></center>
         <center><strong>' . $desafio['nombre'] . ' ' . $desafio['apellido'] . '</strong></center>
-        <center>Ranking #' . $desafio['ranking'] . '</center>
-        <center><a href="#myModal" class="btn btn-info btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">Desafiar!</a></center>
-        </div>';
+        <center>Ranking #' . $desafio['ranking'] . '</center>';
+
+        $esDesafiable = Desafios::esDesafiable($desafio['idJugadores']);
+        $esDesafiador = Desafios::esDesafiador($desafio['idJugadores']);
+
+        if($esDesafiable && !$esDesafiador){
+        echo '<center><a href="#myModal" class="btn btn-info btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">Desafiar!</a></center>';
+        }
+        else{
+            echo '<center><a class="btn btn-warning btn-block" disabled="disabled">Desafio en curso</a></center>';
+        }
+
+        echo '</div>';
         }
     } else {
         echo '<div class="alert alert-success"><strong>Felicitaciones!</strong>, eres n&uacute;mero uno en tu categor&iacute;a. Sigue atento a los desaf&iacute;os que te har&aacute;n.</div>';

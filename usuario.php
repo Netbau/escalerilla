@@ -30,13 +30,22 @@
         <div class="well well-small">
             <div class="row-fluid"><!--Retos Disponibles-->
                 <center><h2>T&uacute; puedes desafiar a:</h2></center>
-                <?php
-                if (isset($_SESSION['jugador'])) {
-                    require(dirname(__FILE__) . "/capaVistas/retosDisponibles.php");
-                } else {
-                    echo '<div class="alert alert-danger">Debes ingresar con tu cuenta para poder desafiar!</div>';
-                }
-                ?>
+                <div id="disponibles">
+                    <?php
+                    if (isset($_SESSION['jugador'])) {
+                        require(dirname(__FILE__) . "/capaVistas/retosDisponibles.php");
+                    } else {
+                        echo '<div class="alert alert-danger">Debes ingresar con tu cuenta para poder desafiar!</div>';
+                    }
+                    ?>
+                </div>
+                <script>
+                    $('#myModal').on('hide', function() {
+                        $('#disponibles').load('capaVistas/retosDisponibles.php', function() {
+
+                        });//load
+                    });
+                </script>
             </div>
         </div>
 
