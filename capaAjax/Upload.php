@@ -6,7 +6,7 @@ if ($_GET['tipo'] == 'premio') {
     require_once (dirname(__FILE__) . '/../capaControladores/premios.php');
     $yaExiste = Premio::yaExiste($_GET['titulo'], $_GET['descripcion']);
     if (!$yaExiste) {
-        $upload_dir = '../img/premios/';
+        $upload_dir = '../img/premios//';
         $valid_extensions = array('gif', 'png', 'jpeg', 'jpg', 'pdf');
 
         $Upload = new FileUpload('uploadfile');

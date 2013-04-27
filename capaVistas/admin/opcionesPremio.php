@@ -44,11 +44,12 @@
         <h3 id="myModalLabel">Ingresar nuevo premio</h3>
     </div>
     <div class="modal-body">
+        <div id="estadoPremio"></div>
         <table class='table table-condensed table-hover table-striped table-bordered'>
             <tbody>
                 <tr><td>Titulo</td><td><input type='text' name='titulo' placeholder='Titulo del Premio'></td></tr>
                 <tr><td>Descripcion</td><td><input type='text' name='descripcion' placeholder='Descripcion'></td></tr>
-                <tr><td colspan='2'><input type='file' id='upload-btn' name='pdf' placeholder='Seleccione archivo'></td></tr><!---->
+                <!--<tr><td colspan='2'><input type='file' id='upload-btn' name='pdf' placeholder='Seleccione archivo'></td></tr><!---->
             </tbody>
         </table>
         <div class='alert alert-info'><strong>NOTA:</strong> El Premio estara <i>Inactivo</i> hasta que se cambie su estado en el listado.</div>
@@ -56,23 +57,33 @@
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
-        <button class="btn btn-info" id='nuevoPremio'><strong>Subir un Archivo</strong></button>
+        <button class="btn btn-info" id='upload-btn' data-loading-text="Subiendo..."><strong>Subir un Archivo</strong></button>
     </div>
 </div>
 
 <script>
-    $('#nuevoPremio').click(function() {
-        var uploaderpdf = new ss.SimpleUpload({
-            button: 'upload-btn',
-            url: 'capaAjax/Upload.php',
-            name: 'uploadfile',
-            data: {
-                "titulo": $('input[name="titulo"]').val(),
-                "descripcion": $('input[name="descripcion"]').val(),
-                "tipo": "premio"
-            }
-        });
-        alert(uploaderpdf);
-
+    $('#upload-btn').click(function() {
+//        $(this).button('loading');
+        if ($('input[name="titulo"]').val() !== '') {
+            var uploader = new ss.SimpleUpload({
+                button: 'upload-btn',
+                url: 'capaAjax/Upload.php',
+                name: 'uploadfile',
+                data: {
+                    "titulo": $('input[name="titulo"]').val(),
+                    "descripcion": $('input[name="descripcion"]').val(),
+                    "tipo": "premio"
+                },
+                onComplete: function(filename,response){
+                    var output = $.parseJSON(response);
+                    if(output.success === true){
+                        $('#estadoPremio').html('<div class="alert alert-success">Premio Subido con exito!</div>');
+                    }
+                }
+            });
+        }
+        else{
+            $('#estadoPremio').html('<div class="alert alert-danger">Debes Asignarle un Titulo!</div>');
+        }
     });
 </script>
