@@ -13,15 +13,15 @@
         </thead>
         <tbody>
             <?php
-            require_once(dirname(__FILE__) . '/../../capaControladores/desafios.php');
+            require_once(dirname(__FILE__) . '/../../capaControladores/encuentro.php');
 			require_once(dirname(__FILE__) . '/../../utilidades/transformarDesafios.php');
-            $desafios = Desafios::Crud();
-			$desafios = transformaDesafios($desafios);
+            $encuentros = Enceuntro::Crud();
+			$encuentros = transformaDesafios($encuentros);
 			
-            foreach ($desafios as $desafio) {
+            foreach ($encuentros as $encuentro) {
 				
-				$fecha = explode(' ', $desafio['fecha']);
-                echo '<tr><td>' . $desafio['idJugadores'] . '</td><td>' . $desafio['idJugadores1'] . '</td><td>' .$fecha[0]. '</td><td>' .$desafio['estado'].'</td><td></td></tr>';
+				$fecha = explode(' ', $encuentro['fecha']);
+                echo '<tr><td>' . $encuentro['idJugadores'] . '</td><td>' . $encuentro['idJugadores1'] . '</td><td>' .$fecha[0]. '</td><td>' .$encuentro['idCancha'].'</td><td></td></tr>';
 
 
             }
