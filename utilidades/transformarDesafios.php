@@ -11,6 +11,14 @@ function transformaDesafios($desafios) {
     $desafios2 = array();
 
     foreach ($desafios as $desafio) {
+	  if(isset($desafio['idGanador'])) {
+	  
+		$ganador = Jugadores::getNombrePorID($desafio['idGanador']);
+		$desafio['idGanador'] = $ganador[0]['nombre'] . ' ' . $ganador[0]['apellido'];
+	  
+	  }
+	  
+	  
         $desafiador = Jugadores::getNombrePorID($desafio['idJugadores']);
         $desafiado = Jugadores::getNombrePorID($desafio['idJugadores1']);
         $desafio['idJugadores'] = $desafiador[0]['nombre'] . ' ' . $desafiador[0]['apellido'];
