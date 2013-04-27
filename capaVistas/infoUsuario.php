@@ -34,13 +34,22 @@
         ?>
 
         <div class="row-fluid">
-            <a class="btn btn-info btn-block btn-small" id="editar" data-loadig-text="cargando..." disabled="disabled">Editar mis datos</a>
+            <a class="btn btn-info btn-block btn-small" id="editar" data-loadig-text="cargando...">Editar mis datos</a>
         </div>
         <div class="row-fluid">
             <a class="btn btn-danger btn-block btn-small" id="logout" data-loading-text="cargando...">Salir</a>
         </div>
     </div>
 </div>
+<script>
+	$('#editar').click(function() {
+		$('.span9').load('capaVistas/editUsuarios.php', function(){
+		
+		//CallBack
+		
+		});
+	});//click
+</script>
 <script>
     $('#logout').click(function() {
         $(this).button('loading');
