@@ -48,7 +48,7 @@
             <tbody>
                 <tr><td>Titulo</td><td><input type='text' name='titulo' placeholder='Titulo del Premio'></td></tr>
                 <tr><td>Descripcion</td><td><input type='text' name='descripcion' placeholder='Descripcion'></td></tr>
-                <!--<tr><td colspan='2'><input type='file' id='upload-btn' name='pdf' placeholder='Seleccione archivo'></td></tr>-->
+                <tr><td colspan='2'><input type='file' id='upload-btn' name='pdf' placeholder='Seleccione archivo'></td></tr><!---->
             </tbody>
         </table>
         <div class='alert alert-info'><strong>NOTA:</strong> El Premio estara <i>Inactivo</i> hasta que se cambie su estado en el listado.</div>
@@ -56,23 +56,26 @@
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
-        <button class="btn btn-info" id='upload-btn'><strong>Subir un Archivo</strong></button>
+        <button class="btn btn-info" id='nuevoPremio'><strong>Subir un Archivo</strong></button>
     </div>
 </div>
 
 <script>
-    $('#upload-btn').click(function() {
-        if ($('input[name="titulo"]').val() !== '') {
-            var uploader = new ss.SimpleUpload({
-                button: 'upload-btn',
-                url: 'capaAjax/Upload.php',
-                name: 'uploadfile',
-                data: {
-                    "titulo": $('input[name="titulo"]').val(),
-                    "descripcion": $('input[name="descripcion"]').val(),
-                    "tipo": "premio"
-                }
-            });
-        }
+    $(document).ready(function() {
+        var uploaderpdf = new ss.SimpleUpload({
+            button: 'upload-btn',
+            url: 'capaAjax/Upload.php',
+            name: 'uploadfile',
+            data: {
+                "titulo": $('input[name="titulo"]').val(),
+                "descripcion": $('input[name="descripcion"]').val(),
+                "tipo": "premio",
+                "autoSubmit": false
+            }
+        });
+        $('#nuevoPremio').click(function() {
+            uploaderpdf.submit();
+        });
     });
+
 </script>

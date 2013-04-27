@@ -74,7 +74,7 @@
                                         });
                                     });
                                 </script>
-                            </div><!-- opciones de usuarios-->
+                            </div><!-- opciones de jugadores-->
                         </div>
                     </div>
                 </div>
@@ -86,9 +86,23 @@
                         </a>
                     </div>
                     <div id="collapseThree" class="accordion-body collapse">
-                        <div class="accordion-inner"><!-- opciones de jugadores-->
-
-                        </div><!-- opciones de jugadores-->
+                        <div class="accordion-inner"><!-- opciones de desafios-->
+                            <a class="btn btn-small btn-inverse refreshDesafios pull-left"><i class="icon-refresh icon-white"></i></a>
+                            <div id="opcionesDesafios"><!-- opciones de desafios-->
+                                <?php
+                                if (isset($_SESSION['usuario']) && $_SESSION['usuario']['nivel'] >= 3) {
+                                    include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesDesafio.php');
+                                }
+                                ?>
+                                <script>
+                                    $('.refreshDesafios').click(function() {
+                                        $('#opcionesDesafios').load('capaVistas/admin/opcionesDesafio.php', function() {
+                                            //accion al refrescar
+                                        });
+                                    });
+                                </script>
+                            </div><!-- opciones de desafios-->
+                        </div><!-- opciones de desafios-->
                     </div>
                 </div>
 
