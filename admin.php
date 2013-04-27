@@ -121,7 +121,7 @@
                                 }
                                 ?>
                                 <script>
-                                    $('.refreshJugadores').click(function() {
+                                    $('.refreshPremios').click(function() {
                                         $('#opcionesPremio').load('capaVistas/admin/opcionesPremio.php', function() {
                                             //accion al refrescar
                                         });
