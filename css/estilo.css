@@ -9,14 +9,15 @@
 body {
     padding-top: 40px;
     padding-bottom: 10px;
-    background: #cedbe9; /* Old browsers */
-    background: -moz-linear-gradient(top,  #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cedbe9), color-stop(17%,#aac5de), color-stop(50%,#6199c7), color-stop(51%,#3a84c3), color-stop(59%,#419ad6), color-stop(71%,#4bb8f0), color-stop(84%,#3a8bc2), color-stop(100%,#26558b)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=0 ); /* IE6-9 */
+    background: #cedbe9;
+    /*Old browsers*/
+    background: -moz-linear-gradient(top,  #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%);  /*FF3.6+*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cedbe9), color-stop(17%,#aac5de), color-stop(50%,#6199c7), color-stop(51%,#3a84c3), color-stop(59%,#419ad6), color-stop(71%,#4bb8f0), color-stop(84%,#3a8bc2), color-stop(100%,#26558b));  /*Chrome,Safari4+*/
+    background: -webkit-linear-gradient(top,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%);  /*Chrome10+,Safari5.1+*/
+    background: -o-linear-gradient(top,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%);  /*Opera 11.10+*/
+    background: -ms-linear-gradient(top,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%);  /*IE10+*/
+    background: linear-gradient(to bottom,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%);  /*W3C*/
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=0 );  /*IE6-9*/
 
 }
 .sidebar-nav {
@@ -87,15 +88,15 @@ Generic Styling, for Desktops/Laptops
 */
 
 @media
-only screen and (max-width: 760px),
+only screen and (max-width: 769px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
-    /* Force table to not be like tables anymore */
+     /*Force table to not be like tables anymore*/
     table, thead, tbody, th, td, tr {
         display: block;
     }
 
-    /* Hide table headers (but not display: none;, for accessibility) */
+     /*Hide table headers (but not display: none;, for accessibility)*/
     thead tr {
         position: absolute;
         top: -9999px;
@@ -105,7 +106,7 @@ only screen and (max-width: 760px),
     tr { border: 1px solid #ccc; }
 
     td {
-        /* Behave  like a "row" */
+         /*Behave  like a "row"*/
         border: none;
         border-bottom: 1px solid #eee;
         position: relative;
@@ -113,9 +114,9 @@ only screen and (max-width: 760px),
     }
 
     td:before {
-        /* Now like a table header */
+         /*Now like a table header*/
         position: absolute;
-        /* Top/left values mimic padding */
+         /*Top/left values mimic padding*/
         top: 6px;
         left: 6px;
         width: 45%;
@@ -123,9 +124,9 @@ only screen and (max-width: 760px),
         white-space: nowrap;
     }
 
-    /*
+
     Label the data
-    */
+
     td:before { content: attr(data-title); }
 }
 
@@ -136,13 +137,13 @@ and (max-device-width : 480px) {
     body {
         padding: 0;
         margin: 0;
-        width: 320px; }
+        width: auto; }
 }
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     body {
-        width: 495px;
+        width: 1024px;
     }
 }
 
