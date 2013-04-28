@@ -154,3 +154,6 @@ and (max-device-width : 480px) {
 .carousel{
     height: 40px;
 }
+.navbar .brand{
+   padding-bottom: 0px;
+}
