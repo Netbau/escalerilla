@@ -26,7 +26,7 @@
             <tr>
                 <td>
                     <input type="reset" name="limpiar" value="Limpiar" class='btn'>	
-                    <input type="submit" name="enviar" value="Enviar" class='btn btn-info'>	
+                    <input type="submit" name="enviar" value="Enviar" class='btn btn-primary'>	
                 </td>
             </tr>
         </center>	

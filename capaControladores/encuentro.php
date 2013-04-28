@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
  * Clase usuarios con sus respectivas funciones
  */
@@ -51,12 +51,12 @@ class Encuentro {
      *
      */
     public static function ultimosGanadores() {
-        $queryString = "SELECT *
+        $queryString = "SELECT DISTINCT u.idUsuarios, u.nombre, u.segundoNombre, u.apellido, u.segundoApellido,
+                               u.correo, u.telefono, u.telefono2, u.foto, j.idJugadores, j.ranking, j.categoria
                         FROM usuarios as u, jugadores as j, encuentro as e
-                        WHERE e.idGanador = e.idJugadores AND
-						e.idJugadores = j.idJugadores AND
-						j.idJugadores = u.idUsuarios
-						ORDER BY e.fecha DESC LIMIT 4";
+                        WHERE e.idGanador = j.idJugadores AND
+                              j.idUsuarios = u.idUsuarios
+                        ORDER BY e.fecha DESC LIMIT 4";
         $result = CallQuery($queryString);
         $resultArray = array();
         while ($fila = $result->fetch_assoc()) {
@@ -194,7 +194,7 @@ class Encuentro {
         }
         return $resultArray;
     }
-	
+
 	public static function Crud() {
 		$queryString = "SELECT *
                         FROM encuentro as e, canchas as c
@@ -205,7 +205,7 @@ class Encuentro {
             $resultArray[] = $fila;
         }
         return $resultArray;
-	
+
 	}
 }
 ?>

@@ -1,4 +1,4 @@
-<a href="#modalPremios" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Prémio</strong></a>
+<a href="#modalPremios" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Prémio</strong></a>
 <br><br>
 <div class="row-fluid">
     <table class="table table-condensed table-hover table-striped table-bordered">
@@ -57,7 +57,7 @@
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
-        <button class="btn btn-info" id='upload-btn' data-loading-text="Subiendo..."><strong>Subir un Archivo</strong></button>
+        <button class="btn btn-primary" id='upload-btn' data-loading-text="Subiendo..."><strong>Subir un Archivo</strong></button>
     </div>
 </div>
 

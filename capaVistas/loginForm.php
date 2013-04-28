@@ -5,7 +5,7 @@
     <label class="checkbox">
         <input type="checkbox" value="remember-me"> Recordarme
     </label>
-    <button class="btn btn-large btn-info btn-block" id='ingresar' data-loading-text="cargando...">Ingresar</button><div id="loginEstado"></div>
+    <button class="btn btn-large btn-primary btn-block" id='ingresar' data-loading-text="cargando...">Ingresar</button><div id="loginEstado"></div>
     <br>
     <center><a href="#">¿Olvidó su contraseña?</a></center>
 </div>

@@ -34,7 +34,7 @@ if (!isset($_SESSION['usuario'])) {
             <tr>
                 <td>Foto:</td>
                 <td width='20%'><center><?php echo '<img class="img-rounded" src="' . $_SESSION['usuario']['foto'] . '" style="max-height:100px; max-width:100px;">'; ?></center>
-        <button class='btn btn-small btn-block btn-info'>Cambiar Foto</button>
+        <button class='btn btn-small btn-block btn-primary'>Cambiar Foto</button>
         </td>
         <td width='15%'>Acerca de ti: <br><small><i>(Agrega una frase que te idenfique como jugador)</i></small></td>
         <td><textarea placeholder='ej: ¡Soy el más rudo!'></textarea></td>

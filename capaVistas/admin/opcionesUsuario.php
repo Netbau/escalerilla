@@ -1,4 +1,4 @@
-<a href="#modalUsuario" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
+<a href="#modalUsuario" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
 <br><br>
 <div class="row-fluid">
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">
@@ -86,7 +86,7 @@
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
-        <button class="btn btn-info" id="nuevoUsuario" data-loading-text="Cargando..." type="submit"><strong>Ingresar</strong></button>
+        <button class="btn btn-primary" id="nuevoUsuario" data-loading-text="Cargando..." type="submit"><strong>Ingresar</strong></button>
     </div>
 </div>
 <script>

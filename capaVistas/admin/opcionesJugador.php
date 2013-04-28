@@ -1,4 +1,4 @@
-<a href="#modalJugadores" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Jugador</strong></a>
+<a href="#modalJugadores" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Jugador</strong></a>
 <br><br>
 <div class="row-fluid">
     <center>
@@ -97,7 +97,7 @@
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
-        <button class="btn btn-info nuevoJugador"><strong>Ingresar</strong></button>
+        <button class="btn btn-primary nuevoJugador"><strong>Ingresar</strong></button>
     </div>
 </div>
 

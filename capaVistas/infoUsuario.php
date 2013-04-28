@@ -21,20 +21,20 @@
             <center><img src="<?php echo $_SESSION['usuario']['foto']; ?>" class="img-rounded"></center>
         </div>
         <div class="row-fluid">
-            <strong>Mí Correo:</strong> <?php echo $_SESSION['usuario']['correo']; ?>
+            <strong>Mï¿½ Correo:</strong> <?php echo $_SESSION['usuario']['correo']; ?>
         </div>
         <?php
         if (isset($_SESSION['jugador'])) {
             echo '<div class="row-fluid">
-            <strong>Mí Categoría:</strong> ' . $_SESSION['jugador']['categoria'] . '</div>
+            <strong>Mi CategorÃ­a:</strong> ' . $_SESSION['jugador']['categoria'] . '</div>
             <div class="row-fluid">
-            <strong>Mí Ranking:</strong> ' . $_SESSION['jugador']['ranking'] . '
+            <strong>Mi Ranking:</strong> ' . $_SESSION['jugador']['ranking'] . '
             </div>';
         }
         ?>
 
         <div class="row-fluid">
-            <a class="btn btn-info btn-block btn-small" id="editar" data-loadig-text="cargando...">Editar mis datos</a>
+            <a class="btn btn-primary btn-block btn-small" id="editar" data-loadig-text="cargando...">Editar mis datos</a>
         </div>
         <div class="row-fluid">
             <a class="btn btn-danger btn-block btn-small" id="logout" data-loading-text="cargando...">Salir</a>
@@ -44,9 +44,9 @@
 <script>
 	$('#editar').click(function() {
 		$('.span9').load('capaVistas/editUsuarios.php', function(){
-		
+
 		//CallBack
-		
+
 		});
 	});//click
 </script>

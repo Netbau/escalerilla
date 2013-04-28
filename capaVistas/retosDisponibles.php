@@ -16,7 +16,7 @@
         $esDesafiador = Desafios::esDesafiador($desafio['idJugadores']);
 
         if($esDesafiable && !$esDesafiador){
-        echo '<center><a href="#myModal" class="btn btn-info btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">¡Desafiar!</a></center>';
+        echo '<center><a href="#myModal" class="btn btn-primary btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">¡Desafiar!</a></center>';
         }
         else{
             echo '<center><a class="btn btn-warning btn-block" disabled="disabled">Desafío en curso.</a></center>';
@@ -44,7 +44,7 @@
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
-        <button class="btn btn-info confirmarDesafio">Confirmar</button>
+        <button class="btn btn-primary confirmarDesafio">Confirmar</button>
     </div>
 </div>
 <script>

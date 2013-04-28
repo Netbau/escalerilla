@@ -11,7 +11,7 @@
         <!-- Le styles -->
         <link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet"><!-- css jQuery UI-->
         <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"><!-- css bootstrap-->
-        <!--<link href="css/bootstrap.min.css" rel="stylesheet"><!--css bootstrap-->
+        <link href="css/bootstrap.min.css" rel="stylesheet"><!--css bootstrap-->
         <!--<link href="css/bootstrap-responsive.css"><!--bootsrap responsive-->
         <link href="css/estilo.css" rel="stylesheet"><!-- css personalizados -->
 
