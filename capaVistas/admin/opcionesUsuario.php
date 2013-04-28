@@ -9,7 +9,7 @@
                 <th>Apellido</th>
                 <th>Segundo Apellido</th>
                 <th>E-mail</th>
-                <th>Telefono</th>
+                <th>Teléfono</th>
                 <th>Foto</th>
                 <th></th>
             </tr>
@@ -73,12 +73,12 @@
                     <td><input type="radio" name="sexo" value="0" class="required"> Femenino</td>
                 </tr>
                 <tr>
-                    <td>Telefonos</td>
+                    <td>Teléfonos</td>
                     <td><input type="text" name="telefono" placeholder="telefono(*)" class="required"></td>
                     <td><input type="text" name="telefono2" placeholder="telefono2"></td>
                 </tr>
                 <tr>
-                    <td>Correo Electronico(*)</td>
+                    <td>Correo Electrénico(*)</td>
                     <td colspan="2"><input type="text" name="correo" placeholder="correo electronico" class="required"></td>
                 </tr>
             </table>
