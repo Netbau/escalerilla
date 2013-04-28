@@ -1,4 +1,4 @@
-﻿<div class="tabbable">
+<div class="tabbable">
     <ul class="nav nav-tabs">
         <?php
         include_once (dirname(__FILE__) . '/../capaControladores/jugadores.php');

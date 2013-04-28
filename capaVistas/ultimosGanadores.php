@@ -1,4 +1,4 @@
-﻿<center>
+<center>
     <?php
     include_once('capaControladores/encuentro.php');
     $ultimosGanadores = Encuentro::ultimosGanadores();
