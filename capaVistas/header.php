@@ -12,7 +12,7 @@
         <link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet"><!-- css jQuery UI-->
         <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"><!-- css bootstrap-->
         <link href="css/bootstrap.min.css" rel="stylesheet"><!--css bootstrap-->
-        <!--<link href="css/bootstrap-responsive.css"><!--bootsrap responsive-->
+        <link href="css/bootstrap-responsive.css"><!--bootsrap responsive-->
         <link href="css/estilo.css" rel="stylesheet"><!-- css personalizados -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><!-- JQUERY-->
@@ -37,7 +37,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="brand" href="index.php">Escalerilla EIM 2013</a>
-                    <img src="img/LogoEimCompacto.jpg" width="35" height="35" class="pull-left">
+                    <img src="img/LogoEimCompacto.jpg" width="40" height="40" class="pull-left">
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li><a href="proximosEncuentros.php">Próximos Encuentros</a></li>
