@@ -1,7 +1,7 @@
-﻿<h3><center>Próximos Desafíos</center></h3>
+﻿<center><h3>Próximos Desafíos</h3></center>
 
 
-<center>
+<div class='row-fluid'>
 
     <?php
     include_once(dirname(__FILE__) . '/../capaControladores/encuentro.php');
@@ -17,13 +17,13 @@
 
             $fecha = explode(' ', $encuentro['fecha']);
             echo '<div class="span6 well well-small"><!--1er Encuentro-->
-                <div class="span5">' . $jugador1[0]['nombre'] . ' ' . $jugador1[0]['apellido'] . '<br><img class="img" src="' . $jugador1[0]['foto'] . '" heigth="60px" width="60px"></div>'
-            . '<div class="span2">' . 'A contar del:' . '<br>' . $fecha[0] . '</div>'
-            . '<div class="span5">' . $jugador2[0]['nombre'] . ' ' . $jugador2[0]['apellido'] . '<br><img clas="img" src="' . $jugador2[0]['foto'] . '" heigth="60px" width="60px"></div>'
+                <div class="span4"><center>' . $jugador1[0]['nombre'] . ' ' . $jugador1[0]['apellido'] . '<br><img class="img-rounded" src="' . $jugador1[0]['foto'] . '"></center></div>'
+            . '<div class="span4"><center>' . 'A contar del:' . '<br>' . $fecha[0] . '</center></div>'
+            . '<div class="span4"><center>' . $jugador2[0]['nombre'] . ' ' . $jugador2[0]['apellido'] . '<br><img class="img-rounded" src="' . $jugador2[0]['foto'] . '"></center></div>'
             . '</div>';
         }
     } else {
         echo '<div class="alert alert-warning"><strong>No hay encuentros próximos.</strong></div>';
     }
     ?>
-</center>
+</div>

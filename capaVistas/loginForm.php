@@ -1,5 +1,5 @@
 ﻿<div class="">
-    <center><h1><small>Conectarse</small></h1></center>
+    <center><h3>Conectarse</h3></center>
     <input type="text" name='user' class="input-block-level" placeholder="Ej: 15035156-k">
     <input type="password" name='password' class="input-block-level" placeholder="Contrase&ntilde;a">
     <label class="checkbox">
@@ -47,7 +47,7 @@
 
 
             });
-        }//if 
+        }//if
         else {
             $('#loginEstado').html('<div class="alert alert-danger">Debes llenar los campos!</div>');
             $(this).button('reset');

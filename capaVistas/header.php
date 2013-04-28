@@ -63,6 +63,22 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row-fluid"><!-- titulo -->
-                <h1><center><small><strong>Escalerilla Estadio Israelita 2013</strong></small></center></h1>
+            <div class="row-fluid" style="margin-top: 20px;">
+
+            <div id="myCarousel" class="carousel slide span12">
+                <!-- Carousel items -->
+                <center>
+                    <div class="carousel-inner">
+                        <div class="active item"><img src="img/logoeim.jpg"></div>
+                        <div class="item"><img src="img/slide-2.jpg"></div>
+                        <div class="item"><img src="img/slide-3.jpg"></div>
+                        <div class="item"><img src="img/slide-4.jpg"></div>
+                        <div class="item"><img src="img/slide-5.jpg"></div>
+                    </div>
+
+                    <!-- Carousel nav -->
+                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                </center>
+            </div>
             </div>
