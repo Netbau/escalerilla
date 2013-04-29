@@ -30,7 +30,7 @@
                 $cantidad++;
             }
         } else {
-            echo '<div class="alert alert-info">No Hay Premios Vigentes Registrados</div>';
+            echo '<div class="alert alert-info">No Hay premios vigentes registrados.</div>';
         }
         ?>
     </div>
