@@ -1,5 +1,5 @@
 <div class="nav-header">
-    <h4>Últimas Noticias</h4>
+    <h4>Últimas Notícias</h4>
 </div>
 <div class="well well-small small" style="overflow: auto;">
     <div class="noticia">
@@ -34,7 +34,7 @@
             <a href="#"> Leer más...</a>
         </div>
         <div>
-            "Se ha dado inicio al torneo..."
+            "Se ha dado início al torneo..."
         </div>
     </div>
 </div>
