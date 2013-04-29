@@ -21,14 +21,14 @@
             <center><img src="<?php echo $_SESSION['usuario']['foto']; ?>" class="img-rounded"></center>
         </div>
         <div class="row-fluid">
-            <strong>Mi Correo:</strong> <?php echo $_SESSION['usuario']['correo']; ?>
+            <strong>Mí Correo:</strong> <?php echo $_SESSION['usuario']['correo']; ?>
         </div>
         <?php
         if (isset($_SESSION['jugador'])) {
             echo '<div class="row-fluid">
-            <strong>Mi Categor&iacute;a:</strong> ' . $_SESSION['jugador']['categoria'] . '</div>
+            <strong>Mí Categoría:</strong> ' . $_SESSION['jugador']['categoria'] . '</div>
             <div class="row-fluid">
-            <strong>Mi Ranking:</strong> ' . $_SESSION['jugador']['ranking'] . '
+            <strong>Mí Ranking:</strong> ' . $_SESSION['jugador']['ranking'] . '
             </div>';
         }
         ?>
