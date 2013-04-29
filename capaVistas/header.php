@@ -23,7 +23,7 @@
         <!--<script src="js/bootstrap.js"></script><!-- bootstrap js -->
         <script>
             $(document).ready(function() {
-                $('.datepicker').datepicker({dateFormat: "yy-mm-dd", yearRange: "1950:2000", changeYear: true, changeMonth: true});
+                $('.datepicker').datepicker({dateFormat: "yy-mm-dd", yearRange: "2010:2050", changeYear: true, changeMonth: true});
             });
         </script>
     </head>
@@ -40,14 +40,14 @@
                     <img src="img/LogoEimCompacto.jpg" width="35" height="35" class="pull-left">
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li><a href="proximosEncuentros.php">Pr&oacute;ximos Encuentros</a></li>
+                            <li><a href="proximosEncuentros.php">Próximos Encuentros</a></li>
                             <?php
                             if (isset($_SESSION['jugador'])) {
                                 echo "<li><a href='usuario.php'><i class='icon-screenshot'></i><strong>¡Desafiar!</strong></a></li>";
                             }
                             ?>
                             <li><a href="reglamento.php">Reglamento</a></li>
-                            <li><a href="#noticias">Noticias</a></li>
+                            <li><a href="#noticias">Notícias</a></li>
                             <li><a href="premios.php">Premios</a></li>
                             <li><a href="contacto.php">Contacto</a></li>
                             <?php
