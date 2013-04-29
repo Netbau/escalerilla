@@ -8,7 +8,7 @@
         <a class="brand" href="#">Ranking</a>
         <div class="nav-collapse collapse">
             <ul class="nav">
-                <li><a href="#proximos">Pr&oacute;ximos Encuentros</a></li>
+                <li><a href="#proximos">Próximos Encuentros</a></li>
                 <li><a href="#reglamento">Reglamento</a></li>
                 <li><a href="#premios">Premios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
