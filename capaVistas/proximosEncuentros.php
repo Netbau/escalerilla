@@ -1,4 +1,4 @@
-﻿<center><h3>Próximos Desafíos</h3></center>
+<center><h3>Próximos Desafíos</h3></center>
 
 
 <div class='row-fluid'>
