@@ -28,7 +28,7 @@
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <a class="btn btn-small accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                            <strong>Creacion y Eliminacion de Usuarios</strong>
+                            <strong>Creación y Eliminación de Usuarios</strong>
                         </a>
                     </div>
                     <div id="collapseOne" class="accordion-body collapse">
@@ -82,7 +82,7 @@
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <a class="btn btn-small accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                            <strong>Registro de Desafios</strong>
+                            <strong>Registro de Desafíos</strong>
                         </a>
                     </div>
                     <div id="collapseThree" class="accordion-body collapse">
@@ -163,7 +163,7 @@
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <a class="btn btn-small accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
-                            <strong>Noticias</strong>
+                            <strong>Notícias</strong>
                         </a>
                     </div>
                     <div id="collapseSix" class="accordion-body collapse">
