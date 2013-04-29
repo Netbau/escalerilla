@@ -16,16 +16,16 @@
         $esDesafiador = Desafios::esDesafiador($desafio['idJugadores']);
 
         if($esDesafiable && !$esDesafiador){
-        echo '<center><a href="#myModal" class="btn btn-info btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">Desafiar!</a></center>';
+        echo '<center><a href="#myModal" class="btn btn-info btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">¡Desafiar!</a></center>';
         }
         else{
-            echo '<center><a class="btn btn-warning btn-block" disabled="disabled">Desafio en curso</a></center>';
+            echo '<center><a class="btn btn-warning btn-block" disabled="disabled">Desafío en curso.</a></center>';
         }
 
         echo '</div>';
         }
     } else {
-        echo '<div class="alert alert-success"><strong>Felicitaciones!</strong>, eres n&uacute;mero uno en tu categor&iacute;a. Sigue atento a los desaf&iacute;os que te har&aacute;n.</div>';
+        echo '<div class="alert alert-success"><strong>¡Felicitaciones!</strong>, eres número uno en tu categoría. Sigue atento a los desafíos que te harán.</div>';
     }
     ?>
 </center>
@@ -33,12 +33,12 @@
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Confirma tu desaf&iacute;o</h3>
+        <h3 id="myModalLabel">Confirma tu desafío</h3>
     </div>
     <div class="modal-body">
-        <p>Se enviar&aacute; un e-mail a tu rival <span id="contrincante"><strong></strong></span> y al administrador del sitio para concretar la fecha y hora del encuentro.</p>
+        <p>Se enviará un e-mail a tu rival <span id="contrincante"><strong></strong></span> y al administrador del sitio para concretar la fecha y hora del encuentro.</p>
         <?php
-        echo '<input type="hidden" class="desafiante" idJugadores="' . $_SESSION['jugador']['idJugadores'] . '" nombre="' . $_SESSION['usuario']['nombre'] . '" apellido="' . $_SESSION['usuario']['apellido'] . '" correo="' . $_SESSION['usuario']['correo'] . '" telefono="' . $_SESSION['usuario']['telefono'] . '">'
+        echo '<input type="hidden" class="desafiante" idJugadores="' . $_SESSION['jugador']['idJugadores'] . '" nombre="' . $_SESSION['usuario']['nombre'] . '" apellido="' . $_SESSION['usuario']['apellido'] . '" correo="' . $_SESSION['usuario']['correo'] . '" teléfono="' . $_SESSION['usuario']['telefono'] . '">'
         ?>
         <input type="hidden" class="desafiado" idJugadores="" nombre="" apellido="" correo="" telefono="">
     </div>
