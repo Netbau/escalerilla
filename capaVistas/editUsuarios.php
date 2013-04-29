@@ -37,7 +37,7 @@ if (!isset($_SESSION['usuario'])) {
         <button class='btn btn-small btn-block btn-info'>Cambiar Foto</button>
         </td>
         <td width='15%'>Acerca de ti: <br><small><i>(Agrega una frase que te idenfique como jugador)</i></small></td>
-        <td><textarea placeholder='ej: soy el más rudo!'></textarea></td>
+        <td><textarea placeholder='ej: ¡Soy el más rudo!'></textarea></td>
         </tr>
         </tbody>
     </table>
