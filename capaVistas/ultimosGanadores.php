@@ -8,7 +8,7 @@
         <div class="span3 well well-small"><!--1ra persona-->
         <center><img class="img img-rounded" src="' . $ganadores['foto'] . '" height="150" width="100"></center>
         <center><strong>' . $ganadores['nombre'] . ' ' . $ganadores['apellido'] . '</strong></center>
-        <center>Ranking #' . $ganadores['ranking'] .'<br> Categoría' . $ganadores['categoria']. '</center>
+        <center>Ranking #' . $ganadores['ranking'] .'<br> Categoría'. ' : ' . $ganadores['categoria']. '</center>
         </div>';
         }
     } else {
