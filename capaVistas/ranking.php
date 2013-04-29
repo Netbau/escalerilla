@@ -6,9 +6,9 @@
         $contador = 0;
         foreach ($categorias as $categoria) {
             if ($contador == 0) {
-                echo '<li class="active"><a href="#categoria' . $categoria['categoria'] . '" data-toggle="tab">Categor&iacute;a ' . $categoria['categoria'] . '</a></li>';
+                echo '<li class="active"><a href="#categoria' . $categoria['categoria'] . '" data-toggle="tab">Categoría ' . $categoria['categoria'] . '</a></li>';
             } else {
-                echo '<li><a href="#categoria' . $categoria['categoria'] . '" data-toggle="tab">Categor&iacute;a ' . $categoria['categoria'] . '</a></li>';
+                echo '<li><a href="#categoria' . $categoria['categoria'] . '" data-toggle="tab">Categoría ' . $categoria['categoria'] . '</a></li>';
             }
             $contador++;
         }
@@ -30,10 +30,10 @@
             <table class="table table-condensed table-striped">
                 <thead>
                     <tr class="">
-                    <th><center>Posici&oacute;n</center></th>
+                    <th><center>Posición</center></th>
                     <th><center>Foto</center></th>
                     <th><center>Nombre Jugador</center></th>
-                    <th><center>Victorias</center></th>
+                    <th><center>Victórias</center></th>
                     <th><center>Cambios</center></th>
                     </tr>
                 </thead>
@@ -43,7 +43,7 @@
                 echo '<td data-title="Ranking"><center>'.$player['ranking'].'</center></td>';
                 echo '<td><center><img class="img img-rounded" src="'.$player['foto'].'" height ="100" width="100"></center></td>';
                 echo '<td data-title="Nombre"><center>'.$player['nombre'].' '.$player['apellido'].'</center></td>';
-                echo '<td data-title="Victorias"><center>0</center></td>';
+                echo '<td data-title="Victórias"><center>0</center></td>';
                 echo '<td data-title="Cambios"><center>--</center></td>';
                 echo '</tr>';
             }
