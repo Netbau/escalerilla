@@ -1,11 +1,11 @@
-<a href="#modalPremios" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Premio</strong></a>
+<a href="#modalPremios" role="button" class="btn btn-small btn-info" data-toggle="modal"><strong>Nuevo Prémio</strong></a>
 <br><br>
 <div class="row-fluid">
     <table class="table table-condensed table-hover table-striped table-bordered">
         <thead>
             <tr>
-                <th>Titulo</th>
-                <th>Descripcion</th>
+                <th>Título</th>
+                <th>Descripción</th>
                 <th>Estado</th>
                 <th>PDF</th>
                 <th></th>
@@ -41,18 +41,18 @@
 <div id="modalPremios" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPremiosLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Ingresar nuevo premio</h3>
+        <h3 id="myModalLabel">Ingresar nuevo prémio</h3>
     </div>
     <div class="modal-body">
         <div id="estadoPremio"></div>
         <table class='table table-condensed table-hover table-striped table-bordered'>
             <tbody>
-                <tr><td>Titulo</td><td><input type='text' name='titulo' placeholder='Titulo del Premio'></td></tr>
-                <tr><td>Descripcion</td><td><input type='text' name='descripcion' placeholder='Descripcion'></td></tr>
+                <tr><td>Título</td><td><input type='text' name='titulo' placeholder='Título del Premio'></td></tr>
+                <tr><td>Descripción</td><td><input type='text' name='descripcion' placeholder='Descripción'></td></tr>
                 <!--<tr><td colspan='2'><input type='file' id='upload-btn' name='pdf' placeholder='Seleccione archivo'></td></tr><!---->
             </tbody>
         </table>
-        <div class='alert alert-info'><strong>NOTA:</strong> El Premio estara <i>Inactivo</i> hasta que se cambie su estado en el listado.</div>
+        <div class='alert alert-info'><strong>NOTA:</strong> El prémio estará <i>Inactivo</i> hasta que se cambie su estado en el listado.</div>
 
     </div>
     <div class="modal-footer">
