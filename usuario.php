@@ -21,7 +21,7 @@
 
         <div class="well well-small"><!--Publicidad-->
 
-            Espacio Publicitario
+            Espacio Publicitário
 
         </div><!--/.well well-small -->
 
@@ -29,13 +29,13 @@
     <div class="span9">
         <div class="well well-small">
             <div class="row-fluid"><!--Retos Disponibles-->
-                <center><h2>T&uacute; puedes desafiar a:</h2></center>
+                <center><h2>Tú puedes desafiar a:</h2></center>
                 <div id="disponibles">
                     <?php
                     if (isset($_SESSION['jugador'])) {
                         require(dirname(__FILE__) . "/capaVistas/retosDisponibles.php");
                     } else {
-                        echo '<div class="alert alert-danger">Debes ingresar con tu cuenta para poder desafiar!</div>';
+                        echo '<div class="alert alert-danger">!Debes ingresar con tu cuenta para poder desafiar!</div>';
                     }
                     ?>
                 </div>

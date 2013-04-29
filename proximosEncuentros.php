@@ -17,7 +17,7 @@
         </div><!--/.well well-small -->
 
         <div class="well well-small"><!--Publicidad-->
-            Espacio Publicitario
+            Espacio Publicitário
         </div><!--/.well well-small -->
 
     </div><!--/span-->
