@@ -8,7 +8,7 @@
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Ranking</th>
-                    <th>Categoria</th>
+                    <th>Categoría</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -18,7 +18,7 @@
                 include_once(dirname(__FILE__) . '/../../capaAjax/getJugadores.php');
                 foreach ($jugadores as $jugador) {
                     if ($jugador['ranking'] == 1) {
-                        echo "<tr><td colspan='8'><center><strong>Categoria " . $jugador['categoria'] . "</strong></center></td></tr>";
+                        echo "<tr><td colspan='8'><center><strong>Categoría " . $jugador['categoria'] . "</strong></center></td></tr>";
                     }
 
                     echo '<tr>
@@ -64,7 +64,7 @@
             </div>
             <table class="table" width="70%">
                 <tr>
-                    <td>Asignar Categoria</td>
+                    <td>Asignar Categoría</td>
                     <td>
                         <select name="categorias"  class="span6">
                             <?php
@@ -75,7 +75,7 @@
                 </tr>
                 <tr>
                     <td>
-                        o Crear nueva categoria
+                        o Crear nueva categoría
                     </td>
                     <td>
                         <input type="text" name="nuevaCategoria" placeholder="Ej: D" class="span6" maxlength='1' onKeyUp="this.value = this.value.toUpperCase();">
@@ -83,7 +83,7 @@
                 </tr>
             </table>
             <div class='alert alert-info'>
-                <strong>*Nota:</strong> se asignara automaticamente el ultimo ranking de la categoria seleccionada. Puede Cambiarlo
+                <strong>*Nota:</strong> se asignará automaticamente el último ranking de la categoría seleccionada. Puede Cambiarlo
                 posteriormente.
             </div>
             <script>
