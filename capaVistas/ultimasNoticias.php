@@ -1,40 +1,19 @@
-<div class="nav-header">
+﻿<div class="nav-header">
     <h4>Últimas Notícias</h4>
 </div>
 <div class="well well-small small" style="overflow: auto;">
     <div class="noticia">
         <div>
-            <h5>21-04-2013</h5>
+            <h5>29-04-2013 - Marcha Blanca Escalerilla</h5>
         </div>
         <div class="pull-right">
-            <a href="#"> Leer más...</a>
+            <a href="#"></a>
         </div>
         <div>
-            "Ha comenzado el periodo de otoño..."
-        </div>
-    </div>
-    <hr>
-    <div class="noticia">
-        <div>
-            <h5>25-03-2013</h5>
-        </div>
-        <div class="pull-right">
-            <a href="#"> Leer más...</a>
-        </div>
-        <div>
-            "Variación en el reglamento del torneo..."
-        </div>
-    </div>
-    <hr>
-    <div class="noticia">
-        <div>
-            <h5>13-03-2013</h5>
-        </div>
-        <div class="pull-right">
-            <a href="#"> Leer más...</a>
-        </div>
-        <div>
-            "Se ha dado início al torneo..."
+            "Estimados Jugadores, En el día de hoy se da inicio a la marcha blanca del sitio. Agradecemos la participación en el evento de inscripción
+		con el que realizaremos la primera carga de información.<br>
+		Muy pronto recibirán un correo electrónico con las indicaciones necesarias para ingresar al sitio, en tanto, estaremos actualizando el ranking
+		Oficial con el señor Sergio Garcés."
         </div>
     </div>
 </div>

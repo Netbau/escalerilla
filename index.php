@@ -25,7 +25,7 @@
     <div class="span9">
 
         <div class="well well-small">
-            <center><h2>Ranking</h2></center><!--Ranking-->
+            <center><h3>Ranking</h3></center><!--Ranking-->
             <?php require(dirname(__FILE__) . "/capaVistas/ranking.php"); ?>
         </div><!--well well-small-->
 
