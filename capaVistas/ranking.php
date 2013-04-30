@@ -33,7 +33,7 @@
                     <th><center>Posición</center></th>
                     <th><center>Foto</center></th>
                     <th><center>Nombre Jugador</center></th>
-                    <th><center>Victórias</center></th>
+                    <th><center>Victorias</center></th>
                     <th><center>Cambios</center></th>
                     </tr>
                 </thead>
