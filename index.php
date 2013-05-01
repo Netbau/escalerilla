@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Escalerilla, EIM</title>
+        <title>Escalerilla</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -40,7 +40,7 @@
                 <h1>Proyecto Escalerilla</h1>
 
                 <div class="well">
-                    <a href="http://www.escalerilla.cl/EIM"> Estadio Israelita <img src="EIM/img/logoeim.jpg"></a>
+                    <a href="http://www.escalerilla.cl/eim"> Estadio Israelita <img src="eim/img/logoeim.jpg"></a>
                 </div>
             </div>
 
