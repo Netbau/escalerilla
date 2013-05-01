@@ -31,6 +31,7 @@
         <script>
             $(document).ready(function() {
                 $('.datepicker').datepicker({dateFormat: "yy-mm-dd", yearRange: "1950:2050", changeYear: true, changeMonth: true});
+                $('.carousel').carousel('cycle');
             });
         </script>
     </head>
@@ -43,9 +44,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
-                    <a class="brand" href="index.php">Escalerilla EIM 2013</a>
                     <img src="img/LogoEimCompacto.jpg" width="40" height="40" class="pull-left">
+                    <a class="brand" href="index.php">Escalerilla EIM 2013</a>
+
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li><a href="proximosEncuentros.php">Próximos Encuentros</a></li>
@@ -73,7 +74,7 @@
         <div class="container-fluid">
             <div class="row-fluid" style="margin-top: 20px;">
 
-                <div id="myCarousel" class="carousel slide span12">
+                <div id="myCarousel" class="carousel slide span12" data-interval="1500">
                     <!-- Carousel items -->
                     <center>
                         <div class="carousel-inner">
@@ -83,10 +84,6 @@
                             <div class="item"><img src="img/slide-4.jpg"></div>
                             <div class="item"><img src="img/slide-5.jpg"></div>
                         </div>
-
-                        <!-- Carousel nav -->
-                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
                     </center>
                 </div>
             </div>

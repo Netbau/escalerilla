@@ -21,7 +21,7 @@
             <center><img src="<?php echo $_SESSION['usuario']['foto']; ?>" class="img-rounded"></center>
         </div>
         <div class="row-fluid">
-            <strong>M� Correo:</strong> <?php echo $_SESSION['usuario']['correo']; ?>
+            <strong>Mi Correo:</strong> <?php echo $_SESSION['usuario']['correo']; ?>
         </div>
         <?php
         if (isset($_SESSION['jugador'])) {

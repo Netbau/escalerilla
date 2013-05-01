@@ -1,7 +1,5 @@
-﻿<div class="nav-header">
-    <h4>Últimas Notícias</h4>
-</div>
-<div class="well well-small small" style="overflow: auto;">
+<h3>Últimas Notícias</h3>
+﻿<div class="well well-small small" style="overflow: auto;">
     <div class="noticia">
         <div>
             <h5>29-04-2013 - Marcha Blanca Escalerilla</h5>

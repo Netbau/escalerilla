@@ -27,14 +27,14 @@
             $letra = $categoria['categoria'];
             $ranking = Jugadores::getRankingPorCategoria($letra);
             echo '
-            <table class="table table-condensed table-striped">
+            <table class="table table-condensed table-striped tabled-bordered">
                 <thead>
                     <tr class="">
-                    <th><center>Posición</center></th>
-                    <th><center>Foto</center></th>
-                    <th><center>Nombre Jugador</center></th>
-                    <th><center>Victorias</center></th>
-                    <th><center>Cambios</center></th>
+                    <th width="10%"><center>Posición</center></th>
+                    <th width="20%"><center>Foto</center></th>
+                    <th width="50%">Nombre Jugador</th>
+                    <th width="10%"><center>Victorias</center></th>
+                    <th width="10%">Cambios</th>
                     </tr>
                 </thead>
                 <tbody>';
@@ -42,8 +42,8 @@
                 echo '<tr>';
                 echo '<td data-title="Ranking"><center>'.$player['ranking'].'</center></td>';
                 echo '<td><center><img class="img img-rounded" src="'.$player['foto'].'" height ="100" width="100"></center></td>';
-                echo '<td data-title="Nombre"><center>'.$player['nombre'].' '.$player['apellido'].'</center></td>';
-                echo '<td data-title="Victórias"><center>0</center></td>';
+                echo '<td data-title="Nombre">'.$player['nombre'].' '.$player['apellido'].'</td>';
+                echo '<td data-title="Victorias"><center>0</center></td>';
                 echo '<td data-title="Cambios"><center>--</center></td>';
                 echo '</tr>';
             }
