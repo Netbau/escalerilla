@@ -37,18 +37,19 @@ if ($_GET['tipo'] == 'premio') {
     $nombreFoto = $foto[0];
 
 
-    $upload_dir = 'img/usuarios/';
+    $upload_dir = '../img/usuarios/';
     $valid_extensions = array('gif', 'png', 'jpeg', 'jpg');
 
     $Upload = new FileUpload('uploadfile');
     $ext = $Upload->getExtension(); // Get the extension of the uploaded file
-    $Upload->newFileName = $nombreFoto . '.' . $ext;
+    $Upload->newFileName = $_SESSION['usuario']['idUsuarios'] . '.' . $ext;
     $result = $Upload->handleUpload($upload_dir, $valid_extensions);
 
     if (!$result) {
         echo json_encode(array('success' => false, 'msg' => $Upload->getErrorMsg(), 'ruta' => $upload_dir));
     } else {
-        $url = $Upload->getSavedFile();
+        $url = 'http://www.escalerilla.cl/eim/img/usuarios/'.$Upload->getFileName();
+        //$url = $Upload->getSavedFile();
         // guardar ruta del archivo en la bbdd blabla
         $actualizado = Usuarios::actualizarFoto($_SESSION['usuario']['idUsuarios'], $url);
 

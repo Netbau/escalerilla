@@ -82,7 +82,7 @@ if (!isset($_SESSION['usuario'])) {
                             .attr('class', 'alert alert-success')
                             .html('<strong>Foto actualizada con exito!</strong>');
                     $('#upload-btn').remove();
-                    $('.imgUsuario').attr('src', '').attr('src', output.ruta + output.file);
+                    $('.imgUsuario').attr('src', '').attr('src', output.ruta);
                 }
             }
         });
