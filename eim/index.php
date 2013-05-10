@@ -16,7 +16,7 @@
             <?php require(dirname(__FILE__) . "/capaVistas/convenios.php"); ?>
         </div><!--/.well well-small -->
 
-        <div class="well well-small"><!--Publicidad-->
+        <div class="well well-small hidden-phone"><!--Publicidad-->
             Espacio Publicitário
         </div><!--/.well well-small -->
 
