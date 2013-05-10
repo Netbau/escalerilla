@@ -32,5 +32,31 @@ if ($_GET['tipo'] == 'premio') {
     }
 } elseif ($_GET['tipo'] == 'usuario') {
     require_once (dirname(__FILE__) . '/../capaControladores/usuarios.php');
+    $foto = explode('/',$_SESSION['usuario']['foto']);
+    $foto = explode('.',end($foto));
+    $nombreFoto = $foto[0];
+
+
+    $upload_dir = '../img/usuarios//';
+    $valid_extensions = array('gif', 'png', 'jpeg', 'jpg');
+
+    $Upload = new FileUpload('uploadfile');
+    $ext = $Upload->getExtension(); // Get the extension of the uploaded file
+    $Upload->newFileName = $nombreFoto.'.'.$ext;
+    $result = $Upload->handleUpload($upload_dir, $valid_extensions);
+
+    if (!$result) {
+        echo json_encode(array('success' => false, 'msg' => $Upload->getErrorMsg()));
+    } else {
+        $url = $Upload->getSavedFile();
+        // guardar ruta del archivo en la bbdd blabla
+        $actualizado = Usuarios::actualizarFoto($_SESSION['usuario']['idUsuarios'], $url);
+
+        if ($actualizado) {
+            echo json_encode(array('success' => true, 'file' => $Upload->getFileName(), 'ruta' => $url));
+        } else {
+            echo json_encode(array('success' => false, 'file' => $Upload->getFileName(), 'ruta' => $url));
+        }
+    }
 }
 ?>

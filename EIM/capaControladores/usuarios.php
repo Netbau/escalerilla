@@ -113,6 +113,18 @@ class Usuarios {
          * funcion de actualizacion por definir
          */
     }
+    public static function actualizarFoto($idUsuarios,$foto){
+        $queryString = "UPDATE usuarios SET
+                        foto = '$foto'
+                        WHERE idUsuarios = $idUsuarios
+                        LIMIT 1";
+        $query = CallQuery($queryString);
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }
 
