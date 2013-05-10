@@ -58,6 +58,7 @@ class Usuarios {
     //devuelve los datos personales (sin privados) de una persona
     public static function Datos($rut) {
         $queryString = "SELECT
+                              idUsuarios,
                               nombre,
                               segundoNombre,
                               apellido,
@@ -120,7 +121,7 @@ class Usuarios {
                         LIMIT 1";
         $query = CallQuery($queryString);
         if ($query) {
-            return true;
+            return $foto;
         } else {
             return false;
         }

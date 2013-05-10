@@ -18,7 +18,7 @@
             </center>
         </div>
         <div class="row-fluid">
-            <center><img src="<?php echo $_SESSION['usuario']['foto']; ?>" class="img-rounded"></center>
+            <center><img src="<?php echo $_SESSION['usuario']['foto']; ?>" class="img-rounded imgUsuario"></center>
         </div>
         <div class="row-fluid">
             <strong>Mi Correo:</strong> <?php echo $_SESSION['usuario']['correo']; ?>

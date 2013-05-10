@@ -10,13 +10,13 @@
 
         <!-- estilos desde cdns -->
         <link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet"><!-- css jQuery UI-->
-        <!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"><!-- css bootstrap css -->
-        <!--<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet"><!-- font awsome -->
-        <!--<link href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/cerulean/bootstrap.min.css" rel="stylesheet"><!-- css bootswatch-->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"><!-- css bootstrap css -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet"><!-- font awsome -->
+        <link href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/cerulean/bootstrap.min.css" rel="stylesheet"><!-- css bootswatch-->
 
         <!--estilos desde el servidor -->
-        <link href="css/cerulean/bootstrap.min.css" rel="stylesheet"><!--css bootstrap-->
-        <link href="css/default/bootstrap-responsive.css" rel="stylesheet"><!--bootstrap responsive-->
+        <!--<link href="css/cerulean/bootstrap.min.css" rel="stylesheet"><!--css bootstrap-->
+        <!--<link href="css/default/bootstrap-responsive.css" rel="stylesheet"><!--bootstrap responsive-->
         <link href="css/cerulean/font-awsome.min.css" rel="stylesheet"><!-- font-awsome-->
         <link href="css/cerulean/bootswatch.css" rel="stylesheet"><!-- bootswatch-->
         <link href="css/estilo.css" rel="stylesheet"><!-- css personalizados -->

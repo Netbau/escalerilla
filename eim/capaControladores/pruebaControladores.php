@@ -3,7 +3,8 @@ session_start();
 include('encuentro.php');
 include('jugadores.php');
 include('usuarios.php');
-
+print_r($_SESSION);
+echo '<hr>';
 
 
 $desafio = Encuentro::ultimosGanadores();

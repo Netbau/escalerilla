@@ -49,15 +49,24 @@ if (!isset($_SESSION['usuario'])) {
         <h3 id="modalEditLabel">Subir nueva Foto</h3>
     </div>
     <div class="modal-body">
-        <div class="alert alert-info">La foto seleccionada reemplazará a la anterior.</div>
+        <div class="alert alert-info" id="editFoto">La foto seleccionada reemplazará a la anterior.</div>
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
-        <button class="btn btn-primary" id="upload-btn">Subir Nueva foto</button>
+        <button class="btn btn-primary" id="upload-btn"  data-loading-text='Subiendo...'>Subir Nueva foto</button>
     </div>
 </div>
 
 <script>
+    var modal = $('#modalEdit .modal-body').html();
+    $('#modalEdit').on('hidden', function() {
+        $(this).children('.modal-body').html('').html(modal);
+        $(this)
+                .children('.modal-footer')
+                .html('').html("<button class='btn' data-dismiss='modal' aria-hidden='true'>Volver</button>\n\
+                                <button class='btn btn-primary' id='upload-btn' data-loading-text='Subiendo...'>Subir Nueva foto</button>");
+        $('#editar').click();
+    });//on hidden
     $('#upload-btn').click(function() {
         var uploader = new ss.SimpleUpload({
             button: 'upload-btn',
@@ -69,7 +78,11 @@ if (!isset($_SESSION['usuario'])) {
             onComplete: function(filename, response) {
                 var output = $.parseJSON(response);
                 if (output.success === true) {
-                    $('#estadoPremio').html('<div class="alert alert-success">Premio Subido con exito!</div>');
+                    $('#editFoto')
+                            .attr('class', 'alert alert-success')
+                            .html('<strong>Foto actualizada con exito!</strong>');
+                    $('#upload-btn').remove();
+                    $('.imgUsuario').attr('src', '').attr('src', output.ruta + output.file);
                 }
             }
         });
