@@ -19,7 +19,7 @@
 
         </div><!--/.well well-small -->
 
-        <div class="well well-small"><!--Publicidad-->
+        <div class="well well-small hidden-phone"><!--Publicidad-->
 
             Espacio Publicitário
 

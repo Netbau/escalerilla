@@ -18,7 +18,7 @@
             $fecha = explode(' ', $encuentro['fecha']);
             echo '<div class="span6 well well-small"><!--1er Encuentro-->
                 <div class="span4"><center>' . $jugador1[0]['nombre'] . ' ' . $jugador1[0]['apellido'] . '<br><img class="img-rounded" src="' . $jugador1[0]['foto'] . '"></center></div>'
-            . '<div class="span4"><center>' . 'A contar del:' . '<br>' . $fecha[0] . '</center></div>'
+            . '<div class="span4"><center>' . 'vs.<br>A contar del:' . '<br>' . $fecha[0] . '</center></div>'
             . '<div class="span4"><center>' . $jugador2[0]['nombre'] . ' ' . $jugador2[0]['apellido'] . '<br><img class="img-rounded" src="' . $jugador2[0]['foto'] . '"></center></div>'
             . '</div>';
         }

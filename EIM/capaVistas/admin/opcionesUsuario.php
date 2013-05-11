@@ -5,7 +5,6 @@
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Segundo Nombre</th>
                 <th>Apellido</th>
                 <th>Segundo Apellido</th>
                 <th>E-mail</th>
@@ -23,7 +22,6 @@
 
                 echo "
                   <td>" . $uno['nombre'] . "</td>
-                  <td>" . $uno['segundoNombre'] . "</td>
                   <td>" . $uno['apellido'] . "</td>
                   <td>" . $uno['segundoApellido'] . "</td>
                   <td>" . $uno['correo'] . "</td>

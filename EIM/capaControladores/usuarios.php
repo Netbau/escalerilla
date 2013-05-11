@@ -58,6 +58,7 @@ class Usuarios {
     //devuelve los datos personales (sin privados) de una persona
     public static function Datos($rut) {
         $queryString = "SELECT
+                              idUsuarios,
                               nombre,
                               segundoNombre,
                               apellido,
@@ -68,7 +69,8 @@ class Usuarios {
                               nivel,
                               foto,
                               fechaNacimiento,
-                              sexo
+                              sexo,
+                              about
                         FROM usuarios
                         WHERE idUsuarios = $rut";
         $result = CallQuery($queryString);
@@ -95,7 +97,7 @@ class Usuarios {
         return $resultArray;
     }
 
-    public static function getNotJugadores(){
+    public static function getNotJugadores() {
         $queryString = "SELECT *
                         FROM usuarios
                         WHERE idUsuarios NOT IN (SELECT idUsuarios FROM jugadores)";
@@ -108,14 +110,15 @@ class Usuarios {
         return $resultArray;
     }
 
-    public static function actualizarDatos() {
-        /*
-         * funcion de actualizacion por definir
-         */
-    }
-    public static function actualizarFoto($idUsuarios,$foto){
+    public static function actualizarDatos($idUsuarios, $nombre, $apellido, $correo, $telefono, $segundoNombre = '', $segundoApellido = '', $about = '') {
         $queryString = "UPDATE usuarios SET
-                        foto = '$foto'
+                        nombre = '$nombre',
+                        segundoNombre = '$segundoNombre',
+                        apellido ='$apellido',
+                        segundoApellido ='$segundoApellido',
+                        correo ='$correo',
+                        telefono ='$telefono',
+                        about='$about'
                         WHERE idUsuarios = $idUsuarios
                         LIMIT 1";
         $query = CallQuery($queryString);
@@ -124,6 +127,33 @@ class Usuarios {
         } else {
             return false;
         }
+    }
+
+    public static function actualizarFoto($idUsuarios, $foto) {
+        $queryString = "UPDATE usuarios SET
+                        foto = '$foto'
+                        WHERE idUsuarios = $idUsuarios
+                        LIMIT 1";
+        $query = CallQuery($queryString);
+        if ($query) {
+            return $foto;
+        } else {
+            return false;
+        }
+    }
+
+    public static function actualizarPassword($idUsuarios,$password){
+        $queryString = "UPDATE `usuarios` SET `password`=MD5($password) WHERE idUsuarios = $idUsuarios";
+        $query = CallQuery($queryString);
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function resetPassword($idUsuarios){
+
     }
 
 }

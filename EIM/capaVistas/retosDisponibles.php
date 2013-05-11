@@ -1,6 +1,8 @@
 ﻿<center>
     <?php
-    if(!isset($_SESSION)){session_start();}
+    if (!isset($_SESSION)) {
+        session_start();
+    }
     include_once(dirname(__FILE__) . '/../capaControladores/jugadores.php');
     include_once(dirname(__FILE__) . '/../capaControladores/desafios.php');
     $desafiosDisponibles = Jugadores::getDesafiosDisponibles($_SESSION['jugador']['ranking'], $_SESSION['jugador']['categoria']);
@@ -12,17 +14,21 @@
         <center><strong>' . $desafio['nombre'] . ' ' . $desafio['apellido'] . '</strong></center>
         <center>Ranking #' . $desafio['ranking'] . '</center>';
 
-        $esDesafiable = Desafios::esDesafiable($desafio['idJugadores']);
-        $esDesafiador = Desafios::esDesafiador($desafio['idJugadores']);
+            $esDesafiable = Desafios::esDesafiable($desafio['idJugadores']);
+            $esDesafiador = Desafios::esDesafiador($desafio['idJugadores']);
+            $soyDesafiador = Desafios::esDesafiador($_SESSION['jugador']['idJugadores']);
 
-        if($esDesafiable && !$esDesafiador){
-        echo '<center><a href="#myModal" class="btn btn-primary btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">¡Desafiar!</a></center>';
-        }
-        else{
-            echo '<center><a class="btn btn-warning btn-block" disabled="disabled">Desafío en curso.</a></center>';
-        }
 
-        echo '</div>';
+            if ($esDesafiable && !$esDesafiador) {
+                if (!$soyDesafiador) {
+                    echo '<center><a href="#myModal" class="btn btn-primary btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">¡Desafiar!</a></center>';
+                } else {
+                    echo '<center><a class="btn btn-block" disabled="disabled">Desafío en curso.</a></center>';
+                }
+            } else {
+                echo '<center><a class="btn btn-warning btn-block" disabled="disabled">Desafío en curso.</a></center>';
+            }
+            echo '</div>';
         }
     } else {
         echo '<div class="alert alert-success"><strong>¡Felicitaciones!</strong>, eres número uno en tu categoría. Sigue atento a los desafíos que te harán.</div>';
@@ -37,9 +43,9 @@
     </div>
     <div class="modal-body">
         <p>Se enviará un e-mail a tu rival <span id="contrincante"><strong></strong></span> y al administrador del sitio para concretar la fecha y hora del encuentro.</p>
-        <?php
-        echo '<input type="hidden" class="desafiante" idJugadores="' . $_SESSION['jugador']['idJugadores'] . '" nombre="' . $_SESSION['usuario']['nombre'] . '" apellido="' . $_SESSION['usuario']['apellido'] . '" correo="' . $_SESSION['usuario']['correo'] . '" teléfono="' . $_SESSION['usuario']['telefono'] . '">'
-        ?>
+<?php
+echo '<input type="hidden" class="desafiante" idJugadores="' . $_SESSION['jugador']['idJugadores'] . '" nombre="' . $_SESSION['usuario']['nombre'] . '" apellido="' . $_SESSION['usuario']['apellido'] . '" correo="' . $_SESSION['usuario']['correo'] . '" telefono="' . $_SESSION['usuario']['telefono'] . '">'
+?>
         <input type="hidden" class="desafiado" idJugadores="" nombre="" apellido="" correo="" telefono="">
     </div>
     <div class="modal-footer">
