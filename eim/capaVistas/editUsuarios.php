@@ -177,7 +177,7 @@ $('#changePass').click(function(){
     var reNewPass = $('#reNewPass').val();
 
     $.ajax({
-        "url": "capaAjax/actualizarDatosUsuario.php",
+        "url": "",
                 "type": "post",
                 "data": {
                     "oldPass": oldPass,

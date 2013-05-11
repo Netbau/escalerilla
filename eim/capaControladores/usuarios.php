@@ -143,10 +143,7 @@ class Usuarios {
     }
 
     public static function actualizarPassword($idUsuarios,$password){
-        $queryString = "UPDATE usuarios SET
-                        password = md5($password)
-                        WHERE = idUsuarios = $idUsuarios
-                        LIMIT 1";
+        $queryString = "UPDATE `usuarios` SET `password`=MD5($password) WHERE idUsuarios = $idUsuarios";
         $query = CallQuery($queryString);
         if ($query) {
             return true;

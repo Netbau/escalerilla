@@ -25,8 +25,12 @@ if (isset($_SESSION['usuario'])) {
                         -- http://www.escalerilla.cl/eim                                            --
                             ";
                     $headers = "Cambio de contraseña Escalerilla" . $from . ":";
-                    $envio = mail($to, $subject, $message, $headers);
-                    echo 1;
+                    $mail = mail($to, $subject, $message, $headers);
+                    if ($mail) {
+                        echo 1;
+                    } else {
+                        echo $subject;// no se envio el mail
+                    }
                 } else {
                     echo 5; // no se pudo actualizar
                 }
