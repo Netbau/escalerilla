@@ -57,7 +57,7 @@ if (!isset($_SESSION['usuario'])) {
             <tr>
                 <td>Contraseña actual</td>
                 <td><input type="password" id="oldPass"></td>
-                <td colspan="2"><center><a class="btn btn-primary btn-small" id="changePass" data-loading-text="Guardando..."><strong>Cambiar Contraseña</strong></a></center></td>
+                <td colspan="2"><center><a disabled="disabled" class="btn btn-primary btn-small" id="changePass" data-loading-text="Guardando..."><strong>Cambiar Contraseña</strong></a></center></td>
             </tr>
             <tr>
                 <td>Contraseña nueva</td>
