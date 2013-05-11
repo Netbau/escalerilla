@@ -1,35 +1,39 @@
 ﻿<?php
 if (!isset($_SESSION['usuario'])) {
     session_start();
+    include_once(dirname(__FILE__) . '/../capaControladores/usuarios.php');
 }
 ?>
 <div class="well well-small">
     <table class="table-hover table-condensed table-bordered" width="99%">
+        <thead>
+            <tr colspan="4"><th><center>Mis Datos</center></td></th>
+        </thead>
         <tbody>
             <?php
+            $datos = Usuarios::Datos($_SESSION['usuario']['idUsuarios']);
             echo '    <tr>
               <td>Nombre:</td>
-              <td><input type="text" class="editable" id="nombre" value=" ' . $_SESSION['usuario']['nombre'] . '" ></td>
+              <td><input type="text" class="editable" id="nombre" value="' . $datos[0]['nombre'] . '" ></td>
               <td>Segundo Nombre:</td>
-              <td><input type="text" class="editable" id="segundoNombre" value=" ' . $_SESSION['usuario']['segundoNombre'] . '" placeholder="segundo nombre"></td>
+              <td><input type="text" class="editable" id="segundoNombre" value="' . $datos[0]['segundoNombre'] . '" placeholder="segundo nombre"></td>
 	  </tr>
           <tr>
                <td>Apellido:</td>
-               <td><input type="text" class="editable" id="apellido" value=" ' . $_SESSION['usuario']['apellido'] . '"></td>
+               <td><input type="text" class="editable" id="apellido" value="' . $datos[0]['apellido'] . '"></td>
 	       <td>Segundo Apellido:</td>
-               <td><input type="text" class="editable" id="segundoapellido" value=" ' . $_SESSION['usuario']['segundoApellido'] . '" placeholder="segundo apellido"></td>
+               <td><input type="text" class="editable" id="segundoApellido" value="' . $datos[0]['segundoApellido'] . '" placeholder="segundo apellido"></td>
 	  </tr>
                <td>E-mail:</td>
-               <td colspan="3"><input type="text" class="editable" id="correo" value=" ' . $_SESSION['usuario']['correo'] . '"></td>
+               <td colspan="3"><input type="text" class="editable" id="correo" value="' . $datos[0]['correo'] . '"></td>
 	  </tr>
                <td>Teléfono:</td>
-               <td colspan="3"><input type="text" class="editable" id="telefono" value=" ' . $_SESSION['usuario']['telefono'] . '"></td>
+               <td colspan="3"><input type="text" class="editable" id="telefono" value="' . $datos[0]['telefono'] . '"></td>
 	  </tr>';
             ?>
         </tbody>
     </table>
     <div class="row-fluid" id="saveChanges"></div>
-    <hr>
     <table class="table-hover table-condensed table-bordered" width="99%">
         <tbody>
             <tr>
@@ -38,8 +42,29 @@ if (!isset($_SESSION['usuario'])) {
         <button class='btn btn-small btn-block btn-primary' href="#modalEdit" data-toggle="modal"><strong>Cambiar Foto</strong></button>
         </td>
         <td width='15%'>Acerca de ti: <br><small><i>(Agrega una frase que te idenfique como jugador)</i></small></td>
-        <td><textarea class="editable" id="about" placeholder='ej: ¡Soy el más rudo!'><?php echo $_SESSION['usuario']['about']; ?></textarea></td>
+        <td><textarea class="editable" id="about" placeholder='ej: ¡Soy el más rudo!'><?php echo $datos[0]['about']; ?></textarea></td>
         </tr>
+        </tbody>
+    </table>
+    <div class="row-fluid" id="savePass"></div>
+    <table class="table-hover table-condensed table-bordered" width="99%">
+        <thead>
+            <tr colspan="4">
+                <th><center>Modificar mi Contraseña</center></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Contraseña actual</td>
+                <td><input type="password" id="oldPass"></td>
+                <td colspan="2"><center><a class="btn btn-primary btn-small" id="changePass" data-loading-text="Guardando..."><strong>Cambiar Contraseña</strong></a></center></td>
+            </tr>
+            <tr>
+                <td>Contraseña nueva</td>
+                <td><input type="password" id="newPass"></td>
+                <td>Repetir Contraseña</td>
+                <td><input type="password" id="reNewPass"></td>
+            </tr>
         </tbody>
     </table>
 </div>
@@ -98,12 +123,19 @@ if (!isset($_SESSION['usuario'])) {
         $('.guardarCambios').click(function() {
             $(this).button('loading');
             var nombre = $('#nombre').val();
+//            alert(nombre);
             var segundoNombre = $('#segundoNombre').val();
+//            alert(segundoNombre);
             var apellido = $('#apellido').val();
+//            alert(apellido);
             var segundoApellido = $('#segundoApellido').val();
+//            alert(segundoApellido);
             var correo = $('#correo').val();
+//            alert(correo);
             var telefono = $('#telefono').val();
+//            alert(telefono);
             var about = $('#about').val();
+//            alert(about);
             $.ajax({
                 "url": "capaAjax/actualizarDatosUsuario.php",
                 "type": "post",
@@ -116,7 +148,16 @@ if (!isset($_SESSION['usuario'])) {
                     "telefono": telefono,
                     "about": about},
                 success: function(output) {
-                    alert(output);
+                    if (output == 1) {
+                        setTimeout(function() {
+                            $('#editar').delay('slow').click();// se refresca
+                        }, 4000)
+                        $('#saveChanges').html('<div class="alert alert-info"><strong>Cambios Guardados satisfactoriamente!.</strong></div>');
+                    } else if (output == 0) {
+                        $('#saveChanges').html('<div class="alert alert-danger"><strong>Ha ocurrido un error!, Vuelve a intentarlo.</strong></div>')
+                    } else {
+                        alert(output);
+                    }
 
                 }//success
             });// ajax
@@ -127,6 +168,25 @@ if (!isset($_SESSION['usuario'])) {
             $('#editar').click();// se eliminan los cambios
         });
     });
+</script>
+<script>
+$('#changePass').click(function(){
+    $(this).button('loading');
+    var oldPass = $('#oldPass').val();
+    var newPass = $('#newPass').val();
+    var reNewPass = $('#reNewPass').val();
 
+    $.ajax({
+        "url": "capaAjax/actualizarDatosUsuario.php",
+                "type": "post",
+                "data": {
+                    "oldPass": oldPass,
+                    "newPass": newPass,
+                    "reNewPass": reNewPass},
+                success: function(output){
+                    alert(output);
+                }
+    });
 
+});
 </script>

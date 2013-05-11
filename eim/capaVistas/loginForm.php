@@ -2,9 +2,6 @@
     <center><h3>Conectarse</h3></center>
     <input type="text" name='user' class="input-block-level" placeholder="Ej: 15035156-k">
     <input type="password" name='password' class="input-block-level" placeholder="Contraseña">
-    <label class="checkbox">
-        <input type="checkbox" value="remember-me"> Recordarme
-    </label>
     <button class="btn btn-primary btn-block" id='ingresar' data-loading-text="cargando...">Ingresar</button><div id="loginEstado"></div>
     <br>
     <center><a href="#">¿Olvidó su contraseña?</a></center>

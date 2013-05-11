@@ -142,6 +142,23 @@ class Usuarios {
         }
     }
 
+    public static function actualizarPassword($idUsuarios,$password){
+        $queryString = "UPDATE usuarios SET
+                        password = md5($password)
+                        WHERE = idUsuarios = $idUsuarios
+                        LIMIT 1";
+        $query = CallQuery($queryString);
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function resetPassword($idUsuarios){
+
+    }
+
 }
 
 ?>
