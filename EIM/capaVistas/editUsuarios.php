@@ -170,23 +170,23 @@ if (!isset($_SESSION['usuario'])) {
     });
 </script>
 <script>
-$('#changePass').click(function(){
-    $(this).button('loading');
-    var oldPass = $('#oldPass').val();
-    var newPass = $('#newPass').val();
-    var reNewPass = $('#reNewPass').val();
-
-    $.ajax({
-        "url": "",
-                "type": "post",
-                "data": {
-                    "oldPass": oldPass,
-                    "newPass": newPass,
-                    "reNewPass": reNewPass},
-                success: function(output){
-                    alert(output);
-                }
-    });
-
-});
+//$('#changePass').click(function(){
+//    $(this).button('loading');
+//    var oldPass = $('#oldPass').val();
+//    var newPass = $('#newPass').val();
+//    var reNewPass = $('#reNewPass').val();
+//
+//    $.ajax({
+//        "url": "",
+//                "type": "post",
+//                "data": {
+//                    "oldPass": oldPass,
+//                    "newPass": newPass,
+//                    "reNewPass": reNewPass},
+//                success: function(output){
+//                    alert(output);
+//                }
+//    });
+//
+//});
 </script>
