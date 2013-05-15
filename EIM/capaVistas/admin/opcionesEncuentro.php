@@ -45,8 +45,8 @@
                 <tr>
                     <td>Desafíos</td>
                     <td colspan="2"><select name="desafios" class="desafios">
-					<option label="Seleccione el Desafios"></option>
-					<?php include(dirname(__FILE__) . '/../../capaAjax/listadoJugadores.php');
+					<option label="Seleccione el Desafío"></option>
+					<?php include(dirname(__FILE__) . '/../../capaAjax/listadoDesafios.php');
 					?>
 					</select></td>
                 </tr>
@@ -107,9 +107,15 @@ $('.setsGenerado').html(sets);
 });
 </script>
 <script>
-$('.jugador').change(function(){
-var jugador1 = '<option value="'+$('select[name="jugador1"]').val()+'">'+$('select[name="jugador1"] option:selected').text()+'</option>';
-var jugador2 = '<option value="'+$('select[name="jugador2"]').val()+'">'+$('select[name="jugador2"] option:selected').text()+'</option>';
+$('.desafios').change(function(){
+
+var idJugador = $('select[name="desafios"]').val().split("-");
+var nombreDelJugador = $('select[name="desafios"] option:selected').text().split("v/s");
+
+alert("I am a box!" +$('select[name="desafios"] option:selected').text());
+
+var jugador1 = '<option value="'+idJugador[0]+'">'+nombreDelJugador[0]+'</option>';
+var jugador2 = '<option value="'+idJugador[1]+'">'+nombreDelJugador[1]+'</option>';
 $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jugador1+jugador2);
 });
 

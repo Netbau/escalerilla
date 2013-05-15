@@ -78,7 +78,7 @@ class Desafios {
         return $resultArray;
     }
 
-    public static function Crude() {
+    public static function Crud() {
         $queryString = "SELECT *
                         FROM desafio d";
         $result = CallQuery($queryString);
