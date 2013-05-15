@@ -15,7 +15,8 @@
         <!--<link href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/cerulean/bootstrap.min.css" rel="stylesheet"><!-- css bootswatch-->
 
         <!--estilos desde el servidor -->
-        <link href="css/cerulean/bootstrap.min.css" rel="stylesheet"><!--css bootstrap-->
+        <link href="css/cerulean/bootstrap.min.css" rel="stylesheet"><!--css bootstrap.min-->
+        <link href="css/cerulean/bootstrap.css" rel="stylesheet"><!--css bootstrap-->
         <link href="css/default/bootstrap-responsive.css" rel="stylesheet"><!--bootstrap responsive-->
         <link href="css/cerulean/font-awsome.min.css" rel="stylesheet"><!-- font-awsome-->
         <link href="css/cerulean/bootswatch.css" rel="stylesheet"><!-- bootswatch-->
