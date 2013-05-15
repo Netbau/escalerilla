@@ -1,4 +1,7 @@
-<a href="#modalUsuario" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a><input type="text" name="filtrar" placeholder="Buscar en Usuarios">
+<div class="input-prepend">
+<a href="#modalUsuario" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
+<input type="text" name="filtrar" placeholder="Filtrar">
+</div>
 <br><br>
 <div class="row-fluid">
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">
@@ -13,7 +16,7 @@
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tablaUsuarios">
             <?php
             include_once(dirname(__FILE__) . '/../../capaAjax/getUsuarios.php');
             foreach ($todos as $uno) {
@@ -26,7 +29,6 @@
                   <td>" . $uno['segundoApellido'] . "</td>
                   <td>" . $uno['correo'] . "</td>
                   <td>" . $uno['telefono'] . "</td>
-                  <td>" . $uno['foto'] . "</td>
                   <td><a class='btn btn-small btn-block borrarUsuario' idUsuarios='".$uno['idUsuarios']."'><i class='icon-remove-sign'></i></a></td>
                   ";
 
@@ -148,5 +150,25 @@
                 $('#nuevoUsuario').button('reset');
             }
         });
+    });
+</script>
+<script>
+$('input[name="filtrar"]').keydown(function(){
+        var filtroDiag = $(this).val().toUpperCase();
+        if( filtroDiag == ''){
+            $('#tablaUsuarios').children('tr').children('td').each(function(index, domEle){
+                $(domEle).show();
+            });
+        }
+        else {
+            $('#tablaUsuarios').children('tr').children('td').each(function(index, domEle){
+                if( $(domEle).children('strong').text().indexOf(filtroDiag) !== -1){
+                    $(domEle).show();
+                }
+                else {
+                    $(domEle).hide();
+                }
+            });
+        }
     });
 </script>
