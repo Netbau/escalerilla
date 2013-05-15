@@ -43,21 +43,12 @@
         <form method="post" action="" id="ingresoEncuentro">
             <table class="table-condensed table-striped table-hover table-bordered" width="100%">
                 <tr>
-                    <td>Jugador 1</td>
-                    <td colspan="2"><select name="jugador1" class="jugador">
-					<option label="Seleccione un Jugador"></option>
+                    <td>Desafíos</td>
+                    <td colspan="2"><select name="desafios" class="desafios">
+					<option label="Seleccione el Desafios"></option>
 					<?php include(dirname(__FILE__) . '/../../capaAjax/listadoJugadores.php');
 					?>
 					</select></td>
-                </tr>
-                <tr>
-                    <td>Jugador 2</td>
-                    <td colspan="2"><select name="jugador2" class="jugador">
-					<option label="Seleccione un Jugador"></option>
-					<?php include(dirname(__FILE__) . '/../../capaAjax/listadoJugadores.php');
-					?>
-					</select>
-					</td>
                 </tr>
                 <tr>
                     <td>Cancha</td>
