@@ -1,4 +1,4 @@
-<a href="#modalUsuario" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
+<a href="#modalUsuario" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a><input type="text" name="filtrar" placeholder="Buscar en Usuarios">
 <br><br>
 <div class="row-fluid">
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">
