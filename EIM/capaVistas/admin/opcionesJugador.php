@@ -30,10 +30,10 @@
                   <td>
                   ";
                     if ($jugador['ranking'] > 1) {
-                        echo "<a class='btn btn-small btn-block cambiarRanking' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-edit'></i></a>";
+                        echo "<a class='btn btn-small cambiarRanking' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-edit'></i></a>";
                     }
                     echo "
-                    <a class='btn btn-small btn-block borrarJugador' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-remove-sign'></i></a></td>
+                    <a class='btn btn-small borrarJugador' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-remove-sign'></i></a></td>
                 ";
 
                     echo '</tr>

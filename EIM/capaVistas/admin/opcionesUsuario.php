@@ -28,7 +28,7 @@
                   <td>" . $uno['segundoApellido'] . "</td>
                   <td>" . $uno['correo'] . "</td>
                   <td>" . $uno['telefono'] . "</td>
-                  <td><a class='btn btn-small btn-block borrarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-remove-sign'></i></a><a class='btn btn-small btn-block editarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-edit'></i></a></td>
+                  <td><a class='btn btn-small borrarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-remove-sign'></i></a><a class='btn btn-small editarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-edit'></i></a></td>
                   ";
 
                 echo '</tr>
