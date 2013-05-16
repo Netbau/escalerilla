@@ -24,7 +24,9 @@
 
                 $fecha = explode(' ', $encuentro['fecha']);
                 echo '<tr><td>' . $encuentro['idJugadores'] . '</td><td>' . $encuentro['idJugadores1'] . '</td><td>' . $fecha[0] .
-                '</td><td>' . $encuentro['nombre'] . '</td><td>' . $encuentro['idGanador'] . '</td><td></td></tr>';
+                '</td><td>' . $encuentro['nombre'] . '</td><td>' . $encuentro['idGanador'] . '</td>
+                 <td></td>
+                 </tr>';
             }
             ?>
         </tbody>

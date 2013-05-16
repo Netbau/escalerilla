@@ -27,14 +27,15 @@
                   <td>" . $jugador['apellido'] . "</td>
                   <td>" . $jugador['ranking'] . "</td>
                   <td>" . $jugador['categoria'] . "</td>
-                  <td>
+                  <td><center>
                   ";
                     if ($jugador['ranking'] > 1) {
                         echo "<a class='btn btn-small cambiarRanking' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-edit'></i></a>";
                     }
                     echo "
-                    <a class='btn btn-small borrarJugador' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-remove-sign'></i></a></td>
-                ";
+                    <a class='btn btn-small borrarJugador' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-remove-sign'></i></a>
+                   </center></td>
+                   ";
 
                     echo '</tr>
                 ';

@@ -20,10 +20,12 @@
             foreach ($desafios as $desafio) {
 
 				$fecha = explode(' ', $desafio['fecha']);
-                echo '<tr><td>' . $desafio['idJugadores'] . '</td><td>' . $desafio['idJugadores1'] . '</td><td>' .$fecha[0]. '</td><td>' .$desafio['estado'].'</td>
-                      <td>
-                      <a class="btn editDesafio"><i class="icon-edit"></i></a>
-                      </td></tr>';
+                echo '<tr>
+                        <td>' . $desafio['idJugadores'] . '</td><td>' . $desafio['idJugadores1'] . '</td><td>' .$fecha[0]. '</td><td>' .$desafio['estado'].'</td>
+                        <td><center>
+                        <a class="btn editDesafio"><i class="icon-edit"></i></a>
+                        </center></td>
+                      </tr>';
 
 
             }
