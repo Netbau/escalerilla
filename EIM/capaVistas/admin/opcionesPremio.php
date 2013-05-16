@@ -28,7 +28,7 @@
                 } elseif ($premio['estado'] == 0) {
                     echo '<td>Inactivo</td>';
                 }
-                echo "<td>" . end($pdf) . "</td><td><a class='btn editPremio' idPremio='" . $premio['idPremios'] . "'><i class='icon-edit'></i></a></td>";
+                echo "<td>" . end($pdf) . "</td><td><center><a class='btn editPremio' idPremio='" . $premio['idPremios'] . "'><i class='icon-edit'></i></a></center></td>";
                 echo '</tr>';
             }
             ?>
