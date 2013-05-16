@@ -10,7 +10,6 @@
                     <th>Ranking</th>
                     <th>Categoría</th>
                     <th></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -31,10 +30,10 @@
                   <td>
                   ";
                     if ($jugador['ranking'] > 1) {
-                        echo "<a class='btn btn-small btn-block cambiarRanking' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-circle-arrow-up'></i></a>";
+                        echo "<a class='btn btn-small btn-block cambiarRanking' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-edit'></i></a>";
                     }
-                    echo "</td>
-                <td><a class='btn btn-small btn-block borrarJugador' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-remove-sign'></i></a></td>
+                    echo "
+                    <a class='btn btn-small btn-block borrarJugador' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-remove-sign'></i></a></td>
                 ";
 
                     echo '</tr>

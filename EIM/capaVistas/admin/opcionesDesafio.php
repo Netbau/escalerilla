@@ -16,11 +16,14 @@
 			require_once(dirname(__FILE__) . '/../../utilidades/transformarDesafios.php');
             $desafios = Desafios::Crud();
 			$desafios = transformaDesafios($desafios);
-			
+
             foreach ($desafios as $desafio) {
-				
+
 				$fecha = explode(' ', $desafio['fecha']);
-                echo '<tr><td>' . $desafio['idJugadores'] . '</td><td>' . $desafio['idJugadores1'] . '</td><td>' .$fecha[0]. '</td><td>' .$desafio['estado'].'</td><td></td></tr>';
+                echo '<tr><td>' . $desafio['idJugadores'] . '</td><td>' . $desafio['idJugadores1'] . '</td><td>' .$fecha[0]. '</td><td>' .$desafio['estado'].'</td>
+                      <td>
+                      <a class="btn editDesafio"><i class="icon-edit"></i></a>
+                      </td></tr>';
 
 
             }
