@@ -1,6 +1,6 @@
 <div class="input-prepend">
 <a href="#modalUsuario" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
-<input type="text" name="filtrar" placeholder="Filtrar">
+<input class="input-small" type="text" name="filtrar" placeholder="Filtrar" onKeyUp="this.value=this.value.toUpperCase();">
 </div>
 <br><br>
 <div class="row-fluid">
@@ -12,7 +12,6 @@
                 <th>Segundo Apellido</th>
                 <th>E-mail</th>
                 <th>Teléfono</th>
-                <th>Foto</th>
                 <th></th>
             </tr>
         </thead>
