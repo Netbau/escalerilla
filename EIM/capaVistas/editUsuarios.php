@@ -51,20 +51,20 @@ if (!isset($_SESSION['usuario'])) {
         <thead>
             <tr colspan="4">
                 <th><center>Modificar mi Contraseña</center></th>
-            </tr>
+        </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Contraseña actual</td>
                 <td><input type="password" id="oldPass"></td>
                 <td colspan="2"><center><a disabled="disabled" class="btn btn-primary btn-small" id="changePass" data-loading-text="Guardando..."><strong>Cambiar Contraseña</strong></a></center></td>
-            </tr>
-            <tr>
-                <td>Contraseña nueva</td>
-                <td><input type="password" id="newPass"></td>
-                <td>Repetir Contraseña</td>
-                <td><input type="password" id="reNewPass"></td>
-            </tr>
+        </tr>
+        <tr>
+            <td>Contraseña nueva</td>
+            <td><input type="password" id="newPass"></td>
+            <td>Repetir Contraseña</td>
+            <td><input type="password" id="reNewPass"></td>
+        </tr>
         </tbody>
     </table>
 </div>

@@ -1,6 +1,6 @@
 <div class="input-prepend">
-<a href="#modalUsuario" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
-<input class="input-small" type="text" name="filtrar" placeholder="Filtrar" onKeyUp="this.value=this.value.toUpperCase();">
+    <a href="#modalUsuario" role="button" class="btn btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
+    <input class="" type="text" name="filtrar" placeholder="Filtrar" onKeyUp="this.value = this.value.toUpperCase();">
 </div>
 <br><br>
 <div class="row-fluid">
@@ -28,7 +28,7 @@
                   <td>" . $uno['segundoApellido'] . "</td>
                   <td>" . $uno['correo'] . "</td>
                   <td>" . $uno['telefono'] . "</td>
-                  <td><a class='btn btn-small btn-block borrarUsuario' idUsuarios='".$uno['idUsuarios']."'><i class='icon-remove-sign'></i></a></td>
+                  <td><a class='btn btn-small btn-block borrarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-remove-sign'></i></a><a class='btn btn-small btn-block editarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-edit'></i></a></td>
                   ";
 
                 echo '</tr>
@@ -54,13 +54,13 @@
                 </tr>
                 <tr>
                     <td>Nombres</td>
-                    <td><input type="text" name="nombre" placeholder="primer nombre(*)" class="required" onKeyUp="this.value=this.value.toUpperCase();"></td>
-                    <td><input type="text" name="segundoNombre"placeholder="segundo nombre" onKeyUp="this.value=this.value.toUpperCase();"></td>
+                    <td><input type="text" name="nombre" placeholder="primer nombre(*)" class="required" onKeyUp="this.value = this.value.toUpperCase();"></td>
+                    <td><input type="text" name="segundoNombre"placeholder="segundo nombre" onKeyUp="this.value = this.value.toUpperCase();"></td>
                 </tr>
                 <tr>
                     <td>Apellidos</td>
-                    <td><input type="text" name="apellido" placeholder="apellido paterno(*)" class="required" onKeyUp="this.value=this.value.toUpperCase();"></td>
-                    <td><input type="text" name="segundoApellido" placeholder="apellido materno" onKeyUp="this.value=this.value.toUpperCase();"></td>
+                    <td><input type="text" name="apellido" placeholder="apellido paterno(*)" class="required" onKeyUp="this.value = this.value.toUpperCase();"></td>
+                    <td><input type="text" name="segundoApellido" placeholder="apellido materno" onKeyUp="this.value = this.value.toUpperCase();"></td>
                 </tr>
                 <tr>
                     <td>Fecha de Nacimiento(*)</td>
@@ -139,11 +139,11 @@
                     $('#ingresoUsuarioForm').collapse('hide');
                     $('.estadoIngreso').html('<div class="alert alert-success">Usuario Ingresado Correctamente</div>');
                     $('#nuevoUsuario').hide();
-                } else if(output==0) {
+                } else if (output == 0) {
                     $('.estadoIngreso').html('<div class="alert alert-danger">Faltan datos!</div>');
-                } else if(output==2) {
+                } else if (output == 2) {
                     $('.estadoIngreso').html('<div class="alert alert-danger">Usuario Ya Registrado!</div>');
-                }else{
+                } else {
                     alert(output);
                 }
                 $('#nuevoUsuario').button('reset');
@@ -152,16 +152,16 @@
     });
 </script>
 <script>
-$('input[name="filtrar"]').keydown(function(){
+    $('input[name="filtrar"]').keydown(function() {
         var filtroDiag = $(this).val().toUpperCase();
-        if( filtroDiag == ''){
-            $('#tablaUsuarios').children('tr').children('td').each(function(index, domEle){
+        if (filtroDiag == '') {
+            $('#tablaUsuarios').children('tr').children('td').each(function(index, domEle) {
                 $(domEle).show();
             });
         }
         else {
-            $('#tablaUsuarios').children('tr').children('td').each(function(index, domEle){
-                if( $(domEle).children('strong').text().indexOf(filtroDiag) !== -1){
+            $('#tablaUsuarios').children('tr').children('td').each(function(index, domEle) {
+                if ($(domEle).children('strong').text().indexOf(filtroDiag) !== -1) {
                     $(domEle).show();
                 }
                 else {

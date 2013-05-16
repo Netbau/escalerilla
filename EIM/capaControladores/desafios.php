@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Clase desafios con sus respectivas funciones
  */
@@ -45,23 +44,21 @@ class Desafios {
                         FROM desafio d
                         WHERE idJugadores1 ='$idJugadores'
                         AND estado ='Pendiente'";
-        if(CallQuery($queryString)->num_rows > 0){
+        if (CallQuery($queryString)->num_rows > 0) {
             return false;
-        }
-        else{
+        } else {
             return true;
         }
     }
 
-    public static function esDesafiador($idJugadores){
+    public static function esDesafiador($idJugadores) {
         $queryString = "SELECT *
                         FROM desafio d
                         WHERE idJugadores ='$idJugadores'
                         AND estado ='Pendiente'";
-        if(CallQuery($queryString)->num_rows == 0){
+        if (CallQuery($queryString)->num_rows == 0) {
             return false;
-        }
-        else{
+        } else {
             return true;
         }
     }
