@@ -10,7 +10,7 @@
         foreach ($desafiosDisponibles as $desafio) {
             echo '
         <div class="span3 well well-small"><!--1ra persona-->
-        <center><img class="img img-rounded" src="' . $desafio['foto'] . '" height="150" width="100"></center>
+        <center><a class="preview" href="' . $desafio['foto'] . '"><img class="img img-rounded" src="' . $desafio['foto'] . '" height="150" width="100"></a></center>
         <center><strong>' . $desafio['nombre'] . ' ' . $desafio['apellido'] . '</strong></center>
         <center>Ranking #' . $desafio['ranking'] . '</center>';
 

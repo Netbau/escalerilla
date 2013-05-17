@@ -14,15 +14,15 @@ if (!isset($_SESSION['usuario'])) {
             $datos = Usuarios::Datos($_SESSION['usuario']['idUsuarios']);
             echo '    <tr>
               <td>Nombre:</td>
-              <td><input type="text" class="editable" id="nombre" value="' . $datos[0]['nombre'] . '" ></td>
+              <td><input type="text" class="editable" id="nombre" value="' . $datos[0]['nombre'] . '" onKeyUp="this.value = this.value.toUpperCase();"></td>
               <td>Segundo Nombre:</td>
-              <td><input type="text" class="editable" id="segundoNombre" value="' . $datos[0]['segundoNombre'] . '" placeholder="segundo nombre"></td>
+              <td><input type="text" class="editable" id="segundoNombre" value="' . $datos[0]['segundoNombre'] . '" placeholder="segundo nombre" onKeyUp="this.value = this.value.toUpperCase();"></td>
 	  </tr>
           <tr>
                <td>Apellido:</td>
-               <td><input type="text" class="editable" id="apellido" value="' . $datos[0]['apellido'] . '"></td>
+               <td><input type="text" class="editable" id="apellido" value="' . $datos[0]['apellido'] . '" onKeyUp="this.value = this.value.toUpperCase();"></td>
 	       <td>Segundo Apellido:</td>
-               <td><input type="text" class="editable" id="segundoApellido" value="' . $datos[0]['segundoApellido'] . '" placeholder="segundo apellido"></td>
+               <td><input type="text" class="editable" id="segundoApellido" value="' . $datos[0]['segundoApellido'] . '" placeholder="segundo apellido" onKeyUp="this.value = this.value.toUpperCase();"></td>
 	  </tr>
                <td>E-mail:</td>
                <td colspan="3"><input type="text" class="editable" id="correo" value="' . $datos[0]['correo'] . '"></td>
@@ -38,7 +38,7 @@ if (!isset($_SESSION['usuario'])) {
         <tbody>
             <tr>
                 <td>Foto:</td>
-                <td width='20%'><center><?php echo '<img class="img-rounded" src="' . $_SESSION['usuario']['foto'] . '" style="max-height:100px; max-width:100px;">'; ?></center>
+                <td width='20%'><center><?php echo '<a class="preview" href="' . $_SESSION['usuario']['foto'] . '"><img class="img-rounded" src="' . $_SESSION['usuario']['foto'] . '" style="max-height:100px; max-width:100px;"></a>'; ?></center>
         <button class='btn btn-small btn-block btn-primary' href="#modalEdit" data-toggle="modal"><strong>Cambiar Foto</strong></button>
         </td>
         <td width='15%'>Acerca de ti: <br><small><i>(Agrega una frase que te idenfique como jugador)</i></small></td>

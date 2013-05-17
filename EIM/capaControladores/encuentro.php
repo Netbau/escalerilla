@@ -149,6 +149,7 @@ class Encuentro {
     public static function getPróximosEncuentros($limite = 3) {
         $queryString = "SELECT *
                         FROM desafio as d
+                        WHERE estado = 'Pendiente'
                         ORDER BY d.fecha ASC LIMIT $limite";
         $result = CallQuery($queryString);
         $resultArray = array();
