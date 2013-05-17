@@ -17,10 +17,11 @@
             $esDesafiable = Desafios::esDesafiable($desafio['idJugadores']);
             $esDesafiador = Desafios::esDesafiador($desafio['idJugadores']);
             $soyDesafiador = Desafios::esDesafiador($_SESSION['jugador']['idJugadores']);
+            $puedoDesafiar = Desafios::esDesafiable($_SESSION['jugador']['idJugadores']);
 
 
             if ($esDesafiable && !$esDesafiador) {
-                if (!$soyDesafiador) {
+                if (!$soyDesafiador && $puedoDesafiar) {
                     echo '<center><a href="#myModal" class="btn btn-primary btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">¡Desafiar!</a></center>';
                 } else {
                     echo '<center><a class="btn btn-block" disabled="disabled">Desafío en curso.</a></center>';

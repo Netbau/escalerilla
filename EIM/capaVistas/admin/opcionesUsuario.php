@@ -184,7 +184,7 @@
     });
 </script>
 <script>
-    $('input[name="filtrar"]').keydown(function() {
+    $('input[name="filtrar"]').keyup(function() {
         var filtroDiag = $(this).val().toUpperCase();
         if (filtroDiag == '') {
             $('#tablaUsuarios').children('tr').children('td').each(function(index, domEle) {
@@ -204,20 +204,20 @@
     });
 </script>
 <script>
-$('.emailAll').click(function(){
-    $('.selectUser').prop('checked', true);
-});
-$('.emailNone').click(function(){
-    $('.selectUser').prop('checked', false);
-});
+    $('.emailAll').click(function() {
+        $('.selectUser').prop('checked', true);
+    });
+    $('.emailNone').click(function() {
+        $('.selectUser').prop('checked', false);
+    });
 </script>
 <script>
-$('#modalCorreo').on('show',function(){
-   var usuarios =  $('.selectUser:checked').length;
-   $('#modalCorreo .estadoEmail').html('<div class="alert alert-info">Se enviara un correo a <strong>'+usuarios+'</strong> usuarios.</div>');
-   if(usuarios<1){
-       $('#enviarEmail').attr('disabled','disabled');
-   }
+    $('#modalCorreo').on('show', function() {
+        var usuarios = $('.selectUser:checked').length;
+        $('#modalCorreo .estadoEmail').html('<div class="alert alert-info">Se enviara un correo a <strong>' + usuarios + '</strong> usuarios.</div>');
+        if (usuarios < 1) {
+            $('#enviarEmail').attr('disabled', 'disabled');
+        }
 
-});
+    });
 </script>

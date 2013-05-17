@@ -28,8 +28,10 @@ if (!isset($_SESSION['usuario'])) {
                <td colspan="3"><input type="text" class="editable" id="correo" value="' . $datos[0]['correo'] . '"></td>
 	  </tr>
                <td>Teléfono:</td>
-               <td colspan="3"><input type="text" class="editable" id="telefono" value="' . $datos[0]['telefono'] . '"></td>
-	  </tr>';
+               <td><input type="text" class="editable" id="telefono" value="' . $datos[0]['telefono'] . '"></td>
+               <td>Fecha de Nacimiento</td>
+               <td><input type="text" class="editable datepicker" id="fechaNacimiento" value="' . $datos[0]['fechaNacimiento'] . '"></td>
+          </tr>';
             ?>
         </tbody>
     </table>
@@ -49,8 +51,8 @@ if (!isset($_SESSION['usuario'])) {
     <div class="row-fluid" id="savePass"></div>
     <table class="table-hover table-condensed table-bordered" width="99%">
         <thead>
-            <tr colspan="4">
-                <th><center>Modificar mi Contraseña</center></th>
+            <tr>
+                <th colspan="4"><center>Modificar mi Contraseña</center><div class="alert alert-info">Lo sentimos. Por el momento se encuentra deshabilitada esta opción.</div></th>
         </tr>
         </thead>
         <tbody>
@@ -93,6 +95,9 @@ if (!isset($_SESSION['usuario'])) {
                                 <button class='btn btn-primary' id='upload-btn' data-loading-text='Subiendo...'>Subir Nueva foto</button>");
         $('#editar').click();
     });//on hidden
+    $(document).ready(function() {
+        $('.datepicker').datepicker({dateFormat: "yy-mm-dd", yearRange: "1950:2050", changeYear: true, changeMonth: true});
+    });
 </script>
 <script>
     $('#upload-btn').click(function() {
@@ -117,7 +122,7 @@ if (!isset($_SESSION['usuario'])) {
     });
 </script>
 <script>
-    $('.editable').keydown(function() {
+    $('.editable').change(function() {
         $('#saveChanges').html('<center><a class="btn btn-primary guardarCambios" data-loading-text="Guardando..."><strong>Guardar Cambios</strong></a>\n\
                                     <a class="btn btn-danger cancel"><strong>Cancelar</strong></a></center>');
         $('.guardarCambios').click(function() {
@@ -134,6 +139,7 @@ if (!isset($_SESSION['usuario'])) {
 //            alert(correo);
             var telefono = $('#telefono').val();
 //            alert(telefono);
+            var fechaNacimiento = $('#fechaNacimiento').val();
             var about = $('#about').val();
 //            alert(about);
             $.ajax({
@@ -146,6 +152,7 @@ if (!isset($_SESSION['usuario'])) {
                     "segundoApellido": segundoApellido,
                     "correo": correo,
                     "telefono": telefono,
+                    "fechaNacimiento": fechaNacimiento,
                     "about": about},
                 success: function(output) {
                     if (output == 1) {
