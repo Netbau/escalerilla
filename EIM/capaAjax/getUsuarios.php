@@ -1,4 +1,9 @@
 <?php
+
 include_once(dirname(__FILE__) . '/../capaControladores/usuarios.php');
-$todos = Usuarios::Crude();
+if (isset($_GET['filtroUsuarios'])) {
+    $todos = Usuarios::Crude($_GET['filtroUsuarios']);
+} else {
+    $todos = Usuarios::Crude();
+}
 ?>
