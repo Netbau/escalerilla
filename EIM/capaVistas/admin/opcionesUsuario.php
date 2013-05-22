@@ -7,9 +7,9 @@
             <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-            <li><a href="#modalCorreo" class="emailAll" data-toggle="modal">Enviar a todos</a></li>
             <li><a href="#modalCorreo" class="emailSelected" data-toggle="modal">Seleccionados</a></li>
             <li><a class="emailNone">Eliminar Seleccionados</a></li>
+            <li><a href="#modalCorreo" class="emailAll" data-toggle="modal">Enviar a todos</a></li>
         </ul>
     </div>
 
@@ -112,7 +112,7 @@
     </div>
     <div class="modal-body">
         <div class="estadoEmail"></div>
-        <div><input type="text" name="subject" placeholder="Asunto"></div>
+        <div><input type="text" name="subject" placeholder="Asunto" id="asuntoEmail"></div>
         <div><textarea name="textEditor" id="mensajeEmail"></textarea></div>
     </div>
     <div class="modal-footer">
@@ -120,6 +120,7 @@
         <button class="btn btn-primary" id="enviarEmail" data-loading-text="Cargando..." type="submit"><strong>Enviar Correo</strong></button>
     </div>
 </div>
+
 <script>
         $('#modalUsuario').on('hide', function() {
             $('#ingresoUsuarioForm').collapse('show');
@@ -135,7 +136,7 @@
             $('input[name="telefono2"]').val('');
             $('input[name="correo"]').val('');
         });
-</script>
+</script><!-- cuando el modal se esconde-->
 <script>
     $('#nuevoUsuario').click(function() {
         $(this).button('loading');
@@ -182,7 +183,7 @@
             }
         });
     });
-</script>
+</script><!-- creacion de usuario-->
 <script>
     $('input[name="filtrar"]').keyup(function() {
         var filtroDiag = $(this).val().toUpperCase();
@@ -202,7 +203,7 @@
             });
         }
     });
-</script>
+</script><!-- live filter -->
 <script>
     $('.emailAll').click(function() {
         $('.selectUser').prop('checked', true);
@@ -210,7 +211,7 @@
     $('.emailNone').click(function() {
         $('.selectUser').prop('checked', false);
     });
-</script>
+</script><!-- seleccion y deseleccion de usuarios-->
 <script>
     $('#modalCorreo').on('show', function() {
         var usuarios = $('.selectUser:checked').length;
@@ -218,6 +219,19 @@
         if (usuarios < 1) {
             $('#enviarEmail').attr('disabled', 'disabled');
         }
-
     });
-</script>
+</script><!-- modal correo-->
+<script>
+$('#enviarEmail').click(function(){
+    var asuntoEmail = $('#asuntoEmail').val();
+    var mensajeEmail = $('#mensajeEmail').val();
+    $('.selectUser:checked').each(function(){
+       alert($(this).attr('idUsuarios'));
+    });
+
+
+
+
+
+});
+</script><!-- envio de correo -->
