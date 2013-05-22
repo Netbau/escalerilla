@@ -35,7 +35,6 @@
             $(document).ready(function() {
                 $('.datepicker').datepicker({dateFormat: "yy-mm-dd", yearRange: "1950:2050", changeYear: true, changeMonth: true});
                 $('.carousel').carousel('cycle');
-                CKEDITOR.replace('textEditor');
             });
         </script>
     </head>

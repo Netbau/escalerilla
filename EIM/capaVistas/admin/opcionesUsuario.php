@@ -8,7 +8,7 @@
         </a>
         <ul class="dropdown-menu">
             <li><a href="#modalCorreo" class="emailSelected" data-toggle="modal">Seleccionados</a></li>
-            <li><a class="emailNone">Eliminar Seleccionados</a></li>
+            <li><a href="#EliminarSelecccion" class="emailNone">Eliminar Seleccionados</a></li>
             <li><a href="#modalCorreo" class="emailAll" data-toggle="modal">Enviar a todos</a></li>
         </ul>
     </div>
@@ -113,9 +113,12 @@
     <div class="modal-body">
         <div class="estadoEmail"></div>
         <div><input type="text" name="subject" placeholder="Asunto" id="asuntoEmail"></div>
-        <div><textarea name="textEditor" id="mensajeEmail"></textarea></div>
+        <div><textarea name="textEditor" id="mensajeEmail" placeholder="Mensaje" style="height: 200px;"></textarea></div>
     </div>
     <div class="modal-footer">
+        <div class="progress progress-info progress-striped active">
+            <div class="bar" style="width: 0%;"></div>
+        </div>
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
         <button class="btn btn-primary" id="enviarEmail" data-loading-text="Cargando..." type="submit"><strong>Enviar Correo</strong></button>
     </div>
@@ -219,19 +222,35 @@
         if (usuarios < 1) {
             $('#enviarEmail').attr('disabled', 'disabled');
         }
+         $('.bar').css('width','0%');
+         $('#asuntoEmail').val('');
+         $('#mensajeEmail').val('');
     });
 </script><!-- modal correo-->
 <script>
-$('#enviarEmail').click(function(){
-    var asuntoEmail = $('#asuntoEmail').val();
-    var mensajeEmail = $('#mensajeEmail').val();
-    $('.selectUser:checked').each(function(){
-       alert($(this).attr('idUsuarios'));
+    $('#enviarEmail').click(function() {
+        var asuntoEmail = $('#asuntoEmail').val();
+        var mensajeEmail = $('#mensajeEmail').val();
+        var cantEnvios = $('.selectUser:checked').length;
+        var enviados = 0;
+        $('.selectUser:checked').each(function() {
+            var idUsuarios = $(this).attr('idUsuarios');
+            $.ajax({
+                url: "capaAjax/enviarCorreo.php",
+                data: {"idUsuarios": idUsuarios, "asunto": asuntoEmail, "mensaje": mensajeEmail},
+                async: false,
+                type: "post",
+                success: function(output) {
+                    if (output == 1) {
+                        enviados++;
+                        setTimeout(function() {
+                          $('.bar').css('width', enviados / cantEnvios * 100 + '%');
+                        }, 2000)
+                     }
+                }//success
+            });//ajax
+        });//each
+        $('#modalCorreo .estadoEmail').html('<div class="alert alert-success">Correo enviado a <strong>' + enviados + '</strong> usuarios.</div>');
+        $('#enviarEmail').attr('disabled', 'disabled').html('Enviados!');
     });
-
-
-
-
-
-});
 </script><!-- envio de correo -->
