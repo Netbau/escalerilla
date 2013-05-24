@@ -11,10 +11,9 @@ if (isset($_POST['idUsuarios']) && isset($_POST['asunto']) && isset($_POST['mens
     if (!empty($_POST['idUsuarios']) && !empty($_POST['mensaje'])) { //envio no vacio
         $datos = Usuarios::Datos($_POST['idUsuarios']); //datos usuario
         $to = $datos[0]['correo'];
-        $from = 'EIM';
 
         $message = $_POST['mensaje'];
-        $headers = "Escalerilla " . $from . ":";
+        $headers = "From: info@escalerilla.cl";
         $envio = mail($to, $subject, $message, $headers);
         if ($envio) {
             echo 1;

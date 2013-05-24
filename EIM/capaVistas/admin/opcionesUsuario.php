@@ -222,13 +222,14 @@
         if (usuarios < 1) {
             $('#enviarEmail').attr('disabled', 'disabled');
         }
-         $('.bar').css('width','0%');
-         $('#asuntoEmail').val('');
-         $('#mensajeEmail').val('');
+        $('.bar').css('width', '0%');
+        $('#asuntoEmail').val('');
+        $('#mensajeEmail').val('');
     });
 </script><!-- modal correo-->
 <script>
     $('#enviarEmail').click(function() {
+        $(this).button("loading");
         var asuntoEmail = $('#asuntoEmail').val();
         var mensajeEmail = $('#mensajeEmail').val();
         var cantEnvios = $('.selectUser:checked').length;
@@ -244,13 +245,15 @@
                     if (output == 1) {
                         enviados++;
                         setTimeout(function() {
-                          $('.bar').css('width', enviados / cantEnvios * 100 + '%');
+                            $('.bar').css('width', enviados / cantEnvios * 100 + '%');
                         }, 2000)
-                     }
+                    }
                 }//success
             });//ajax
         });//each
-        $('#modalCorreo .estadoEmail').html('<div class="alert alert-success">Correo enviado a <strong>' + enviados + '</strong> usuarios.</div>');
-        $('#enviarEmail').attr('disabled', 'disabled').html('Enviados!');
+        if (enviados == cantEnvios) {
+            $('#modalCorreo .estadoEmail').html('<div class="alert alert-success">Correo enviado a <strong>' + enviados + '</strong> usuarios.</div>');
+            $('#enviarEmail').attr('disabled', 'disabled').html('Enviados!');
+        }
     });
 </script><!-- envio de correo -->
