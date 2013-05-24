@@ -41,7 +41,7 @@
             foreach($ranking as $player){
                 echo '<tr>';
                 echo '<td data-title="Ranking"><center>'.$player['ranking'].'</center></td>';
-                echo '<td><center><a class="preview" href="'.$player['foto'].'"><img class="img img-rounded" src="'.$player['foto'].'" height ="100" width="100"></a></center></td>';
+                echo '<td><center><img class="img img-rounded" src="'.$player['foto'].'" height ="100" width="100"></center></td>';
                 echo '<td data-title="Nombre">'.$player['nombre'].' '.$player['apellido'].'</td>';
                 echo '<td data-title="Victorias"><center>0</center></td>';
                 echo '<td data-title="Cambios"><center>--</center></td>';

@@ -1,19 +1,4 @@
-<div class="input-prepend input-append">
-    <a href="#modalUsuario" role="button" class="btn btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
-    <input class="" type="text" name="filtrar" placeholder="Filtrar" onKeyUp="this.value = this.value.toUpperCase();">
-    <div class="btn-group">
-        <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#">
-            Redactar Correo
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a href="#modalCorreo" class="emailSelected" data-toggle="modal">Seleccionados</a></li>
-            <li><a href="#EliminarSelecccion" class="emailNone">Eliminar Seleccionados</a></li>
-            <li><a href="#modalCorreo" class="emailAll" data-toggle="modal">Enviar a todos</a></li>
-        </ul>
-    </div>
-
-</div>
+<a href="#modalUsuario" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Usuario</strong></a>
 <br><br>
 <div class="row-fluid">
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">
@@ -24,10 +9,11 @@
                 <th>Segundo Apellido</th>
                 <th>E-mail</th>
                 <th>Teléfono</th>
-                <th>Opciones</th>
+                <th>Foto</th>
+                <th></th>
             </tr>
         </thead>
-        <tbody id="tablaUsuarios">
+        <tbody>
             <?php
             include_once(dirname(__FILE__) . '/../../capaAjax/getUsuarios.php');
             foreach ($todos as $uno) {
@@ -40,11 +26,8 @@
                   <td>" . $uno['segundoApellido'] . "</td>
                   <td>" . $uno['correo'] . "</td>
                   <td>" . $uno['telefono'] . "</td>
-                  <td><center><a class='btn btn-small borrarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-remove-sign'></i></a>
-                      <a class='btn btn-small editarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-edit'></i></a>
-                          <input type='checkbox' class='selectUser' idUsuarios='" . $uno['idUsuarios'] . "'>
-                  </center>
-                  </td>
+                  <td>" . $uno['foto'] . "</td>
+                  <td><a class='btn btn-small btn-block borrarUsuario' idUsuarios='".$uno['idUsuarios']."'><i class='icon-remove-sign'></i></a></td>
                   ";
 
                 echo '</tr>
@@ -70,13 +53,13 @@
                 </tr>
                 <tr>
                     <td>Nombres</td>
-                    <td><input type="text" name="nombre" placeholder="primer nombre(*)" class="required" onKeyUp="this.value = this.value.toUpperCase();"></td>
-                    <td><input type="text" name="segundoNombre"placeholder="segundo nombre" onKeyUp="this.value = this.value.toUpperCase();"></td>
+                    <td><input type="text" name="nombre" placeholder="primer nombre(*)" class="required" onKeyUp="this.value=this.value.toUpperCase();"></td>
+                    <td><input type="text" name="segundoNombre"placeholder="segundo nombre" onKeyUp="this.value=this.value.toUpperCase();"></td>
                 </tr>
                 <tr>
                     <td>Apellidos</td>
-                    <td><input type="text" name="apellido" placeholder="apellido paterno(*)" class="required" onKeyUp="this.value = this.value.toUpperCase();"></td>
-                    <td><input type="text" name="segundoApellido" placeholder="apellido materno" onKeyUp="this.value = this.value.toUpperCase();"></td>
+                    <td><input type="text" name="apellido" placeholder="apellido paterno(*)" class="required" onKeyUp="this.value=this.value.toUpperCase();"></td>
+                    <td><input type="text" name="segundoApellido" placeholder="apellido materno" onKeyUp="this.value=this.value.toUpperCase();"></td>
                 </tr>
                 <tr>
                     <td>Fecha de Nacimiento(*)</td>
@@ -104,42 +87,22 @@
         <button class="btn btn-primary" id="nuevoUsuario" data-loading-text="Cargando..." type="submit"><strong>Ingresar</strong></button>
     </div>
 </div>
-
-<div id="modalCorreo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="modalUsuarioLabel">Envío de Correo a Usuarios</h3>
-    </div>
-    <div class="modal-body">
-        <div class="estadoEmail"></div>
-        <div><input type="text" name="subject" placeholder="Asunto" id="asuntoEmail"></div>
-        <div><textarea name="textEditor" id="mensajeEmail" placeholder="Mensaje" style="height: 200px;"></textarea></div>
-    </div>
-    <div class="modal-footer">
-        <div class="progress progress-info progress-striped active">
-            <div class="bar" style="width: 0%;"></div>
-        </div>
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
-        <button class="btn btn-primary" id="enviarEmail" data-loading-text="Cargando..." type="submit"><strong>Enviar Correo</strong></button>
-    </div>
-</div>
-
 <script>
-        $('#modalUsuario').on('hide', function() {
-            $('#ingresoUsuarioForm').collapse('show');
-            $('.estadoIngreso').html('');
-            $('#nuevoUsuario').show('');
-            $('input[name="rut"]').val('');
-            $('input[name="nombre"]').val('');
-            $('input[name="segundoNombre"]').val('');
-            $('input[name="apellido"]').val('');
-            $('input[name="segundoApellido"]').val('');
-            $('input[name="fechaNacimiento"]').val('');
-            $('input[name="telefono"]').val('');
-            $('input[name="telefono2"]').val('');
-            $('input[name="correo"]').val('');
-        });
-</script><!-- cuando el modal se esconde-->
+    $('#modalUsuario').on('hide', function() {
+        $('#ingresoUsuarioForm').collapse('show');
+        $('.estadoIngreso').html('');
+        $('#nuevoUsuario').show('');
+        $('input[name="rut"]').val('');
+        $('input[name="nombre"]').val('');
+        $('input[name="segundoNombre"]').val('');
+        $('input[name="apellido"]').val('');
+        $('input[name="segundoApellido"]').val('');
+        $('input[name="fechaNacimiento"]').val('');
+        $('input[name="telefono"]').val('');
+        $('input[name="telefono2"]').val('');
+        $('input[name="correo"]').val('');
+    });
+</script>
 <script>
     $('#nuevoUsuario').click(function() {
         $(this).button('loading');
@@ -175,85 +138,15 @@
                     $('#ingresoUsuarioForm').collapse('hide');
                     $('.estadoIngreso').html('<div class="alert alert-success">Usuario Ingresado Correctamente</div>');
                     $('#nuevoUsuario').hide();
-                } else if (output == 0) {
+                } else if(output==0) {
                     $('.estadoIngreso').html('<div class="alert alert-danger">Faltan datos!</div>');
-                } else if (output == 2) {
+                } else if(output==2) {
                     $('.estadoIngreso').html('<div class="alert alert-danger">Usuario Ya Registrado!</div>');
-                } else {
+                }else{
                     alert(output);
                 }
                 $('#nuevoUsuario').button('reset');
             }
         });
     });
-</script><!-- creacion de usuario-->
-<script>
-    $('input[name="filtrar"]').keyup(function() {
-        var filtroDiag = $(this).val().toUpperCase();
-        if (filtroDiag == '') {
-            $('#tablaUsuarios').children('tr').children('td').each(function(index, domEle) {
-                $(domEle).show();
-            });
-        }
-        else {
-            $('#tablaUsuarios').children('tr').children('td').each(function(index, domEle) {
-                if ($(domEle).children('strong').text().indexOf(filtroDiag) !== -1) {
-                    $(domEle).show();
-                }
-                else {
-                    $(domEle).hide();
-                }
-            });
-        }
-    });
-</script><!-- live filter -->
-<script>
-    $('.emailAll').click(function() {
-        $('.selectUser').prop('checked', true);
-    });
-    $('.emailNone').click(function() {
-        $('.selectUser').prop('checked', false);
-    });
-</script><!-- seleccion y deseleccion de usuarios-->
-<script>
-    $('#modalCorreo').on('show', function() {
-        var usuarios = $('.selectUser:checked').length;
-        $('#modalCorreo .estadoEmail').html('<div class="alert alert-info">Se enviara un correo a <strong>' + usuarios + '</strong> usuarios.</div>');
-        if (usuarios < 1) {
-            $('#enviarEmail').attr('disabled', 'disabled');
-        }
-        $('.bar').css('width', '0%');
-        $('#asuntoEmail').val('');
-        $('#mensajeEmail').val('');
-    });
-</script><!-- modal correo-->
-<script>
-    $('#enviarEmail').click(function() {
-        $(this).button("loading");
-        var asuntoEmail = $('#asuntoEmail').val();
-        var mensajeEmail = $('#mensajeEmail').val();
-        var cantEnvios = $('.selectUser:checked').length;
-        var enviados = 0;
-        $('.selectUser:checked').each(function() {
-            var idUsuarios = $(this).attr('idUsuarios');
-            $.ajax({
-                url: "capaAjax/enviarCorreo.php",
-                data: {"idUsuarios": idUsuarios, "asunto": asuntoEmail, "mensaje": mensajeEmail},
-                async: false,
-                type: "post",
-                success: function(output) {
-                    if (output == 1) {
-                        enviados++;
-                        setTimeout(function() {
-                            $('.bar').css('width', enviados / cantEnvios * 100 + '%');
-                        }, 2000)
-                    }
-                }//success
-            });//ajax
-        });//each
-        if (enviados == cantEnvios) {
-            $('#modalCorreo .estadoEmail').html('<div class="alert alert-success">Correo enviado a <strong>' + enviados + '</strong> usuarios.</div>');
-            $('#enviarEmail').attr('disabled', 'disabled').html('Enviados!');
-        }
-    });
-</script><!-- envio de correo -->
+</script>

@@ -25,12 +25,10 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><!-- JQUERY-->
         <!--<script src="js/jquery191.js"></script><!-- JQUERY-->
-        <script src="js/main.js"></script><!-- preview-->
         <script type="text/javascript" src="js/SimpleAjaxUploader.js"></script><!-- ajax uploader -->
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script><!-- JQUERY UI-->
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><!-- bootstrap js -->
         <!--<script src="js/bootstrap.js"></script><!-- bootstrap js -->
-        <script src="ckeditor/ckeditor.js"></script>
         <script>
             $(document).ready(function() {
                 $('.datepicker').datepicker({dateFormat: "yy-mm-dd", yearRange: "1950:2050", changeYear: true, changeMonth: true});

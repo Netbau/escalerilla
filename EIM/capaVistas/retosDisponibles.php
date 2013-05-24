@@ -10,18 +10,17 @@
         foreach ($desafiosDisponibles as $desafio) {
             echo '
         <div class="span3 well well-small"><!--1ra persona-->
-        <center><a class="preview" href="' . $desafio['foto'] . '"><img class="img img-rounded" src="' . $desafio['foto'] . '" height="150" width="100"></a></center>
+        <center><img class="img img-rounded" src="' . $desafio['foto'] . '" height="150" width="100"></center>
         <center><strong>' . $desafio['nombre'] . ' ' . $desafio['apellido'] . '</strong></center>
         <center>Ranking #' . $desafio['ranking'] . '</center>';
 
             $esDesafiable = Desafios::esDesafiable($desafio['idJugadores']);
             $esDesafiador = Desafios::esDesafiador($desafio['idJugadores']);
             $soyDesafiador = Desafios::esDesafiador($_SESSION['jugador']['idJugadores']);
-            $puedoDesafiar = Desafios::esDesafiable($_SESSION['jugador']['idJugadores']);
 
 
             if ($esDesafiable && !$esDesafiador) {
-                if (!$soyDesafiador && $puedoDesafiar) {
+                if (!$soyDesafiador) {
                     echo '<center><a href="#myModal" class="btn btn-primary btn-block desafiar" idJugadores="' . $desafio['idJugadores'] . '" data-loading-text="cargando...">¡Desafiar!</a></center>';
                 } else {
                     echo '<center><a class="btn btn-block" disabled="disabled">Desafío en curso.</a></center>';

@@ -6,23 +6,23 @@ include('usuarios.php');
 include('desafios.php');
 print_r($_SESSION);
 echo '<hr>';
-//$password = '5678';
-//$actualizado = Usuarios::actualizarPassword($_SESSION['usuario']['idUsuarios'], trim($password));
-//if($actualizado){
-//    echo 'password cambiada!';
-//}else{
-//    echo 'error';
+$password = '5678';
+$actualizado = Usuarios::actualizarPassword($_SESSION['usuario']['idUsuarios'], trim($password));
+if($actualizado){
+    echo 'password cambiada!';
+}else{
+    echo 'error';
+}
+
+
+
+//$soyDesafiador = Desafios::esDesafiador($_SESSION['jugador']['idJugadores']);
+//if(!$soyDesafiador){
+//    echo 'NO soy desafiador!!<hr>';
 //}
-
-
-
-$soyDesafiador = Desafios::esDesafiador($_SESSION['jugador']['idJugadores']);
-if(!$soyDesafiador){
-    echo 'NO soy desafiador!!<hr>';
-}
-else{
-    echo 'soy desafiador!!<hr>';
-}
+//else{
+//    echo 'soy desafiador!!<hr>';
+//}
 
 
 //$desafio = Encuentro::ultimosGanadores();

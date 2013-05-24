@@ -14,24 +14,22 @@ if (!isset($_SESSION['usuario'])) {
             $datos = Usuarios::Datos($_SESSION['usuario']['idUsuarios']);
             echo '    <tr>
               <td>Nombre:</td>
-              <td><input type="text" class="editable" id="nombre" value="' . $datos[0]['nombre'] . '" onKeyUp="this.value = this.value.toUpperCase();"></td>
+              <td><input type="text" class="editable" id="nombre" value="' . $datos[0]['nombre'] . '" ></td>
               <td>Segundo Nombre:</td>
-              <td><input type="text" class="editable" id="segundoNombre" value="' . $datos[0]['segundoNombre'] . '" placeholder="segundo nombre" onKeyUp="this.value = this.value.toUpperCase();"></td>
+              <td><input type="text" class="editable" id="segundoNombre" value="' . $datos[0]['segundoNombre'] . '" placeholder="segundo nombre"></td>
 	  </tr>
           <tr>
                <td>Apellido:</td>
-               <td><input type="text" class="editable" id="apellido" value="' . $datos[0]['apellido'] . '" onKeyUp="this.value = this.value.toUpperCase();"></td>
+               <td><input type="text" class="editable" id="apellido" value="' . $datos[0]['apellido'] . '"></td>
 	       <td>Segundo Apellido:</td>
-               <td><input type="text" class="editable" id="segundoApellido" value="' . $datos[0]['segundoApellido'] . '" placeholder="segundo apellido" onKeyUp="this.value = this.value.toUpperCase();"></td>
+               <td><input type="text" class="editable" id="segundoApellido" value="' . $datos[0]['segundoApellido'] . '" placeholder="segundo apellido"></td>
 	  </tr>
                <td>E-mail:</td>
                <td colspan="3"><input type="text" class="editable" id="correo" value="' . $datos[0]['correo'] . '"></td>
 	  </tr>
                <td>Teléfono:</td>
-               <td><input type="text" class="editable" id="telefono" value="' . $datos[0]['telefono'] . '"></td>
-               <td>Fecha de Nacimiento</td>
-               <td><input type="text" class="editable datepicker" id="fechaNacimiento" value="' . $datos[0]['fechaNacimiento'] . '"></td>
-          </tr>';
+               <td colspan="3"><input type="text" class="editable" id="telefono" value="' . $datos[0]['telefono'] . '"></td>
+	  </tr>';
             ?>
         </tbody>
     </table>
@@ -40,7 +38,7 @@ if (!isset($_SESSION['usuario'])) {
         <tbody>
             <tr>
                 <td>Foto:</td>
-                <td width='20%'><center><?php echo '<a class="preview" href="' . $_SESSION['usuario']['foto'] . '"><img class="img-rounded" src="' . $_SESSION['usuario']['foto'] . '" style="max-height:100px; max-width:100px;"></a>'; ?></center>
+                <td width='20%'><center><?php echo '<img class="img-rounded" src="' . $_SESSION['usuario']['foto'] . '" style="max-height:100px; max-width:100px;">'; ?></center>
         <button class='btn btn-small btn-block btn-primary' href="#modalEdit" data-toggle="modal"><strong>Cambiar Foto</strong></button>
         </td>
         <td width='15%'>Acerca de ti: <br><small><i>(Agrega una frase que te idenfique como jugador)</i></small></td>
@@ -51,22 +49,22 @@ if (!isset($_SESSION['usuario'])) {
     <div class="row-fluid" id="savePass"></div>
     <table class="table-hover table-condensed table-bordered" width="99%">
         <thead>
-            <tr>
-                <th colspan="4"><center>Modificar mi Contraseña</center><div class="alert alert-info">Lo sentimos. Por el momento se encuentra deshabilitada esta opción.</div></th>
-        </tr>
+            <tr colspan="4">
+                <th><center>Modificar mi Contraseña</center></th>
+            </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Contraseña actual</td>
                 <td><input type="password" id="oldPass"></td>
                 <td colspan="2"><center><a disabled="disabled" class="btn btn-primary btn-small" id="changePass" data-loading-text="Guardando..."><strong>Cambiar Contraseña</strong></a></center></td>
-        </tr>
-        <tr>
-            <td>Contraseña nueva</td>
-            <td><input type="password" id="newPass"></td>
-            <td>Repetir Contraseña</td>
-            <td><input type="password" id="reNewPass"></td>
-        </tr>
+            </tr>
+            <tr>
+                <td>Contraseña nueva</td>
+                <td><input type="password" id="newPass"></td>
+                <td>Repetir Contraseña</td>
+                <td><input type="password" id="reNewPass"></td>
+            </tr>
         </tbody>
     </table>
 </div>
@@ -95,9 +93,6 @@ if (!isset($_SESSION['usuario'])) {
                                 <button class='btn btn-primary' id='upload-btn' data-loading-text='Subiendo...'>Subir Nueva foto</button>");
         $('#editar').click();
     });//on hidden
-    $(document).ready(function() {
-        $('.datepicker').datepicker({dateFormat: "yy-mm-dd", yearRange: "1950:2050", changeYear: true, changeMonth: true});
-    });
 </script>
 <script>
     $('#upload-btn').click(function() {
@@ -122,7 +117,7 @@ if (!isset($_SESSION['usuario'])) {
     });
 </script>
 <script>
-    $('.editable').change(function() {
+    $('.editable').keydown(function() {
         $('#saveChanges').html('<center><a class="btn btn-primary guardarCambios" data-loading-text="Guardando..."><strong>Guardar Cambios</strong></a>\n\
                                     <a class="btn btn-danger cancel"><strong>Cancelar</strong></a></center>');
         $('.guardarCambios').click(function() {
@@ -139,7 +134,6 @@ if (!isset($_SESSION['usuario'])) {
 //            alert(correo);
             var telefono = $('#telefono').val();
 //            alert(telefono);
-            var fechaNacimiento = $('#fechaNacimiento').val();
             var about = $('#about').val();
 //            alert(about);
             $.ajax({
@@ -152,7 +146,6 @@ if (!isset($_SESSION['usuario'])) {
                     "segundoApellido": segundoApellido,
                     "correo": correo,
                     "telefono": telefono,
-                    "fechaNacimiento": fechaNacimiento,
                     "about": about},
                 success: function(output) {
                     if (output == 1) {

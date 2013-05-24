@@ -84,10 +84,9 @@ class Usuarios {
     }
 
     //devuelve los datos crudos de todos los usuarios
-    public static function Crude($filtro='idUsuarios') {
+    public static function Crude() {
         $queryString = "SELECT *
-                        FROM usuarios
-                        ORDER BY $filtro ASC";
+                        FROM usuarios";
         $result = CallQuery($queryString);
         $resultArray = array();
 
@@ -111,7 +110,7 @@ class Usuarios {
         return $resultArray;
     }
 
-    public static function actualizarDatos($idUsuarios, $nombre, $apellido, $correo, $telefono, $fechaNacimiento, $segundoNombre = '', $segundoApellido = '', $about = '') {
+    public static function actualizarDatos($idUsuarios, $nombre, $apellido, $correo, $telefono, $segundoNombre = '', $segundoApellido = '', $about = '') {
         $queryString = "UPDATE usuarios SET
                         nombre = '$nombre',
                         segundoNombre = '$segundoNombre',
@@ -119,8 +118,7 @@ class Usuarios {
                         segundoApellido ='$segundoApellido',
                         correo ='$correo',
                         telefono ='$telefono',
-                        about='$about',
-                        fechaNacimiento ='$fechaNacimiento'
+                        about='$about'
                         WHERE idUsuarios = $idUsuarios
                         LIMIT 1";
         $query = CallQuery($queryString);

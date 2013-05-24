@@ -7,7 +7,7 @@ if (count($ultimosGanadores) != 0) {
     foreach ($ultimosGanadores as $ganadores) {
         echo '
                     <div class="well well-small span3">
-                    <center><a href="' . $ganadores['foto'] . '" class="preview"><img class="img img-rounded" src="' . $ganadores['foto'] . '" height="150" width="100"></a></center>
+                    <center><img class="img img-rounded" src="' . $ganadores['foto'] . '" height="150" width="100"></center>
                     <center><strong>' . $ganadores['nombre'] . ' ' . $ganadores['apellido'] . '</strong></center>
                     <center>Ranking #' . $ganadores['ranking'] . '<br> Categoría' . ' : ' . $ganadores['categoria'] . '</center>
                     </div>';
