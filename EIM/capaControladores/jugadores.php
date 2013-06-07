@@ -93,7 +93,9 @@ class Jugadores {
     }
 
     public static function getRankingPorCategoria($categoria) {
-        $queryString = "SELECT nombre,
+        $queryString = "SELECT j.idUsuarios,
+                               idJugadores,
+                               nombre,
                                segundoNombre,
                                apellido,
                                segundoApellido,
