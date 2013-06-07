@@ -1,50 +1,73 @@
 <a href="#modalJugadores" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Jugador</strong></a>
 <br><br>
-<div class="row-fluid">
-    <center>
-        <table class="table-condensed table-striped table-hover table-bordered" width="100%">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Ranking</th>
-                    <th>Categoría</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                include_once(dirname(__FILE__) . '/../../capaAjax/getJugadores.php');
-                foreach ($jugadores as $jugador) {
-                    if ($jugador['ranking'] == 1) {
-                        echo "<tr><td colspan='8'><center><strong>Categoría " . $jugador['categoria'] . "</strong></center></td></tr>";
-                    }
 
-                    echo '<tr>
-                ';
+<div class="tabbable">
+    <ul class="nav nav-tabs">
+        <?php
+        include_once (dirname(__FILE__) . '/../../capaControladores/jugadores.php');
+        $categorias = Jugadores::getCategorias();
+        $contador = 0;
+        foreach ($categorias as $categoria) {
+            if ($contador == 0) {
+                echo '<li class="active"><a href="#categoria' . $categoria['categoria'] . '" data-toggle="tab">Categoría ' . $categoria['categoria'] . '</a></li>';
+            } else {
+                echo '<li><a href="#categoria' . $categoria['categoria'] . '" data-toggle="tab">Categoría ' . $categoria['categoria'] . '</a></li>';
+            }
+            $contador++;
+        }
+        ?>
+    </ul>
 
-                    echo "<td>" . $jugador['nombre'] . "</td>
-                  <td>" . $jugador['apellido'] . "</td>
-                  <td>" . $jugador['ranking'] . "</td>
-                  <td>" . $jugador['categoria'] . "</td>
-                  <td>
+    <div class="tab-content" style="max-height: 800px;">
+        <?php
+        $contador2 = 0;
+        foreach ($categorias as $categoria) {
+            if ($contador2 == 0) {
+                echo '<div id="categoria' . $categoria['categoria'] . '" class="tab-pane active">';
+            } else {
+                echo '<div id="categoria' . $categoria['categoria'] . '" class="tab-pane">';
+            }
+            $letra = $categoria['categoria'];
+            $ranking = Jugadores::getRankingPorCategoria($letra);
+            echo "
+                <div class='row-fluid'>
+                    <div class='span1'></div>
+                    <div class='span3'><center><strong>Nombre</strong></center></div>
+                    <div class='span3'><center><strong>Apellido</strong></center></div>
+                    <div class='span2'><center><strong>Posición</strong></center></div>
+                    <div class='span2'><center><strong>Victorias</strong></center></div>
+                    <div class='span1'></div>
+                </div>
+                <ul class='img-rounded media-list jugadores' style='list-style-type: none;'>
+                    ";
+            foreach ($ranking as $player) {
+                echo "<li class='media ui-state-default jugador' categoria='".$player['categoria']."' idJugadores='".$player['idJugadores']."' style='border: #e0e0e0 solid thin;'>
+                    <div class='span1'><center><i class='icon-resize-vertical'> </i></center></div>
+                    <div class='span3'><center>" . $player['nombre'] . "</center></div>
+                    <div class='span3'><center>" . $player['apellido'] . "</center></div>
+                    <div class='span2'><center>" . $player['ranking'] . "</center></div>
+                    <div class='span2'><center>--</center></div>
+                    <div class='span1'>
                   ";
-                    if ($jugador['ranking'] > 1) {
-                        echo "<a class='btn btn-small btn-block cambiarRanking' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-circle-arrow-up'></i></a>";
-                    }
-                    echo "</td>
-                <td><a class='btn btn-small btn-block borrarJugador' idJugadores='" . $jugador['idJugadores'] . "'><i class='icon-remove-sign'></i></a></td>
+
+                echo "<center><a class='btn btn-small borrarJugador' idJugadores='" . $player['idJugadores'] . "'><i class='icon-remove-sign'></i></a></center>
                 ";
 
-                    echo '</tr>
+                echo '</div></li>
                 ';
-                }
-                ?>
-            </tbody>
-        </table>
-    </center>
-</div>
+            }
+
+
+            echo '
+                </ul></div>';
+            $contador2++;
+        }
+        ?>
+
+    </div><!-- /.tab-content -->
+</div><!-- /.tabbable -->
+
+
 <div id="modalJugadores" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalJugadoresLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -102,6 +125,25 @@
 </div>
 
 <script>
+    $(document).ready(function() {
+        $(".jugadores").sortable({
+            placeholder: "ui-state-highlight",
+            axis: "y",
+            cursor: "move",
+            containment: "parent",
+            change: function(ui){
+                
+
+            }
+        });
+        $(".jugadores").disableSelection();
+
+
+
+    });
+</script>
+
+<script>
     $('#modalJugadores').on('hide', function() {
         $('#datosIngreso').collapse('show');
         $('.estadoJugadores').html('');
@@ -122,9 +164,7 @@
         }
 
         $.ajax({
-            "url": 'capaAjax/insertarNuevoJugador.php',
-            data: {"idUsuarios": idUsuarios, "categoria": categoria},
-            type: "post",
+            "url": 'capaAjax/insertarNuevoJugador.php', data: {"idUsuarios": idUsuarios, "categoria": categoria}, type: "post",
             async: false,
             success: function(output) {
                 if (output == 1) {
