@@ -15,18 +15,39 @@ class Encuentro {
      * En encuentro
      */
     public static function insertarEncuentro($idJugadores, $idJugadores1, $fecha, $idCanchas, $idGanador) {
+         $id = CallQuery("SELECT * FROM ".self::$nombreTabla." WHERE ".self::$nombreTabla.".idJugadores=".$idJugadores." AND ".self::$nombreTabla.".idJugadores1=".$idJugadores1." AND ".self::$nombreTabla.".fecha='".$fecha."'");
+         $retorno = new stdClass();
+         if($id->num_rows == 0)
+         {
+            $datosCreacion = array(
+                array('idJugadores', $idJugadores),
+                array('idJugadores1', $idJugadores1),
+                array('fecha', $fecha),
+                array('idCanchas', $idCanchas),
+                array('idGanador', $idGanador)
+            );
 
-        $datosCreacion = array(
-            array('idJugadores', $idJugadores),
-            array('idJugadores1', $idJugadores1),
-            array('fecha', $fecha),
-            array('idCanchas', $idCanchas),
-            array('idGanador', $idGanador)
-        );
-
-        $queryString = QueryStringAgregar($datosCreacion, self::$nombreTabla);
-        $query = CallQueryReturnID($queryString);
-        return $query;
+            $queryString = QueryStringAgregar($datosCreacion, self::$nombreTabla);
+            $query = CallQuery($queryString);
+            if($query)
+            {
+                $retorno->status = 1;
+                $id = CallQuery("SELECT * FROM ".self::$nombreTabla." WHERE ".self::$nombreTabla.".idJugadores=".$idJugadores." AND ".self::$nombreTabla.".idJugadores1=".$idJugadores1." AND ".self::$nombreTabla.".fecha='".$fecha."'");
+                $retorno->value = $id->fetch_assoc();
+                return $retorno;
+            }
+            else
+            {
+                $retorno->status = 0;
+                return $retorno;
+            }
+        }
+        else
+        {
+            $retorno->status = 2;
+            return $retorno;
+        }
+        
     }
 
     /**
@@ -42,8 +63,7 @@ class Encuentro {
             array('idEncuentro', $idEncuentro),
             array('puntuacion', $puntuacion)
         );
-		
-        $queryString = QueryStringAgregar($datosCreacion, self::$nombreTabla);
+        $queryString = QueryStringAgregar($datosCreacion, 'resultadoEncuentro');
         $query = CallQuery($queryString);
         return $query;
     }

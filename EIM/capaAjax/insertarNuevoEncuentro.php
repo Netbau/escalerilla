@@ -9,29 +9,38 @@ if (isset($_POST)) {
     $fecha = $_POST['fecha']; // not null
     $idCanchas = $_POST['idCanchas'];
     $idGanador = $_POST['idGanador']; //not null
-	$set = json_decode($_POST['sets']);
-	
-
+	$set_info = json_decode(stripslashes($_POST['sets']));
 	
     if (!empty($idJugadores) && !empty($idJugadores1) && !empty($fecha) && !empty($idCanchas) && !empty($idGanador)) {
         $insertado = Encuentro::insertarEncuentro($idJugadores, $idJugadores1, $fecha, $idCanchas, $idGanador);
-		$actualizarEstado = Desafios::actualizarEstadoDesafio($idJugadores, $idJugadores1, "Concretado", $fecha);
-		
-		foreach($set as $key => $resultado ){			
-
-		//$resultadoEncuentro = Encuentro::insertarResultadoEnceuntro(($key), $insertado, $resultado);
-		
-		}
-        if ($insertado) {
-			
-            echo 1; // ok
-        } else {
-            echo 2; // ya existe
+        if($insertado->status == 1)
+        {
+            $actualizarEstado = Desafios::actualizarEstadoDesafio($idJugadores, $idJugadores1, "Concretado", $fecha);
+            foreach($set_info as $key => $resultado ){           
+              Encuentro::insertarResultadoEncuentro(($key+1), $insertado->value['idEncuentro'], $resultado);
+            }
+            $retorno = new stdClass();
+            $retorno->output = 1;
+            echo json_encode($retorno);
+        }
+        elseif($insertado->status == 2)
+        {
+            $retorno = new stdClass();
+            $retorno->output = 2;
+            echo json_encode($retorno);
+        }
+        elseif($insertado->status == 0)
+        {
+            $retorno = new stdClass();
+            $retorno->output = 3;
+            echo json_encode($retorno);
         }
     }
 	
 	else{
-        echo 0; // faltan datos
+        $retorno = new stdClass();
+        $retorno->output = 0;
+        echo json_encode($retorno);
     }
 }
 ?>

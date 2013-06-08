@@ -101,7 +101,7 @@ var numeroSets = $(this).val();
 var sets="";
 var i;
 for($i=0; $i<numeroSets; $i++){
-sets+='<input type="text" name="set '+$i+'" id="set '+$i+' input" placeholder="Ej: 6-'+$i+'">';
+sets+='<input type="text" name="set'+$i+'" id="set'+$i+'input" placeholder="Ej: 6-'+$i+'" />';
 }
 $('.setsGenerado').html(sets);
 
@@ -138,12 +138,11 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
 		
 			for(i=0; i<$(".sets").val(); i++)
 			{
-				if($("#set'+$i+'input").val() != null && $("#set'+$i+'input").val() != "")
+				if($("#set"+i+"input").val() != null && $("#set"+i+"input").val() != "")
 				{
-					set.push($("#set'+$i+'input").val());
+					set.push($("#set"+i+"input").val());
 				}
 			}
-			
         $.ajax({
             "url": 'capaAjax/insertarNuevoEncuentro.php',
             data: {
@@ -152,20 +151,20 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
             "fecha": fecha,
             "idCanchas": idCanchas,
             "idGanador": idGanador,
-			"sets": JSON.stringfy(set),
+			"sets": JSON.stringify(set),
         },
 		
             "type": "post",
             "async": false,
             success: function(output) {
-
-                if (output == 1) {
+                var resultado = JSON.parse(output);
+                if (resultado.output == 1) {
                     $('#ingresoEncuentroForm').collapse('hide');
                     $('#estadoIngresoEncuentro').html('<div class="alert alert-success">Desafío Ingresado Correctamente.</div>');
                     $('#nuevoDesafio').hide();
-                } else if(output==0) {
+                } else if(resultado.output==0) {
                     $('#estadoIngresoEncuentro').html('<div class="alert alert-danger">¡Faltan datos!</div>');
-                } else if(output==2) {
+                } else if(resultado.output==2) {
                     $('#estadoIngresoEncuentro').html('<div class="alert alert-danger">¡Desafío ya registrado!</div>');
                 }else{
                     alert(output);
