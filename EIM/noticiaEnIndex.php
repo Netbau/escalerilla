@@ -27,7 +27,7 @@
 
     </div><!--/span-->
     <div class="span9">
-        <div class="well well-small">
+        <div class="well well-small"><h3><center>NOTICIAS TORNEO ESCALERILLA</h3></center><br>
 
             <?php require(dirname(__FILE__) . "/capaVistas/noticias.php"); ?>
 

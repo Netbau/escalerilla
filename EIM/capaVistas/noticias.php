@@ -1,4 +1,4 @@
-<div class="well well-small"﻿>
+
     <div class="accordion" id="accordion2">
         <?php
         require_once(dirname(__FILE__) . '/../capaControladores/noticias.php');
@@ -32,4 +32,3 @@
         }
         ?>
     </div>
-</div>
