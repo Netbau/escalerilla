@@ -99,6 +99,7 @@
 $('.sets').change(function(){
 var numeroSets = $(this).val();
 var sets="";
+var i;
 for($i=0; $i<numeroSets; $i++){
 sets+='<input type="text" name="set'+i+'" placeholder="Ej: 6-2">';
 }

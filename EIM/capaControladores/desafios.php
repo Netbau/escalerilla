@@ -91,16 +91,17 @@ class Desafios {
 	
 	public static function actualizarEstadoDesafio($idJugador, $idJugador1, $estado, $fecha) {
 		$queryString = "UPDATE desafio
-						SET estado = Concretado
+						SET estado = 'Concretado'
 						WHERE idJugadores = '$idJugador'
-						AND idJugadores1 = '$idJugadores1'
-						AND fecha = '$fecha'";
+						AND idJugadores1 = '$idJugador1'";
+						
+			echo $queryString;
 		$result = CallQuery($queryString);
-        $resultArray = array();
-        while ($fila = $result->fetch_assoc()) {
-            $resultArray[] = $fila;
-        }
-        return $resultArray;	
+
+		if($result)
+		{
+			echo 0;
+		}
 	}
 
 }
