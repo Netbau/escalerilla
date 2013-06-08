@@ -47,6 +47,7 @@ class Premio {
         }
         return $resultArray;
     }
+	
     public static function yaExiste($titulo, $descripcion){
         $queryString = "SELECT *
                         FROM ".self::$nombreTabla."

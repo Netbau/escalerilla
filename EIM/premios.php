@@ -27,7 +27,7 @@
 
     </div><!--/span-->
     <div class="span9">
-        <div class="row-fluid"><!--Reglamento-->
+        <div class="row-fluid"><!--Premios-->
 
             <?php require(dirname(__FILE__) . "/capaVistas/documentoPremios.php"); ?>
 
