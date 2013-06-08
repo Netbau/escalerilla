@@ -198,14 +198,14 @@
 
 <hr>
 
+
+
+</div><!--/.fluid-container-->
 <footer><!-- ARCHIVO footer-->
 
     <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
 
 </footer><!-- ARCHIVO footer-->
-
-</div><!--/.fluid-container-->
-
 
 </body>
 </html>

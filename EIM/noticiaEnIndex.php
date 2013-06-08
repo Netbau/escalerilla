@@ -34,19 +34,12 @@
         </div>
     </div><!--/span-->
 </div><!--/Row Fluid-->
-<div class="well well-small"><!--Footer-->
+</div><!--/.fluid-container-->
    <footer><!-- ARCHIVO footer-->
 
     <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
 
 </footer><!-- ARCHIVO footer-->
-</div>
-
-<hr>
-
-
-
-</div><!--/.fluid-container-->
 
 
 </body>
