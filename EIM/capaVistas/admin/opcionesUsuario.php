@@ -15,7 +15,7 @@
 
 </div>
 <br><br>
-<div class="row-fluid">
+<div class="row-fluid" style="max-height: 600px; overflow: auto;">
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">
         <thead>
             <tr>

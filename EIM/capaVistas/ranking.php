@@ -27,7 +27,8 @@
             $letra = $categoria['categoria'];
             $ranking = Jugadores::getRankingPorCategoria($letra);
             echo '
-            <table class="table table-condensed table-striped tabled-bordered">
+            <center><input class="" type="text" name="filtrar" placeholder="Filtrar" onKeyUp="this.value = this.value.toUpperCase();"></center>
+            <table class="table table-condensed table-striped tabled-bordered ranking">
                 <thead>
                     <tr class="">
                     <th width="10%"><center>Posición</center></th>
@@ -38,11 +39,11 @@
                     </tr>
                 </thead>
                 <tbody>';
-            foreach($ranking as $player){
+            foreach ($ranking as $player) {
                 echo '<tr>';
-                echo '<td data-title="Ranking"><center>'.$player['ranking'].'</center></td>';
-                echo '<td><center><img class="img img-rounded" src="'.$player['foto'].'" height ="100" width="100"></center></td>';
-                echo '<td data-title="Nombre">'.$player['nombre'].' '.$player['apellido'].'</td>';
+                echo '<td data-title="Ranking"><center>' . $player['ranking'] . '</center></td>';
+                echo '<td><center><img class="img img-rounded" src="' . $player['foto'] . '" height ="100" width="100"></center></td>';
+                echo '<td data-title="Nombre">' . $player['nombre'] . ' ' . $player['apellido'] . '</td>';
                 echo '<td data-title="Victorias"><center>0</center></td>';
                 echo '<td data-title="Cambios"><center>--</center></td>';
                 echo '</tr>';
@@ -57,3 +58,26 @@
 
     </div><!-- /.tab-content -->
 </div><!-- /.tabbable -->
+
+
+
+<script>
+    $('input[name="filtrar"]').keyup(function() {
+        var filtroDiag = $(this).val().toUpperCase();
+        if (filtroDiag == '') {
+            $('.ranking').children('tr').children('td').each(function(index, domEle) {
+                $(domEle).show();
+            });
+        }
+        else {
+            $('.ranking').children('tr').each(function(index, domEle) {
+                if ($(domEle).children('td').text().indexOf(filtroDiag) !== -1) {
+                    $(domEle).show();
+                }
+                else {
+                    $(domEle).hide();
+                }
+            });
+        }
+    });
+</script>

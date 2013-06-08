@@ -86,7 +86,8 @@ class Usuarios {
     //devuelve los datos crudos de todos los usuarios
     public static function Crude() {
         $queryString = "SELECT *
-                        FROM usuarios";
+                        FROM usuarios
+                        ORDER BY apellido ASC";
         $result = CallQuery($queryString);
         $resultArray = array();
 
