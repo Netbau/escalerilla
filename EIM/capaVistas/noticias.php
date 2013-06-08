@@ -7,12 +7,12 @@
             $cantidad = 0;
             foreach ($noticias as $noticia) {
                 echo '
-            <div class="accordion-group">
-            <div class="accordion-heading info">
+            <div class = "well well-small">
+            
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse' . $noticia['idNoticias'] . '">
-                    ' . $noticia['titulo'] . '
+                    <h5>' . $noticia['titulo'] . '</h5>
                 </a>
-            </div>
+            
             <div id="collapse' . $noticia['idNoticias'] . '" class="accordion-body collapse';
                 if ($cantidad == 0) {
                     echo ' in';

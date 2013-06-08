@@ -8,10 +8,12 @@
 		if (!empty($noticias)) {
             $cantidad = 0;
             foreach ($noticias as $noticia) {
+			
+			$fecha = explode(" ", $noticia['fecha']);
                 echo '
             <div class="well"><div>
-                <h3>' . $noticia['titulo'] . '
-                </h3>
+                <h5>' . $fecha[0] . ' ' . $noticia['titulo'] . '
+                </h5>
             </div>
             <div  id="' . $noticia['idNoticias'] . '" style="overflow: auto;';
                 if ($cantidad == 0) {
