@@ -9,21 +9,25 @@ if (isset($_POST)) {
     $fecha = $_POST['fecha']; // not null
     $idCanchas = $_POST['idCanchas'];
     $idGanador = $_POST['idGanador']; //not null
+	$set = json_decode($_POST['sets']);
 
     if (!empty($idJugadores) && !empty($idJugadores1) && !empty($fecha) && !empty($idCanchas) && !empty($idGanador)) {
         $insertado = Encuentro::insertarEncuentro($idJugadores, $idJugadores1, $fecha, $idCanchas, $idGanador);
 		$actualizarEstado = Desafios::actualizarEstadoDesafio($idJugadores, $idJugadores1, "Concretado", $fecha);
+		foreach($set as $key => $resultado ){		
 		
+		$resultadoEncuentro = Encuentro::insertarResultadoEnceuntro(($key+1), $insertado, $resultado);
+		}
         if ($insertado) {
-		
+			
             echo 1; // ok
         } else {
             echo 2; // ya existe
         }
-    }else{
+    }
+	
+	else{
         echo 0; // faltan datos
     }
 }
 ?>
-
-

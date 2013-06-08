@@ -55,9 +55,9 @@
                     <td>
 					<select name="cancha">
 					<option label="Seleccione Cancha"></option>
-					<option value="2">Cancha 1</option>
-					<option value="3">Cancha 2</option>
-					<option value="4">Cancha 3</option>
+					<option value="1">Cancha 1</option>
+					<option value="2">Cancha 2</option>
+					<option value="3">Cancha 3</option>
 					</select></td>
                 </tr>
                 <tr>
@@ -101,7 +101,7 @@ var numeroSets = $(this).val();
 var sets="";
 var i;
 for($i=0; $i<numeroSets; $i++){
-sets+='<input type="text" name="set'+i+'" placeholder="Ej: 6-2">';
+sets+='<input type="text" name="set'+$i+'" id="set'+$i+'input" placeholder="Ej: 6-'+$i+'">';
 }
 $('.setsGenerado').html(sets);
 
@@ -112,8 +112,6 @@ $('.desafios').change(function(){
 
 var idJugador = $('select[name="desafios"]').val().split("-");
 var nombreDelJugador = $('select[name="desafios"] option:selected').text().split("v/s");
-
-<!--alert("I am a box!" +$('select[name="desafios"] option:selected').text());-->
 
 var jugador1 = '<option value="'+idJugador[0]+'">'+nombreDelJugador[0]+'</option>';
 var jugador2 = '<option value="'+idJugador[1]+'">'+nombreDelJugador[1]+'</option>';
@@ -134,9 +132,16 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
         var fecha = $('input[name="fecha"]').val();
         var idCanchas = $('select[name="cancha"]').val(); 
         var idGanador = $('.ganadorGenerado').val();
-
 		
-			
+		var set =[];
+		
+			for(i=0; i<$(".sets").val(); i++)
+			{
+				if($("#set'+$i+'input").val() != null && $("#set'+$i+'input").val() != "")
+				{
+					set.push($("#set'+$i+'input").val());
+				}
+			}
 			
         $.ajax({
             "url": 'capaAjax/insertarNuevoEncuentro.php',
@@ -146,6 +151,7 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
             "fecha": fecha,
             "idCanchas": idCanchas,
             "idGanador": idGanador,
+			"sets": JSON.stringfy(set),
         },
             "type": "post",
             "async": false,
