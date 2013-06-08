@@ -30,8 +30,8 @@
         </div><!--well well-small-->
 
         <div class="well well-small">
+            <center><h3>Últimos Ganadores</h3></center><!--Últimos Ganadores-->
             <div class="row-fluid">
-                <center><h3>Últimos Ganadores</h3></center><!--Últimos Ganadores-->
                 <?php require(dirname(__FILE__) . "/capaVistas/ultimosGanadores.php"); ?>
             </div><!--/row-->
         </div><!--well well-small-->
