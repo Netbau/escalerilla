@@ -7,7 +7,7 @@ require_once(dirname(__FILE__) . '/../dbconfig/generadorStringQuery.php');
 
 class Noticia {
 
-    static $nombreTabla = "Noticia";
+    static $nombreTabla = "noticias";
 
     /**
      * Insertar
@@ -30,8 +30,9 @@ class Noticia {
 	
 	public static function Crude() {
         $queryString = "SELECT *
-                        FROM noticia as n";
+                        FROM noticias as n";
         $result = CallQuery($queryString);
+
         $resultArray = array();
 
         while ($fila = $result->fetch_assoc()) {
@@ -41,5 +42,25 @@ class Noticia {
         return $resultArray;
     }
 
+    public static function getReg($id) {
+        $queryString = "SELECT * FROM noticias WHERE noticias.idNoticias = ".$id;
+        $result = CallQuery($queryString);
+
+        $resultArray = array();
+
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+
+        return $resultArray;
+    }
+
+
+    //ACCION PARA UPDATE NOTICIA
+    public static function updateNoticia($fecha,$titulo,$contenido,$estado,$id){
+        $updateString = "UPDATE ".self::$nombreTabla." SET ".self::$nombreTabla.".fecha='".$fecha."', ".self::$nombreTabla.".titulo='".$titulo."', ".self::$nombreTabla.".contenido='".$contenido."', ".self::$nombreTabla.".estado=".$estado." WHERE ".self::$nombreTabla.".idNoticias=".$id;
+        $result = CallQuery($updateString);
+        return $result;
+    }
 }
 ?>

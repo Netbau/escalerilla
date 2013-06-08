@@ -167,9 +167,23 @@
                         </a>
                     </div>
                     <div id="collapseSix" class="accordion-body collapse">
-                        <div class="accordion-inner"><!-- opciones de jugadores-->
-
-                        </div><!-- opciones de usuarios-->
+                        <div class="accordion-inner"><!-- opciones de noticias-->
+                             <a class="btn btn-small btn-inverse refreshNoticias pull-left"><i class="icon-refresh icon-white"></i></a>
+                            <div id="opcionesNoticias"><!-- opciones de premios-->
+                                <?php
+                                if (isset($_SESSION['usuario']) && $_SESSION['usuario']['nivel'] >= 3) {
+                                    include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesNoticias.php');
+                                }
+                                ?>
+                                <script>
+                                    $('.refreshNoticias').click(function() {
+                                        $('#opcionesNoticias').load('capaVistas/admin/opcionesNoticias.php', function() {
+                                            //accion al refrescar
+                                        });
+                                    });
+                                </script>
+                            </div><!-- opciones depremios-->
+                        </div><!-- opciones de noticias-->
                     </div>
                 </div>
 
