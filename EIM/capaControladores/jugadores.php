@@ -177,4 +177,16 @@ class Jugadores {
         return $resultArray;
     }
 
+    public static function getVictorias($idJugadores) {
+        $queryString = "SELECT count(*) as victorias FROM encuentro WHERE idGanador = $idJugadores";
+        $result = CallQuery($queryString);
+        $resultArray = array();
+
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+
+    }
+
 }

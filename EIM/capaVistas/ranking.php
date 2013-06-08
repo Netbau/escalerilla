@@ -40,11 +40,12 @@
                 </thead>
                 <tbody class="ranking">';
             foreach ($ranking as $player) {
+                $victorias = Jugadores::getVictorias($player['idJugadores']);
                 echo '<tr>';
                 echo '<td data-title="Ranking"><center>' . $player['ranking'] . '</center></td>';
                 echo '<td><center><img class="img img-rounded" src="' . $player['foto'] . '" height ="100" width="100"></center></td>';
                 echo '<td data-title="Nombre">' . $player['nombre'] . ' ' . $player['apellido'] . '</td>';
-                echo '<td data-title="Victorias"><center>0</center></td>';
+                echo '<td data-title="Victorias"><center>'.$victorias[0]['victorias'].'</center></td>';
                 echo '<td data-title="Cambios"><center>--</center></td>';
                 echo '</tr>';
             }
