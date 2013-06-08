@@ -47,10 +47,11 @@
     </div>
 
     <hr>
+
+</div><!--/row-->
     <footer><!-- ARCHIVO footer-->
         <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
     </footer>
-</div><!--/row-->
 </div><!--/.fluid-container-->
 </body>
 </html>
