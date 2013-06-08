@@ -78,5 +78,19 @@ class Noticia {
         }
         return $resultArray;
     }
+	
+	public static function ultimasNoticias(){
+		$queryString = 'SELECT *
+						FROM '.self::$nombreTabla.'
+						ORDER BY fecha DESC
+						LIMIT 2';
+						
+		$result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
+	}
 }
 ?>
