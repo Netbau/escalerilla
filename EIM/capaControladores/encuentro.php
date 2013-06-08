@@ -25,7 +25,7 @@ class Encuentro {
         );
 
         $queryString = QueryStringAgregar($datosCreacion, self::$nombreTabla);
-        $query = CallQuery($queryString);
+        $query = CallQueryReturnID($queryString);
         return $query;
     }
 
@@ -42,6 +42,9 @@ class Encuentro {
             array('idEncuentro', $idEncuentro),
             array('puntuacion', $puntuacion)
         );
+        $queryString = QueryStringAgregar($datosCreacion, self::$nombreTabla);
+        $query = CallQuery($queryString);
+        return $query;
     }
 
     /**
