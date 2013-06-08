@@ -154,6 +154,7 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
             "idGanador": idGanador,
 			"sets": JSON.stringfy(set),
         },
+		
             "type": "post",
             "async": false,
             success: function(output) {

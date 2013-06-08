@@ -10,13 +10,17 @@ if (isset($_POST)) {
     $idCanchas = $_POST['idCanchas'];
     $idGanador = $_POST['idGanador']; //not null
 	$set = json_decode($_POST['sets']);
+	
 
+	
     if (!empty($idJugadores) && !empty($idJugadores1) && !empty($fecha) && !empty($idCanchas) && !empty($idGanador)) {
         $insertado = Encuentro::insertarEncuentro($idJugadores, $idJugadores1, $fecha, $idCanchas, $idGanador);
 		$actualizarEstado = Desafios::actualizarEstadoDesafio($idJugadores, $idJugadores1, "Concretado", $fecha);
-		foreach($set as $key => $resultado ){		
 		
-		$resultadoEncuentro = Encuentro::insertarResultadoEnceuntro(($key), $insertado, $resultado);
+		foreach($set as $key => $resultado ){			
+
+		//$resultadoEncuentro = Encuentro::insertarResultadoEnceuntro(($key), $insertado, $resultado);
+		
 		}
         if ($insertado) {
 			
