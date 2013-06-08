@@ -47,7 +47,7 @@ class Encuentro {
             $retorno->status = 2;
             return $retorno;
         }
-        
+
     }
 
     /**

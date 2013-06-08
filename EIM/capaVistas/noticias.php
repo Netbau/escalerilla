@@ -8,11 +8,11 @@
             foreach ($noticias as $noticia) {
                 echo '
             <div class = "well well-small">
-            
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse' . $noticia['idNoticias'] . '">
+
+                <a class="accordion-toggle btn btn-block" data-toggle="collapse" data-parent="#accordion2" href="#collapse' . $noticia['idNoticias'] . '">
                     <h5>' . $noticia['titulo'] . '</h5>
                 </a>
-            
+
             <div id="collapse' . $noticia['idNoticias'] . '" class="accordion-body collapse';
                 if ($cantidad == 0) {
                     echo ' in';
@@ -28,7 +28,7 @@
                 $cantidad++;
             }
         } else {
-            echo '<div class="alert alert-info">No Hay premios vigentes registrados.</div>';
+            echo '<div class="alert alert-info">No Hay noticias registrados.</div>';
         }
         ?>
     </div>

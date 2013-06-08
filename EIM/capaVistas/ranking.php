@@ -27,8 +27,8 @@
             $letra = $categoria['categoria'];
             $ranking = Jugadores::getRankingPorCategoria($letra);
             echo '
-            <center><input class="" type="text" name="filtrar" placeholder="Filtrar" onKeyUp="this.value = this.value.toUpperCase();"></center>
-            <table class="table table-condensed table-striped tabled-bordered ranking">
+            <center><input type="text" name="filtrar" placeholder="Filtrar" onKeyUp="this.value = this.value.toUpperCase();"></center>
+            <table class="table table-condensed table-striped tabled-bordered">
                 <thead>
                     <tr class="">
                     <th width="10%"><center>Posición</center></th>
@@ -38,7 +38,7 @@
                     <th width="10%">Cambios</th>
                     </tr>
                 </thead>
-                <tbody>';
+                <tbody class="ranking">';
             foreach ($ranking as $player) {
                 echo '<tr>';
                 echo '<td data-title="Ranking"><center>' . $player['ranking'] . '</center></td>';
