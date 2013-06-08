@@ -1,18 +1,19 @@
 <h3>Últimas Notícias</h3>
-﻿<div class="well well-small small" style="overflow: auto;">
+﻿<div style="overflow: auto;">
     <div class="noticia">
         <?php
         require_once(dirname(__FILE__) . '/../capaControladores/noticias.php');
         $noticias = Noticia::ultimasNoticias();
-        if (!empty($noticias)) {
+        
+		if (!empty($noticias)) {
             $cantidad = 0;
             foreach ($noticias as $noticia) {
                 echo '
-            <div class="accordion-heading info">
-                <h4>' . $noticia['titulo'] . '
-                </h4>
+            <div class="well"><div>
+                <h3>' . $noticia['titulo'] . '
+                </h3>
             </div>
-            <div id="' . $noticia['idNoticias'] . '" style="overflow: auto;';
+            <div  id="' . $noticia['idNoticias'] . '" style="overflow: auto;';
                 if ($cantidad == 0) {
                     echo ' in';
                 }
@@ -25,7 +26,7 @@
                     </div>
                 
             </div>
-        <!--  ' . $noticia['idNoticias'] . '-->';
+        <!--  ' . $noticia['idNoticias'] . '--></div>';
                 $cantidad++;
             }
         }
