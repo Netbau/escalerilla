@@ -101,7 +101,7 @@ var numeroSets = $(this).val();
 var sets="";
 var i;
 for($i=0; $i<numeroSets; $i++){
-sets+='<input type="text" name="set'+$i+'" id="set'+$i+'input" placeholder="Ej: 6-'+$i+'">';
+sets+='<input type="text" name="set '+$i+'" id="set '+$i+' input" placeholder="Ej: 6-'+$i+'">';
 }
 $('.setsGenerado').html(sets);
 
@@ -132,6 +132,7 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
         var fecha = $('input[name="fecha"]').val();
         var idCanchas = $('select[name="cancha"]').val(); 
         var idGanador = $('.ganadorGenerado').val();
+		
 		
 		var set =[];
 		

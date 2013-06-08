@@ -16,7 +16,7 @@ if (isset($_POST)) {
 		$actualizarEstado = Desafios::actualizarEstadoDesafio($idJugadores, $idJugadores1, "Concretado", $fecha);
 		foreach($set as $key => $resultado ){		
 		
-		$resultadoEncuentro = Encuentro::insertarResultadoEnceuntro(($key+1), $insertado, $resultado);
+		$resultadoEncuentro = Encuentro::insertarResultadoEnceuntro(($key), $insertado, $resultado);
 		}
         if ($insertado) {
 			
