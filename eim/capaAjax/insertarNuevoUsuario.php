@@ -2,6 +2,7 @@
 
 if (isset($_POST)) {
     include (dirname(__FILE__) . '/../capaControladores/usuarios.php');
+	
     $rut = explode('-', $_POST['rut']); //not null
     $nombre = $_POST['nombre']; //not null
     $segundoNombre = $_POST['segundoNombre'];
