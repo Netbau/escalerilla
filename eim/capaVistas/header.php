@@ -57,7 +57,7 @@
                             }
                             ?>
                             <li><a href="reglamento.php">Reglamento</a></li>
-                            <li><a href="#noticias">Notícias</a></li>
+                            <li><a href="noticiaEnIndex.php">Notícias</a></li>
                             <li><a href="premios.php">Premios</a></li>
                             <li><a href="contacto.php">Contacto</a></li>
                             <?php

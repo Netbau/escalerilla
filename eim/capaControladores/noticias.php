@@ -43,7 +43,9 @@ class Noticia {
     }
 
     public static function getReg($id) {
-        $queryString = "SELECT * FROM noticias WHERE noticias.idNoticias = ".$id;
+        $queryString = "SELECT * 
+						FROM noticias 
+						WHERE noticias.idNoticias = ".$id;
         $result = CallQuery($queryString);
 
         $resultArray = array();
@@ -58,9 +60,23 @@ class Noticia {
 
     //ACCION PARA UPDATE NOTICIA
     public static function updateNoticia($fecha,$titulo,$contenido,$estado,$id){
-        $updateString = "UPDATE ".self::$nombreTabla." SET ".self::$nombreTabla.".fecha='".$fecha."', ".self::$nombreTabla.".titulo='".$titulo."', ".self::$nombreTabla.".contenido='".$contenido."', ".self::$nombreTabla.".estado=".$estado." WHERE ".self::$nombreTabla.".idNoticias=".$id;
+        $updateString = "UPDATE ".self::$nombreTabla." 
+						 SET ".self::$nombreTabla.".fecha='".$fecha."', ".self::$nombreTabla.".titulo='".$titulo."', ".self::$nombreTabla.".contenido='".$contenido."',
+						 ".self::$nombreTabla.".estado=".$estado." WHERE ".self::$nombreTabla.".idNoticias=".$id;
         $result = CallQuery($updateString);
         return $result;
+    }
+	
+	public static function getActivos(){
+        $queryString = 'SELECT *
+                        FROM '.self::$nombreTabla.'
+                        WHERE estado = 1';
+        $result = CallQuery($queryString);
+        $resultArray = array();
+        while ($fila = $result->fetch_assoc()) {
+            $resultArray[] = $fila;
+        }
+        return $resultArray;
     }
 }
 ?>
