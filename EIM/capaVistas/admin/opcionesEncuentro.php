@@ -1,4 +1,4 @@
-﻿<a href="#modalEncuentro" role="button" class="btn btn-small btn-primary" data-toggle="modal"><strong>Nuevo Encuentro</strong></a>
+﻿<a href="#modalEncuentro" role="button" class="btn btn-small btn-primary modalEncuentroBtn" data-toggle="modal"><strong>Nuevo Encuentro</strong></a>
 <br><br>
 <div class="row-fluid">
     <table class="table table-condensed table-hover table-striped table-bordered">
@@ -159,7 +159,6 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
             success: function(output) {
                 var resultado = JSON.parse(output);
                 if (resultado.output == 1) {
-                    $('#ingresoEncuentroForm').collapse('hide');
                     $('#estadoIngresoEncuentro').html('<div class="alert alert-success">Desafío Ingresado Correctamente.</div>');
                     $('#nuevoDesafio').hide();
                 } else if(resultado.output==0) {
@@ -172,5 +171,15 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
                 $('#nuevoDesafio').button('reset');
             }
         });
+    });
+    $('.modalEncuentroBtn').click(function(){
+        $('.setsGenerado').html('');
+        $('select[name="desafios"]').val('')
+        $('input[name="fecha"]').val('');
+        $('select[name="cancha"]').val(''); 
+        $('.sets').val('');
+        $('.ganadorGenerado').val('');
+        $('#estadoIngresoEncuentro').html('');
+        $('#nuevoDesafio').show();
     });
 </script>
