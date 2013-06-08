@@ -8,28 +8,30 @@
             $cantidad = 0;
             foreach ($noticias as $noticia) {
                 echo '
-            <div class="accordion-group">
             <div class="accordion-heading info">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse' . $noticia['idNoticias'] . '">
-                    ' . $noticia['titulo'] . '
-                </a>
+                <h4>' . $noticia['titulo'] . '
+                </h4>
             </div>
-            <div id="collapse' . $noticia['idNoticias'] . '" class="accordion-body collapse';
+            <div id="' . $noticia['idNoticias'] . '" style="overflow: auto;';
                 if ($cantidad == 0) {
                     echo ' in';
                 }
                 echo '">
-                <div class="accordion-inner">
+                
                     <div class="row-fluid">
+					
                        '. $noticia[contenido] . '
+					   
                     </div>
-                </div>
+                
             </div>
-        </div><!-- collapse para premio ' . $noticia['idNoticias'] . '-->';
+        <!--  ' . $noticia['idNoticias'] . '-->';
                 $cantidad++;
             }
-        } else {
-            echo '<div class="alert alert-info">No Hay premios vigentes registrados.</div>';
+        }
+
+		else {
+            echo '<div class="alert alert-info">No Hay noticias registradas.</div>';
         }
         ?>
 </div>
