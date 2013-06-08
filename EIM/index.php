@@ -49,6 +49,7 @@
     <hr>
 
 </div><!--/row-->
+<div> <hr> </div>
     <footer><!-- ARCHIVO footer-->
         <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
     </footer>
