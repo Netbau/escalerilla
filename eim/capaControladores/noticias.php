@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /*
  * Clase noticia con sus respectivas funciones
