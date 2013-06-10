@@ -37,15 +37,13 @@
 <div class="well well-small"><!--Últimas Noticias-->
     <?php require(dirname(__FILE__) . "/capaVistas/ultimasNoticias.php"); ?>
 </div>
-
-<hr>
-
-</div><!--/.fluid-container-->
 <footer><!-- ARCHIVO footer-->
 
     <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
 
 </footer><!-- ARCHIVO footer-->
+</div><!--/.fluid-container-->
+
 
 </body>
 </html>

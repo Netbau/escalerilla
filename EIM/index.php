@@ -43,15 +43,13 @@
 
 </div><!--/row-->
 <div class="well well-small"><!--Últimas Noticias-->
-        <?php require(dirname(__FILE__) . "/capaVistas/ultimasNoticias.php"); ?>
-    </div>
-
-    <hr>
+    <?php require(dirname(__FILE__) . "/capaVistas/ultimasNoticias.php"); ?>
+</div>
 
 </div><!--/row-->
-    <footer><!-- ARCHIVO footer-->
-        <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
-    </footer>
+<footer><!-- ARCHIVO footer-->
+    <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
+</footer>
 </div><!--/.fluid-container-->
 </body>
 </html>
