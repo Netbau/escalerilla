@@ -82,6 +82,7 @@ class Noticia {
 	public static function ultimasNoticias(){
 		$queryString = 'SELECT *
 						FROM '.self::$nombreTabla.'
+						WHERE estado = 1
 						ORDER BY fecha DESC
 						LIMIT 2';
 						
