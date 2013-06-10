@@ -27,7 +27,7 @@
             $letra = $categoria['categoria'];
             $ranking = Jugadores::getRankingPorCategoria($letra);
             echo '
-            <center><input type="text" name="filtrar" placeholder="Filtrar" onKeyUp="this.value = this.value.toUpperCase();"></center>
+            <center><input type="text" name="filtrar" placeholder="Buscar.." onKeyUp="this.value = this.value.toUpperCase();"></center>
             <table class="table table-condensed table-striped tabled-bordered">
                 <thead>
                     <tr class="">
@@ -65,7 +65,7 @@
 <script>
     $('input[name="filtrar"]').keyup(function() {
         var filtroDiag = $(this).val().toUpperCase();
-        if (filtroDiag == '') {
+        if (filtroDiag.length === 0) {
             $('.ranking').children('tr').children('td').each(function(index, domEle) {
                 $(domEle).show();
             });
