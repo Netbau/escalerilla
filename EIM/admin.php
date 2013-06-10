@@ -168,7 +168,7 @@
                     </div>
                     <div id="collapseSix" class="accordion-body collapse">
                         <div class="accordion-inner"><!-- opciones de noticias-->
-                             <a class="btn btn-small btn-inverse refreshNoticias pull-left"><i class="icon-refresh icon-white"></i></a>
+                            <a class="btn btn-small btn-inverse refreshNoticias pull-left"><i class="icon-refresh icon-white"></i></a>
                             <div id="opcionesNoticias"><!-- opciones de premios-->
                                 <?php
                                 if (isset($_SESSION['usuario']) && $_SESSION['usuario']['nivel'] >= 3) {
@@ -201,7 +201,6 @@
 
 
 </div><!--/.fluid-container-->
-<div> <hr> </div>
 <footer><!-- ARCHIVO footer-->
 
     <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
