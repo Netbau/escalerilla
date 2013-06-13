@@ -34,7 +34,7 @@ if (isset($_POST)) {
             $enviados++;
         }
 
-        $to = 'cgonzb@gmail.com';
+        $to = 'info@escalerilla.cl';
         $envio = mail($to, $subject, $message, $headers);
         if ($envio) {
             $enviados++;
