@@ -133,6 +133,7 @@ class Jugadores {
                         WHERE j.idUsuarios = u.idUsuarios
                         AND categoria = '$categoria' AND
                         ranking < $ranking
+                        ORDER BY ranking DESC
                         LIMIT 4";
         $result = CallQuery($queryString);
         $resultArray = array();

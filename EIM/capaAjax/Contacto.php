@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	//A PARTIR DE LOS DATOS ENVIADOS GENERAMOS EL CORREO.
-	$para      = 'cgonzb@gmail.com'; //AKA VA EL CORREO AL QUE LLEGARA EL MAIL
+	$para      = 'info@escalerilla.cl'; //AKA VA EL CORREO AL QUE LLEGARA EL MAIL
 	$asunto    = $_POST['consulta'].' de : '. $_POST['name'];
 	$mensaje   = $_POST['message'];
 	$cabeceras = 'From: '.$_POST['mail']. "\r\n" .
