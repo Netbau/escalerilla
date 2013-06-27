@@ -29,6 +29,7 @@
             }
             $letra = $categoria['categoria'];
             $ranking = Jugadores::getRankingPorCategoria($letra);
+            $cantidad = count($ranking);
             echo "
                 <div class='row-fluid'>
                     <div class='span1'></div>
@@ -40,8 +41,12 @@
                 </div>
                 <ul class='img-rounded media-list jugadores' style='list-style-type: none;'>
                     ";
-            foreach ($ranking as $player) {
-                echo "<li class='media ui-state-default jugador' categoria='".$player['categoria']."' idJugadores='".$player['idJugadores']."' style='border: #e0e0e0 solid thin;'>
+            for ($i = 1; $i <= $cantidad; $i++) {
+
+                foreach ($ranking as $player) {
+                    if ($player['ranking'] == $i) {
+
+                        echo "<li class='media ui-state-default jugador' categoria='" . $player['categoria'] . "' idJugadores='" . $player['idJugadores'] . "' style='border: #e0e0e0 solid thin;'>
                     <div class='span1'><center><i class='icon-resize-vertical'> </i></center></div>
                     <div class='span3'><center>" . $player['nombre'] . "</center></div>
                     <div class='span3'><center>" . $player['apellido'] . "</center></div>
@@ -50,12 +55,15 @@
                     <div class='span1'>
                   ";
 
-                echo "<center><a class='btn btn-small borrarJugador' idJugadores='" . $player['idJugadores'] . "'><i class='icon-remove-sign'></i></a></center>
+                        echo "<center><a class='btn btn-small borrarJugador' idJugadores='" . $player['idJugadores'] . "'><i class='icon-remove-sign'></i></a></center>
                 ";
 
-                echo '</div></li>
+                        echo '</div></li>
                 ';
-            }
+                    }//if
+                }//foreach
+               $i++;
+            }//for
 
 
             echo '
@@ -131,8 +139,8 @@
             axis: "y",
             cursor: "move",
             containment: "parent",
-            change: function(ui){
-                
+            change: function(ui) {
+
 
             }
         });
