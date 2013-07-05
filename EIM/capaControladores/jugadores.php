@@ -67,9 +67,11 @@ class Jugadores {
     public static function setRanking($rut, $ranking) {
         $queryString = "UPDATE jugadores
                         SET ranking = '$ranking'
-                        WHERE idUsuarios = '$rut'";
-        $result = CallQuery($queryString);
-        return $result;
+                        WHERE idUsuarios = '$rut'
+                        LIMIT 1";
+        echo $queryString;
+//        $result = CallQuery($queryString);
+//        return $result;
     }
 
     public static function getCategorias() {
