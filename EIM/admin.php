@@ -1,4 +1,6 @@
-<?php require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
+<?php
+session_start();
+require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
 <div class="row-fluid">
     <div class="span3">
         <div class="well well-small"><!--Formulario login-->
@@ -64,7 +66,7 @@
                             <div id="opcionesJugador"><!-- opciones de usuarios-->
                                 <?php
                                 if (isset($_SESSION['usuario']) && $_SESSION['usuario']['nivel'] >= 3) {
-                                    include_once(dirname(__FILE__) . '/capaVistas/admin/opcionesJugador.php');
+                                    include_once('capaVistas/admin/opcionesJugador.php');
                                 }
                                 ?>
                                 <script>

@@ -1,4 +1,6 @@
-<?php require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
+<?php
+session_start();
+require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
 <div class="row-fluid"><!-- row de contenido -->
     <div class="span3">
 

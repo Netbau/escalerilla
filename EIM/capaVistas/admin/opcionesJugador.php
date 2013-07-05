@@ -5,7 +5,7 @@
 <div class="tabbable">
     <ul class="nav nav-tabs">
         <?php
-        include_once (dirname(__FILE__) . '/../../capaControladores/jugadores.php');
+        include_once(dirname(__FILE__) . '/../../capaControladores/jugadores.php');
         $categorias = Jugadores::getCategorias();
         $contador = 0;
         foreach ($categorias as $categoria) {
@@ -30,8 +30,8 @@
             }
             $letra = $categoria['categoria'];
             $ranking = Jugadores::getRankingPorCategoria($letra);
-
-            $cantidad = end($ranking)['ranking'];
+            $cantidad = end($ranking);
+            $cantidad = $cantidad['ranking'];
             echo "
                 <div class='row-fluid'>
                     <div class='span1'></div>
@@ -82,7 +82,7 @@
             echo '
                 </ul></div>';
             $contador2++;
-        }
+        }//foreach
         ?>
 
     </div><!-- /.tab-content -->
@@ -219,8 +219,8 @@
                 "url": "capaAjax/guardarRanking.php",
                 type: "post",
                 async: false,
-                data:{"categoria":categoria, "rank":rank},
-                success: function(output){
+                data: {"categoria": categoria, "rank": rank},
+                success: function(output) {
                     alert(output);
                 }//success
 
