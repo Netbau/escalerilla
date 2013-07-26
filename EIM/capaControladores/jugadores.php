@@ -69,9 +69,9 @@ class Jugadores {
                         SET ranking = '$ranking'
                         WHERE idUsuarios = '$rut'
                         LIMIT 1";
-        echo $queryString;
-//        $result = CallQuery($queryString);
-//        return $result;
+//        echo $queryString;
+        $result = CallQuery($queryString);
+        return $result;
     }
 
     public static function getCategorias() {

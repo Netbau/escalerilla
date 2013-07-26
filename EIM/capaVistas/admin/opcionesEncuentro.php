@@ -1,4 +1,4 @@
-﻿<a href="#modalEncuentro" role="button" class="btn btn-small btn-primary modalEncuentroBtn" data-toggle="modal"><strong>Nuevo Encuentro</strong></a>
+﻿<a href="#modalEncuentro" role="button" class="btn btn-small btn-primary modalEncuentroBtn" data-toggle="modal"><strong>Registrar Encuentro</strong></a>
 <br><br>
 <div class="row-fluid">
     <table class="table table-condensed table-hover table-striped table-bordered">
@@ -18,10 +18,10 @@
 			require_once(dirname(__FILE__) . '/../../utilidades/transformarDesafios.php');
             $encuentros1 = Encuentro::Crud();
 			$encuentros = transformaDesafios($encuentros1);
-			
-			
+
+
             foreach ($encuentros as $encuentro) {
-				
+
 				$fecha = explode(' ', $encuentro['fecha']);
                 echo '<tr><td>' . $encuentro['idJugadores'] . '</td><td>' . $encuentro['idJugadores1'] . '</td><td>' .$fecha[0].
 				'</td><td>' .$encuentro['nombre'].'</td><td>' .$encuentro['idGanador'].'</td><td></td></tr>';
@@ -64,7 +64,7 @@
                     <td>Ganador</td>
                     <td>
 					<select class="ganadorGenerado">
-					
+
 					</select>
 					</td>
                 </tr>
@@ -122,20 +122,20 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
 </script>
 <script>
     $('#nuevoDesafio').click(function() {
-	
+
         $(this).button('loading');
-		
+
 		var idJugador = $('select[name="desafios"]').val().split("-");
-		
+
         var idJugadores = idJugador[0];
         var idJugadores1 = idJugador[1];
         var fecha = $('input[name="fecha"]').val();
-        var idCanchas = $('select[name="cancha"]').val(); 
+        var idCanchas = $('select[name="cancha"]').val();
         var idGanador = $('.ganadorGenerado').val();
-		
-		
+
+
 		var set =[];
-		
+
 			for(i=0; i<$(".sets").val(); i++)
 			{
 				if($("#set"+i+"input").val() != null && $("#set"+i+"input").val() != "")
@@ -153,7 +153,7 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
             "idGanador": idGanador,
 			"sets": JSON.stringify(set),
         },
-		
+
             "type": "post",
             "async": false,
             success: function(output) {
@@ -176,7 +176,7 @@ $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jug
         $('.setsGenerado').html('');
         $('select[name="desafios"]').val('')
         $('input[name="fecha"]').val('');
-        $('select[name="cancha"]').val(''); 
+        $('select[name="cancha"]').val('');
         $('.sets').val('');
         $('.ganadorGenerado').val('');
         $('#estadoIngresoEncuentro').html('');

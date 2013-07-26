@@ -68,7 +68,7 @@
                     }//if
                 }//foreach
                 if ($puesto == 0) {
-                    echo '<li class="media ui-state-default jugador" categoria="' . $letra . '" id="0" style="border: #e0e0e0 solid thin;">
+                    echo '<li class="media ui-state-default ui-state-disabled jugador" categoria="' . $letra . '" id="0" style="border: #e0e0e0 solid thin;">
                        <div class="span1"><center><i class="icon-resize-vertical"> </i></center></div>
                     <div class="span3"><center>Jugador</center></div>
                     <div class="span3"><center>No Registrado</center></div>
@@ -211,17 +211,22 @@
     });
 
     $('#guardarRanking').click(function() {
-        $(this).button('loading');
+        var boton = $(this);
+            boton.button('loading');
         $('.jugadores').each(function() {
             var categoria = $(this).attr('categoria');
             var rank = $(this).sortable("toArray");
             $.ajax({
                 "url": "capaAjax/guardarRanking.php",
                 type: "post",
-                async: false,
                 data: {"categoria": categoria, "rank": rank},
                 success: function(output) {
-                    alert(output);
+                    if(output !== 0){
+                        boton.text('Guardado!');
+                        setTimeout(function() {
+                            boton.hide().button('reset');// se refresca
+                        }, 4000);
+                    }//if
                 }//success
 
 
