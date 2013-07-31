@@ -88,11 +88,14 @@ class Desafios {
     }
 
     public static function actualizarEstadoDesafio($idJugador, $idJugador1, $estado, $fecha) {
+        $fecha = explode('-', $fecha);
         $queryString = "UPDATE desafio
 			SET estado = '$estado'
 			WHERE idJugadores = '$idJugador'
 			AND idJugadores1 = '$idJugador1'
-			AND fecha = '$fecha'";
+			AND YEAR(fecha) = '$fecha[0]'
+                        AND MONTH(fecha) = '$fecha[1]'
+                        AND DAY(fecha) = '$fecha[2]'";
         $result = CallQuery($queryString);
         return $result;
     }

@@ -122,7 +122,7 @@
                         o Crear nueva categoría
                     </td>
                     <td>
-                        <input type="text" name="nuevaCategoria" placeholder="Ej: D" class="span6" maxlength='1' onKeyUp="this.value = this.value.toUpperCase();">
+                        <input type="text" name="nuevaCategoria" placeholder="Ej: D" class="span6" maxlength='10' onKeyUp="this.value = this.value.toUpperCase();">
                     </td>
                 </tr>
             </table>

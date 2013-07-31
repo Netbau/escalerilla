@@ -48,7 +48,7 @@ if ($_GET['tipo'] == 'premio') {
     if (!$result) {
         echo json_encode(array('success' => false, 'msg' => $Upload->getErrorMsg(), 'ruta' => $upload_dir));
     } else {
-        $url = 'http://www.escalerilla.cl/eim/img/usuarios/'.$Upload->getFileName();
+        $url = 'http://www.escalerilla.cl/manquehue/img/usuarios/'.$Upload->getFileName();
         //$url = $Upload->getSavedFile();
         // guardar ruta del archivo en la bbdd blabla
         $actualizado = Usuarios::actualizarFoto($_SESSION['usuario']['idUsuarios'], $url);

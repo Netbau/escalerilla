@@ -13,19 +13,24 @@
         <tbody>
             <?php
             require_once(dirname(__FILE__) . '/../../capaControladores/desafios.php');
-			require_once(dirname(__FILE__) . '/../../utilidades/transformarDesafios.php');
+            require_once(dirname(__FILE__) . '/../../utilidades/transformarDesafios.php');
             $desafios = Desafios::Crud();
-			$desafios = transformaDesafios($desafios);
-			
+            $desafios = transformaDesafios($desafios);
+
             foreach ($desafios as $desafio) {
-				
-				$fecha = explode(' ', $desafio['fecha']);
-                echo '<tr><td>' . $desafio['idJugadores'] . '</td><td>' . $desafio['idJugadores1'] . '</td><td>' .$fecha[0]. '</td><td>' .$desafio['estado'].'</td><td></td></tr>';
-
-
+                $fecha = explode(' ', $desafio['fecha']);
+                if ($desafio['estado'] == 'Pendiente') {
+                    echo '<tr class="warning"><td>' . $desafio['idJugadores'] . '</td><td>' . $desafio['idJugadores1'] . '</td><td>' . $fecha[0] . '</td><td>' . $desafio['estado'] . '</td><td></td></tr>';
+                }
+                elseif($desafio['estado'] == 'Concretado') {
+                    echo '<tr class="success"><td>' . $desafio['idJugadores'] . '</td><td>' . $desafio['idJugadores1'] . '</td><td>' . $fecha[0] . '</td><td>' . $desafio['estado'] . '</td><td></td></tr>';
+                }
+                elseif($desafio['estado'] == 'WO') {
+                    echo '<tr class="danger"><td>' . $desafio['idJugadores'] . '</td><td>' . $desafio['idJugadores1'] . '</td><td>' . $fecha[0] . '</td><td>' . $desafio['estado'] . '</td><td></td></tr>';
+                }
             }
             ?>
-			</tbody>
-        </table>
-    </center>
+        </tbody>
+    </table>
+</center>
 </div>

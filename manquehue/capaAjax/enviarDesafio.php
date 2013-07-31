@@ -10,7 +10,7 @@ if (isset($_POST)) {
         $enviados = 0;
 
         $to = $desafiado['correo'];
-        $from = 'EIM';
+        $from = 'Manquehue';
         $subject = "Nuevo Desafio Escalerilla " . $from;
         $message = "Estimados,
         Se ha creado un nuevo desafio con la siguiente informacion:
