@@ -8,26 +8,28 @@
                 <th>Jugador</th>
                 <th>Fecha</th>
                 <th>Cancha</th>
-                <th>Ganador</th>
+				<th>Ganador</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <?php
             require_once(dirname(__FILE__) . '/../../capaControladores/encuentro.php');
-            require_once(dirname(__FILE__) . '/../../utilidades/transformarDesafios.php');
+			require_once(dirname(__FILE__) . '/../../utilidades/transformarDesafios.php');
             $encuentros1 = Encuentro::Crud();
-            $encuentros = transformaDesafios($encuentros1);
+			$encuentros = transformaDesafios($encuentros1);
 
 
             foreach ($encuentros as $encuentro) {
 
-                $fecha = explode(' ', $encuentro['fecha']);
-                echo '<tr><td>' . $encuentro['idJugadores'] . '</td><td>' . $encuentro['idJugadores1'] . '</td><td>' . $fecha[0] .
-                '</td><td>' . $encuentro['nombre'] . '</td><td>' . $encuentro['idGanador'] . '</td><td></td></tr>';
+				$fecha = explode(' ', $encuentro['fecha']);
+                echo '<tr><td>' . $encuentro['idJugadores'] . '</td><td>' . $encuentro['idJugadores1'] . '</td><td>' .$fecha[0].
+				'</td><td>' .$encuentro['nombre'].'</td><td>' .$encuentro['idGanador'].'</td><td></td></tr>';
+
+
             }
             ?>
-        </tbody>
+		</tbody>
     </table>
 </div>
 
@@ -43,47 +45,47 @@
                 <tr>
                     <td>Desafíos</td>
                     <td colspan="2"><select name="desafios" class="desafios">
-                            <option label="Seleccione el Desafío"></option>
-<?php include(dirname(__FILE__) . '/../../capaAjax/listadoDesafios.php');
-?>
-                        </select></td>
+					<option label="Seleccione el Desafío"></option>
+					<?php include(dirname(__FILE__) . '/../../capaAjax/listadoDesafios.php');
+					?>
+					</select></td>
                 </tr>
                 <tr>
                     <td>Cancha</td>
                     <td>
-                        <select name="cancha">
-                            <option label="Seleccione Cancha"></option>
-                            <option value="1">Cancha 1</option>
-                            <option value="2">Cancha 2</option>
-                            <option value="3">Cancha 3</option>
-                        </select></td>
+					<select name="cancha">
+					<option label="Seleccione Cancha"></option>
+					<option value="1">Cancha 1</option>
+					<option value="2">Cancha 2</option>
+					<option value="3">Cancha 3</option>
+					</select></td>
                 </tr>
                 <tr>
                     <td>Ganador</td>
                     <td>
-                        <select class="ganadorGenerado">
+					<select class="ganadorGenerado">
 
-                        </select>
-                    </td>
+					</select>
+					</td>
                 </tr>
                 <tr>
                     <td>Fecha</td>
                     <td><input type="text" name="fecha" class="datepicker"></td>
+					</tr>
+					<tr>
+					<td>Número de Set</td>
+					<td>
+					<select class="sets">
+					<option label="Seleccione Cantidad"></option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					</select></td>
                 </tr>
-                <tr>
-                    <td>Número de Set</td>
-                    <td>
-                        <select class="sets">
-                            <option label="Seleccione Cantidad"></option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select></td>
-                </tr>
-                <tr><td class="setsGenerado" colspan="2">
-                    </td>
-                </tr>
+				<tr><td class="setsGenerado" colspan="2">
+				</td>
+				</tr>
             </table>
         </form>
     </div>
@@ -94,27 +96,27 @@
 </div>
 
 <script>
-    $('.sets').change(function() {
-        var numeroSets = $(this).val();
-        var sets = "";
-        var i;
-        for ($i = 0; $i < numeroSets; $i++) {
-            sets += '<input type="text" name="set' + $i + '" id="set' + $i + 'input" placeholder="Ej: 6-' + $i + '" />';
-        }
-        $('.setsGenerado').html(sets);
+$('.sets').change(function(){
+var numeroSets = $(this).val();
+var sets="";
+var i;
+for($i=0; $i<numeroSets; $i++){
+sets+='<input type="text" name="set'+$i+'" id="set'+$i+'input" placeholder="Ej: 6-'+$i+'" />';
+}
+$('.setsGenerado').html(sets);
 
-    });
+});
 </script>
 <script>
-    $('.desafios').change(function() {
+$('.desafios').change(function(){
 
-        var idJugador = $('select[name="desafios"]').val().split("-");
-        var nombreDelJugador = $('select[name="desafios"] option:selected').text().split("v/s");
+var idJugador = $('select[name="desafios"]').val().split("-");
+var nombreDelJugador = $('select[name="desafios"] option:selected').text().split("v/s");
 
-        var jugador1 = '<option value="' + idJugador[0] + '">' + nombreDelJugador[0] + '</option>';
-        var jugador2 = '<option value="' + idJugador[1] + '">' + nombreDelJugador[1] + '</option>';
-        $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>' + jugador1 + jugador2);
-    });
+var jugador1 = '<option value="'+idJugador[0]+'">'+nombreDelJugador[0]+'</option>';
+var jugador2 = '<option value="'+idJugador[1]+'">'+nombreDelJugador[1]+'</option>';
+$('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>'+jugador1+jugador2);
+});
 
 
 </script>
@@ -123,7 +125,7 @@
 
         $(this).button('loading');
 
-        var idJugador = $('select[name="desafios"]').val().split("-");
+		var idJugador = $('select[name="desafios"]').val().split("-");
 
         var idJugadores = idJugador[0];
         var idJugadores1 = idJugador[1];
@@ -132,25 +134,26 @@
         var idGanador = $('.ganadorGenerado').val();
 
 
-        var set = [];
+		var set =[];
 
-        for (i = 0; i < $(".sets").val(); i++)
-        {
-            if ($("#set" + i + "input").val() != null && $("#set" + i + "input").val() != "")
-            {
-                set.push($("#set" + i + "input").val());
-            }
-        }
+			for(i=0; i<$(".sets").val(); i++)
+			{
+				if($("#set"+i+"input").val() != null && $("#set"+i+"input").val() != "")
+				{
+					set.push($("#set"+i+"input").val());
+				}
+			}
         $.ajax({
             "url": 'capaAjax/insertarNuevoEncuentro.php',
             data: {
-                "idJugadores": idJugadores,
-                "idJugadores1": idJugadores1,
-                "fecha": fecha,
-                "idCanchas": idCanchas,
-                "idGanador": idGanador,
-                "sets": JSON.stringify(set),
-            },
+            "idJugadores": idJugadores,
+            "idJugadores1": idJugadores1,
+            "fecha": fecha,
+            "idCanchas": idCanchas,
+            "idGanador": idGanador,
+			"sets": JSON.stringify(set),
+        },
+
             "type": "post",
             "async": false,
             success: function(output) {
@@ -158,18 +161,18 @@
                 if (resultado.output == 1) {
                     $('#estadoIngresoEncuentro').html('<div class="alert alert-success">Desafío Ingresado Correctamente.</div>');
                     $('#nuevoDesafio').hide();
-                } else if (resultado.output == 0) {
+                } else if(resultado.output==0) {
                     $('#estadoIngresoEncuentro').html('<div class="alert alert-danger">¡Faltan datos!</div>');
-                } else if (resultado.output == 2) {
+                } else if(resultado.output==2) {
                     $('#estadoIngresoEncuentro').html('<div class="alert alert-danger">¡Desafío ya registrado!</div>');
-                } else {
+                }else{
                     alert(output);
                 }
                 $('#nuevoDesafio').button('reset');
             }
         });
     });
-    $('.modalEncuentroBtn').click(function() {
+    $('.modalEncuentroBtn').click(function(){
         $('.setsGenerado').html('');
         $('select[name="desafios"]').val('')
         $('input[name="fecha"]').val('');
