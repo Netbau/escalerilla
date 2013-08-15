@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 if (!isset($_SESSION['usuario'])) {
     session_start();
     include_once(dirname(__FILE__) . '/../capaControladores/usuarios.php');

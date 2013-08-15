@@ -1,6 +1,8 @@
 <?php
 session_start();
-require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
+require(dirname(__FILE__) . '/capaVistas/header.php');
+?>
+<?php require(dirname(__FILE__) . "/popup.php"); ?>
 <div class="row-fluid"><!-- row de contenido -->
     <div class="span3">
 
@@ -15,7 +17,7 @@ require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
         </div><!--/.well well-small -->
 
         <div class="well well-small"><!--Convenios-->
-            <?php require(dirname(__FILE__) . "/capaVistas/convenios.php"); ?>
+<?php require(dirname(__FILE__) . "/capaVistas/convenios.php"); ?>
         </div><!--/.well well-small -->
 
         <div class="well well-small hidden-phone"><!--Publicidad-->
@@ -28,13 +30,13 @@ require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
 
         <div class="well well-small">
             <center><h3>Ranking</h3></center><!--Ranking-->
-            <?php require(dirname(__FILE__) . "/capaVistas/ranking.php"); ?>
+<?php require(dirname(__FILE__) . "/capaVistas/ranking.php"); ?>
         </div><!--well well-small-->
 
         <div class="well well-small">
             <center><h3>Últimos Ganadores</h3></center><!--Últimos Ganadores-->
             <div class="row-fluid">
-                <?php require(dirname(__FILE__) . "/capaVistas/ultimosGanadores.php"); ?>
+<?php require(dirname(__FILE__) . "/capaVistas/ultimosGanadores.php"); ?>
             </div><!--/row-->
         </div><!--well well-small-->
 
@@ -45,12 +47,12 @@ require(dirname(__FILE__) . '/capaVistas/header.php'); ?>
 
 </div><!--/row-->
 <div class="well well-small"><!--Últimas Noticias-->
-    <?php require(dirname(__FILE__) . "/capaVistas/ultimasNoticias.php"); ?>
+<?php require(dirname(__FILE__) . "/capaVistas/ultimasNoticias.php"); ?>
 </div>
 
 </div><!--/row-->
 <footer><!-- ARCHIVO footer-->
-    <?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
+<?php require(dirname(__FILE__) . "/capaVistas/footer.php"); ?>
 </footer>
 </div><!--/.fluid-container-->
 </body>

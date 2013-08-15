@@ -143,8 +143,8 @@ class Usuarios {
         }
     }
 
-    public static function actualizarPassword($idUsuarios,$password){
-        $queryString = "UPDATE `usuarios` SET `password`=MD5($password) WHERE idUsuarios = $idUsuarios";
+    public static function actualizarPassword($idUsuarios, $password) {
+        $queryString = "UPDATE `usuarios` SET `password`= MD5($password) WHERE idUsuarios = $idUsuarios";
         $query = CallQuery($queryString);
         if ($query) {
             return true;
@@ -153,8 +153,18 @@ class Usuarios {
         }
     }
 
-    public static function resetPassword($idUsuarios){
+    public static function resetPassword($idUsuarios) {
 
+    }
+
+    public static function borrar($idUsuarios) {
+        $queryString = "DELETE FROM usuarios WHERE idUsuarios = $idUsuarios";
+        $query = CallQuery($queryString);
+        if ($query) {
+            return true;
+        } else { 
+            return false;
+        }
     }
 
 }

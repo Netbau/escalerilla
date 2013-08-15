@@ -222,7 +222,7 @@ class Encuentro {
 	public static function Crud() {
 		$queryString = "SELECT *
                         FROM encuentro as e, canchas as c
-						WHERE e.idCanchas = c.idCanchas";
+			WHERE e.idCanchas = c.idCanchas";
         $result = CallQuery($queryString);
         $resultArray = array();
         while ($fila = $result->fetch_assoc()) {

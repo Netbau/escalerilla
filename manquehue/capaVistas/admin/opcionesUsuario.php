@@ -13,8 +13,9 @@
         </ul>
     </div>
 
-</div>
+</div><!--opciones de usuario-->
 <br><br>
+
 <div class="row-fluid" style="max-height: 600px; overflow: auto;">
     <table class="table-condensed table-striped table-hover table-bordered" width="100%">
         <thead>
@@ -40,8 +41,10 @@
                   <td>" . $uno['segundoApellido'] . "</td>
                   <td>" . $uno['correo'] . "</td>
                   <td>" . $uno['telefono'] . "</td>
-                  <td><center><a class='btn btn-small borrarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-remove-sign'></i></a>
-                      <a class='btn btn-small editarUsuario' idUsuarios='" . $uno['idUsuarios'] . "'><i class='icon-edit'></i></a>
+                  <td>
+                  <center>
+                          <a class='btn btn-small borrarUsuario' idUsuarios='" . $uno['idUsuarios'] . "' data-toggle='modal' href='#modalBorrarUsuario'><i class='icon-remove-sign'></i></a>
+                          <a class='btn btn-small editarUsuario' idUsuarios='" . $uno['idUsuarios'] . "' data-toggle='modal' href='#modalEdit'><i class='icon-edit'></i></a>
                           <input type='checkbox' class='selectUser' idUsuarios='" . $uno['idUsuarios'] . "'>
                   </center>
                   </td>
@@ -53,7 +56,7 @@
             ?>
         </tbody>
     </table>
-</div>
+</div><!-- listado de usuarios del sistema-->
 
 <div id="modalUsuario" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
     <div class="modal-header">
@@ -103,7 +106,7 @@
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
         <button class="btn btn-primary" id="nuevoUsuario" data-loading-text="Cargando..." type="submit"><strong>Ingresar</strong></button>
     </div>
-</div>
+</div><!-- modal para crear un nuevo usuario-->
 
 <div id="modalCorreo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
     <div class="modal-header">
@@ -122,7 +125,60 @@
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
         <button class="btn btn-primary" id="enviarEmail" data-loading-text="Cargando..." type="submit"><strong>Enviar Correo</strong></button>
     </div>
-</div>
+</div><!-- modal para enviar correos-->
+
+<div id="modalEdit" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalEditLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="modalUsuarioLabel">Editar Usuario</h3>
+    </div>
+    <div class="modal-body">
+        <div class="estadoEdit"></div>
+        <table class="table-condensed table-striped table-hover table-bordered" width="100%">
+            <tr>
+                <td><input type="text" class="primerNombre" placeholder="Primer Nombre(*)"></td>
+                <td><input type="text" class="segundoNombre" placeholder="Segundo Nombre"></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="apellidoPaterno" placeholder="Apellido Paterno(*)"></td>
+                <td><input type="text" class="apellidoMaterno" placeholder="Apellido Materno"></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="telefono" placeholder="Telefono(*)"></td>
+                <td><select class="sexo">
+                        <option value="1">Masculino</option>
+                        <option value="0">Femenino</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" class="fechaNacimiento" placeholder="Fecha de Nacimiento(*)"></td>
+                <td><input type="text" class="email" placeholder="E-mail(*)"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
+        <button class="btn btn-primary" id="editarUsuario" data-loading-text="Cargando..."><strong>Guardar</strong></button>
+    </div>
+</div><!-- modal para editar los datos de usuario-->
+
+<div id="modalBorrarUsuario" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalBorrarUsuarioLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="modalBorrarUsuarioLabel">Borrar Usuario</h3>
+    </div>
+    <div class="modal-body">
+        <div id="idUsuario" style="display: none;"></div>
+        <div class="estadoBorrado">
+            <div class="alert alert-warning">El usuario será eliminado de la base de datos!!.</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
+        <button class="btn btn-primary" id="borrarUsuario" data-loading-text="Cargando..." type="submit"><strong>Confirmar</strong></button>
+    </div>
+</div><!-- modal para confirmar el borrado de usuarios-->
 
 <script>
         $('#modalUsuario').on('hide', function() {
@@ -246,8 +302,8 @@
                         enviados++;
                         setTimeout(function() {
                             $('.bar').css('width', enviados / cantEnvios * 100 + '%');
-                        }, 2000)
-                    }
+                        }, 2000);//timeout
+                    }//if
                 }//success
             });//ajax
         });//each
@@ -257,3 +313,61 @@
         }
     });
 </script><!-- envio de correo -->
+<script>
+    $('.editarUsuario').click(function() {
+        var idUsuarios = $(this).attr('idUsuarios');
+
+        $.ajax({
+            "url": "capaAjax/getDatosUsuario.php",
+            "data": {"idUsuarios": idUsuarios},
+            "type": "post",
+            "async": false,
+            success: function(output) {
+                var datos = jQuery.parseJSON(output);
+                alert(datos.idUsuarios);
+            }//success
+        });//ajax
+
+    });
+</script><!-- edicion de los datos del usuario-->
+<script>
+    $('.borrarUsuario').click(function() {
+        var idUsuario = $(this).attr('idUsuarios');
+        $('#idUsuario').text(idUsuario);
+        //traspaso del idUsuario correspondiente para eliminar
+    });//click
+    $('#borrarUsuario').click(function() {
+        $(this).button('loading');
+        //identificador del registro que se quiere borrar
+        var idUsuario = $('#idUsuario').text();
+        //se envia al ajax para borrar el registro
+        $.ajax({
+            url: "capaAjax/borrarRegistro.php",
+            data: {
+                "idUsuario": idUsuario,
+                "tipo": "usuario"
+            },
+            type: "post",
+            success: function(output) {
+                //manejar resultados con variables numericas
+                alert(output);
+                if (output === 1) {
+                    $('.estadoBorrado').html('<div class="alert alert-success"><strong>Usuario borrado con éxito!</strong></div>');
+                    setTimeout(function() {
+                        //esconder modal y refrescar la seccion si corresponde
+                    }, 2000);//timeout
+                }//if (1) -> resultado favorable
+                else if (output === 0) {
+                    $('.estadoBorrado').html('<div class="alert alert-danger"><strong>Usuario borrado con éxito!</strong></div>');
+                    setTimeout(function() {
+                        //esconder modal y refrescar la seccion si corresponde
+                    }, 2000);//timeout
+                }//if (0) -> resultado desfavorable
+                else {
+                    alert(output);
+                }//resultado extrano
+            }//success
+        });//ajax
+    });//click
+
+</script><!-- eliminacion de un usuario-->

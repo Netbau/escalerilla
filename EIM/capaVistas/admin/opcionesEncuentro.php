@@ -44,8 +44,8 @@
                     <td>Desafíos</td>
                     <td colspan="2"><select name="desafios" class="desafios">
                             <option label="Seleccione el Desafío"></option>
-<?php include(dirname(__FILE__) . '/../../capaAjax/listadoDesafios.php');
-?>
+                            <?php include(dirname(__FILE__) . '/../../capaAjax/listadoDesafios.php');
+                            ?>
                         </select></td>
                 </tr>
                 <tr>
@@ -149,7 +149,7 @@
                 "fecha": fecha,
                 "idCanchas": idCanchas,
                 "idGanador": idGanador,
-                "sets": JSON.stringify(set),
+                "sets": JSON.stringify(set)
             },
             "type": "post",
             "async": false,
@@ -171,7 +171,7 @@
     });
     $('.modalEncuentroBtn').click(function() {
         $('.setsGenerado').html('');
-        $('select[name="desafios"]').val('')
+        $('select[name="desafios"]').val('');
         $('input[name="fecha"]').val('');
         $('select[name="cancha"]').val('');
         $('.sets').val('');

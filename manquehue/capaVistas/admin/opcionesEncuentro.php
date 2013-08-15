@@ -18,7 +18,7 @@
             require_once(dirname(__FILE__) . '/../../utilidades/transformarDesafios.php');
             $encuentros1 = Encuentro::Crud();
             $encuentros = transformaDesafios($encuentros1);
-
+//            print_r($encuentros1);
             if (count($encuentros) != 0) {
                 foreach ($encuentros as $encuentro) {
 
@@ -26,7 +26,7 @@
                     echo '<tr><td>' . $encuentro['idJugadores'] . '</td><td>' . $encuentro['idJugadores1'] . '</td><td>' . $fecha[0] .
                     '</td><td>' . $encuentro['nombre'] . '</td><td>' . $encuentro['idGanador'] . '</td><td></td></tr>';
                 }
-            }else{
+            } else {
                 echo '<tr class="info"><td colspan="6">No hay encuentros registrados</td></tr>';
             }
             ?>
@@ -47,8 +47,8 @@
                     <td>Desafíos</td>
                     <td colspan="2"><select name="desafios" class="desafios">
                             <option label="Seleccione el Desafío"></option>
-<?php include(dirname(__FILE__) . '/../../capaAjax/listadoDesafios.php');
-?>
+                            <?php include(dirname(__FILE__) . '/../../capaAjax/listadoDesafios.php');
+                            ?>
                         </select></td>
                 </tr>
                 <tr>
@@ -94,7 +94,7 @@
         <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
         <button class="btn btn-primary" id="nuevoDesafio" data-loading-text="Cargando..." type="submit"><strong>Ingresar</strong></button>
     </div>
-</div>
+</div><!-- modal encuentros -->
 
 <script>
     $('.sets').change(function() {
