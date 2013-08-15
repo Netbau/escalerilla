@@ -1,4 +1,4 @@
-﻿<center>
+<center>
 
     <?php
     include_once(dirname(__FILE__) . '/../capaControladores/encuentro.php');

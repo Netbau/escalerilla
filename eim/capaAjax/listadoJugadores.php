@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 include_once(dirname(__FILE__) . '/../capaControladores/jugadores.php');
 $Jugadores = Jugadores::Crude();
