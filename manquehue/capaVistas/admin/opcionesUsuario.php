@@ -130,7 +130,7 @@
 <div id="modalEdit" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalEditLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="modalUsuarioLabel">Editar Usuario</h3>
+        <h3 id="modalUsuarioLabel">Editar Usuario <span class="label rut"></span></h3>
     </div>
     <div class="modal-body">
         <div class="estadoEdit"></div>
@@ -145,15 +145,13 @@
             </tr>
             <tr>
                 <td><input type="text" class="telefono" placeholder="Telefono(*)"></td>
-                <td><select class="sexo">
-                        <option value="1">Masculino</option>
-                        <option value="0">Femenino</option>
-                    </select>
-                </td>
+                <td><input type="text" class="fechaNacimiento datepicker" placeholder="Fecha de Nacimiento(*)"></td>
             </tr>
             <tr>
-                <td><input type="text" class="fechaNacimiento" placeholder="Fecha de Nacimiento(*)"></td>
-                <td><input type="text" class="email" placeholder="E-mail(*)"></td>
+                <td colspan="2"><input type="text" class="email" placeholder="E-mail(*)"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="text" class="about" placeholder="Frase"></td>
             </tr>
         </table>
     </div>
@@ -182,19 +180,16 @@
 
 <script>
         $('#modalUsuario').on('hide', function() {
-            $('#ingresoUsuarioForm').collapse('show');
-            $('.estadoIngreso').html('');
-            $('#nuevoUsuario').show('');
-            $('input[name="rut"]').val('');
-            $('input[name="nombre"]').val('');
-            $('input[name="segundoNombre"]').val('');
-            $('input[name="apellido"]').val('');
-            $('input[name="segundoApellido"]').val('');
-            $('input[name="fechaNacimiento"]').val('');
-            $('input[name="telefono"]').val('');
-            $('input[name="telefono2"]').val('');
-            $('input[name="correo"]').val('');
-        });
+            $('.refreshUsuarios').click();
+        });//on
+        $('#modalEdit').on('hide', function() {
+            $('.refreshUsuarios').click();
+        });//on
+        $('#modalBorrarUsuario').on('hide', function() {
+            $('.refreshUsuarios').click();
+        });//on
+
+
 </script><!-- cuando el modal se esconde-->
 <script>
     $('#nuevoUsuario').click(function() {
@@ -230,7 +225,7 @@
                 if (output == 1) {
                     $('#ingresoUsuarioForm').collapse('hide');
                     $('.estadoIngreso').html('<div class="alert alert-success">Usuario Ingresado Correctamente</div>');
-                    $('#nuevoUsuario').hide();
+                    $('#nuevoUsuario').modal('hide');
                 } else if (output == 0) {
                     $('.estadoIngreso').html('<div class="alert alert-danger">Faltan datos!</div>');
                 } else if (output == 2) {
@@ -241,8 +236,7 @@
                 $('#nuevoUsuario').button('reset');
             }
         });
-    });
-</script><!-- creacion de usuario-->
+    });</script><!-- creacion de usuario-->
 <script>
     $('input[name="filtrar"]').keyup(function() {
         var filtroDiag = $(this).val().toUpperCase();
@@ -261,16 +255,14 @@
                 }
             });
         }
-    });
-</script><!-- live filter -->
+    });</script><!-- live filter -->
 <script>
     $('.emailAll').click(function() {
         $('.selectUser').prop('checked', true);
     });
     $('.emailNone').click(function() {
         $('.selectUser').prop('checked', false);
-    });
-</script><!-- seleccion y deseleccion de usuarios-->
+    });</script><!-- seleccion y deseleccion de usuarios-->
 <script>
     $('#modalCorreo').on('show', function() {
         var usuarios = $('.selectUser:checked').length;
@@ -281,8 +273,7 @@
         $('.bar').css('width', '0%');
         $('#asuntoEmail').val('');
         $('#mensajeEmail').val('');
-    });
-</script><!-- modal correo-->
+    });</script><!-- modal correo-->
 <script>
     $('#enviarEmail').click(function() {
         $(this).button("loading");
@@ -302,40 +293,77 @@
                         enviados++;
                         setTimeout(function() {
                             $('.bar').css('width', enviados / cantEnvios * 100 + '%');
-                        }, 2000);//timeout
+                        }, 2000); //timeout
                     }//if
                 }//success
-            });//ajax
-        });//each
+            }); //ajax
+        }); //each
         if (enviados == cantEnvios) {
             $('#modalCorreo .estadoEmail').html('<div class="alert alert-success">Correo enviado a <strong>' + enviados + '</strong> usuarios.</div>');
             $('#enviarEmail').attr('disabled', 'disabled').html('Enviados!');
         }
-    });
-</script><!-- envio de correo -->
+    });</script><!-- envio de correo -->
 <script>
     $('.editarUsuario').click(function() {
         var idUsuarios = $(this).attr('idUsuarios');
-
         $.ajax({
             "url": "capaAjax/getDatosUsuario.php",
             "data": {"idUsuarios": idUsuarios},
             "type": "post",
             "async": false,
             success: function(output) {
-                var datos = jQuery.parseJSON(output);
-                alert(datos.idUsuarios);
+                //alert(output);
+                output = $.parseJSON(output);
+                //traspaso de los elementos al modal
+                $('.primerNombre').val(output['nombre']);
+                $('.segundoNombre').val(output['segundoNombre']);
+                $('.apellidoPaterno').val(output['apellido']);
+                $('.apellidoMaterno').val(output['segundoApellido']);
+                $('.telefono').val(output['telefono']);
+                $('.fechaNacimiento').val(output['fechaNacimiento']);
+                $('.email').val(output['correo']);
+                $('.rut').text(output['idUsuarios']);
+                $('.about').val(output['about']);
             }//success
-        });//ajax
+        }); //ajax
+    }); //click
 
-    });
+    $('#editarUsuario').click(function() {
+        $(this).button('loading');
+        $.ajax({
+            'url': 'capaAjax/actualizarDatosUsuario.php',
+            'data': {
+                'admin': 1,
+                'idUsuarios': $('.rut').text(),
+                'nombre': $('.primerNombre').val(),
+                'apellido': $('.apellidoPaterno').val(),
+                'correo': $('.email').val(),
+                'telefono': $('.telefono').val(),
+                'segundoNombre': $('.segundoNombre').val(),
+                'segundoApellido': $('.apellidoMaterno').val(),
+                'about': $('.about').val()
+            },
+            'type': 'post',
+            success: function(output) {
+                if (output == '1') {
+                    $('#editarUsuario').button('reset');
+                    $('.estadoEdit').html('<div class="alert alert-success"><strong>Datos actualizados correctamente!</strong></div>');
+                }//1
+                else if (output == '0') {
+                    $('#editarUsuario').button('reset');
+                    $('.estadoEdit').html('<div class="alert alert-danger"><strong>Ha ocurrido un error!</strong></div>');
+                }//0
+            }//success
+        }); //ajax
+    }); //click
+
 </script><!-- edicion de los datos del usuario-->
 <script>
     $('.borrarUsuario').click(function() {
         var idUsuario = $(this).attr('idUsuarios');
         $('#idUsuario').text(idUsuario);
         //traspaso del idUsuario correspondiente para eliminar
-    });//click
+    }); //click
     $('#borrarUsuario').click(function() {
         $(this).button('loading');
         //identificador del registro que se quiere borrar
@@ -350,24 +378,25 @@
             type: "post",
             success: function(output) {
                 //manejar resultados con variables numericas
-                alert(output);
-                if (output === 1) {
+                if (output === '1') {
                     $('.estadoBorrado').html('<div class="alert alert-success"><strong>Usuario borrado con éxito!</strong></div>');
                     setTimeout(function() {
                         //esconder modal y refrescar la seccion si corresponde
-                    }, 2000);//timeout
+                        $('#modalBorrarUsuario').modal('hide');
+                    }, 2000); //timeout
                 }//if (1) -> resultado favorable
-                else if (output === 0) {
-                    $('.estadoBorrado').html('<div class="alert alert-danger"><strong>Usuario borrado con éxito!</strong></div>');
+                else if (output === '0') {
+                    $('.estadoBorrado').html('<div class="alert alert-danger"><strong>Ha ocurrido un error!</strong></div>');
                     setTimeout(function() {
                         //esconder modal y refrescar la seccion si corresponde
-                    }, 2000);//timeout
+                        $('#modalBorrarUsuario').modal('hide');
+                    }, 2000); //timeout
                 }//if (0) -> resultado desfavorable
                 else {
                     alert(output);
                 }//resultado extrano
             }//success
-        });//ajax
-    });//click
+        }); //ajax
+    }); //click
 
 </script><!-- eliminacion de un usuario-->

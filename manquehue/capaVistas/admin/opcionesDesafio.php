@@ -83,13 +83,15 @@
     $('.editDesafio').click(function() {
         //se obtienen los datos de la linea seleccionada
         var id0 = $(this).parent().parent().attr('id0');
+        var desafiador = $(this).parent().parent().children('.jugador0').text();
         var id1 = $(this).parent().parent().attr('id1');
+        var desafiado = $(this).parent().parent().children('.jugador1').text();
         var fecha = $(this).parent().parent().attr('fecha');
         var estado = $('.estado').text();
 
         //se traspasan los datos respectivos al modal
-        $('.id0').attr('id0', id0).text($('.jugador0').text());
-        $('.id1').attr('id1', id1).text($('.jugador1').text());
+        $('.id0').attr('id0', id0).text(desafiador);
+        $('.id1').attr('id1', id1).text(desafiado);
         $('.fecha').attr('fecha', fecha).text(fecha);
 
         //se selecciona el estado respectivo
