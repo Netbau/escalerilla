@@ -159,12 +159,14 @@
             success: function(output) {
                 var resultado = JSON.parse(output);
                 if (resultado.output == 1) {
-                    $('#estadoIngresoEncuentro').html('<div class="alert alert-success">Desafío Ingresado Correctamente.</div>');
+                    $('#estadoIngresoEncuentro').html('<div class="alert alert-success">Encuentro Ingresado Correctamente.</div>');
                     $('#nuevoDesafio').hide();
                 } else if (resultado.output == 0) {
                     $('#estadoIngresoEncuentro').html('<div class="alert alert-danger">¡Faltan datos!</div>');
                 } else if (resultado.output == 2) {
-                    $('#estadoIngresoEncuentro').html('<div class="alert alert-danger">¡Desafío ya registrado!</div>');
+                    $('#estadoIngresoEncuentro').html('<div class="alert alert-danger">¡Encuentro ya registrado!</div>');
+                } else if (resultado.output == 4) {
+                    $('#estadoIngresoEncuentro').html('<div class="alert alert-danger">¡No se pudo modificar el estado del desafío!</div>');
                 } else {
                     alert(output);
                 }

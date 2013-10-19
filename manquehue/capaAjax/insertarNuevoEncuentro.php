@@ -34,7 +34,7 @@ if (isset($_POST)) {
         }//se inserta el encuentro luego de actualizar a concretado el estado del desafio
         else {
             $retorno = new stdClass();
-            $retorno->output = 0;
+            $retorno->output = 4;
             echo json_encode($retorno);
         }// se retorna 0 si no se modifico el estado del desafio
     } else {
