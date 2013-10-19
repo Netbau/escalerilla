@@ -1,5 +1,6 @@
 <?php
-if(isset($_POST)){
+
+if (isset($_POST)) {
     include_once (dirname(__FILE__) . '/../capaControladores/desafios.php');
     $idJugador = $_POST['id0'];
     $idJugador1 = $_POST['id1'];
@@ -7,14 +8,12 @@ if(isset($_POST)){
     $estado = $_POST['estado'];
 
     $actualizado = Desafios::actualizarEstadoDesafio($idJugador, $idJugador1, $estado, $fecha);
-    if($actualizado){
+    if ($actualizado) {
         echo 1;
-    }
-    else{
+    } else {
         echo 0;
     }
-}
-else{
+} else {
     echo 0;
 }
 ?>

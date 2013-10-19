@@ -174,7 +174,7 @@
     });
     $('.modalEncuentroBtn').click(function() {
         $('.setsGenerado').html('');
-        $('select[name="desafios"]').val('')
+        $('select[name="desafios"]').val('');
         $('input[name="fecha"]').val('');
         $('select[name="cancha"]').val('');
         $('.sets').val('');
