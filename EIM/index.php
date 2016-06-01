@@ -2,7 +2,7 @@
 session_start();
 require(dirname(__FILE__) . '/capaVistas/header.php');
 ?>
-<?php require(dirname(__FILE__) . "/popup.php"); ?>
+<?php //require(dirname(__FILE__) . "/popup.php"); ?>
 <div class="row-fluid"><!-- row de contenido -->
     <div class="span3">
 

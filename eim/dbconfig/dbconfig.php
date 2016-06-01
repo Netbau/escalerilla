@@ -19,16 +19,16 @@ DEFINE ('baseDeDatos', 'BD_REMEL');
 //$puerto = '3306';
 
 
-//$servidor = 'localhost';
-//$nombre_usuario = 'root';
-//$contrasena = '';
-//$base_de_datos = 'netbau_escalerillas';
-//$puerto = '3306';
-
-$servidor = '200.54.168.133';
+$servidor = 'localhost';
 $nombre_usuario = 'root';
-$contrasena = 'pepito.P789';
+$contrasena = '';
 $base_de_datos = 'netbau_escalerillas';
 $puerto = '3306';
+
+//$servidor = '200.54.168.133';
+//$nombre_usuario = 'root';
+//$contrasena = 'pepito.P789';
+//$base_de_datos = 'netbau_escalerillas';
+//$puerto = '3306';
 
 ?>

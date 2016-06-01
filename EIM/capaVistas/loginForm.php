@@ -16,7 +16,7 @@
                 url: "capaAjax/login.php",
                 data: {"usuario": usuario, "password": password},
                 type: "post",
-                async: false,
+                async: true,
                 success: function(output) {
                     if (output == 1) {
                         $('#loginEstado').html('<div class="alert alert-danger"><center>¡Usuario y contraseña no coinciden!</center></div>');

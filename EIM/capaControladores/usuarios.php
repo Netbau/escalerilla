@@ -50,9 +50,9 @@ class Usuarios {
 
         if (CallQuery($queryString)->num_rows != 1) {
             return false;
-        }
-        else
+        } else {
             return true;
+        }
     }
 
     //devuelve los datos personales (sin privados) de una persona
@@ -69,10 +69,10 @@ class Usuarios {
                               nivel,
                               foto,
                               fechaNacimiento,
-                              sexo,
-                              about
+                              sexo
                         FROM usuarios
                         WHERE idUsuarios = $rut";
+        
         $result = CallQuery($queryString);
         $resultArray = array();
 
@@ -143,7 +143,7 @@ class Usuarios {
         }
     }
 
-    public static function actualizarPassword($idUsuarios,$password){
+    public static function actualizarPassword($idUsuarios, $password) {
         $queryString = "UPDATE `usuarios` SET `password`=MD5($password) WHERE idUsuarios = $idUsuarios";
         $query = CallQuery($queryString);
         if ($query) {
@@ -153,7 +153,7 @@ class Usuarios {
         }
     }
 
-    public static function resetPassword($idUsuarios){
+    public static function resetPassword($idUsuarios) {
 
     }
 

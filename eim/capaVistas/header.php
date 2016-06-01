@@ -12,7 +12,7 @@
         <!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"><!-- css bootstrap css -->
         <!--<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet"><!-- font awsome -->
         <!--<link href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/cerulean/bootstrap.min.css" rel="stylesheet"><!-- css bootswatch-->
-
+        
         <!--estilos desde el servidor -->
         <link href="css/cerulean/bootstrap.min.css" rel="stylesheet"><!--css bootstrap.min-->
         <link href="css/cerulean/bootstrap.css" rel="stylesheet"><!--css bootstrap-->
@@ -27,12 +27,15 @@
         <script type="text/javascript" src="js/SimpleAjaxUploader.js"></script><!-- ajax uploader -->
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script><!-- JQUERY UI-->
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><!-- bootstrap js -->
-        <!--<script src="js/bootstrap.js"></script><!-- bootstrap js -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<!--<script src="js/bootstrap.js"></script><!-- bootstrap js -->
         <script>
             $(document).ready(function() {
                 $('.datepicker').datepicker({dateFormat: "yy-mm-dd", yearRange: "1950:2050", changeYear: true, changeMonth: true});
                 $('.carousel').carousel('cycle');
+                $('body').backstretch("http://science-all.com/images/wallpapers/blue-wallpaper/blue-wallpaper-4.jpg");
             });
+
         </script>
     </head>
     <body>

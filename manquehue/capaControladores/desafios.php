@@ -96,6 +96,7 @@ class Desafios {
 			AND YEAR(fecha) = '$fecha[0]'
                         AND MONTH(fecha) = '$fecha[1]'
                         AND DAY(fecha) = '$fecha[2]'";
+//        echo $queryString;
         $result = CallQuery($queryString);
         return $result;
     }

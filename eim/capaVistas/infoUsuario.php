@@ -42,13 +42,13 @@
     </div>
 </div>
 <script>
-	$('#editar').click(function() {
-		$('.span9').load('capaVistas/editUsuarios.php', function(){
+    $('#editar').click(function() {
+        $('.span9').load('capaVistas/editUsuarios.php', function() {
 
-		//CallBack
+            //CallBack
 
-		});
-	});//click
+        });
+    });//click
 </script>
 <script>
     $('#logout').click(function() {

@@ -47,8 +47,7 @@
                     <td>Desafíos</td>
                     <td colspan="2"><select name="desafios" class="desafios">
                             <option label="Seleccione el Desafío"></option>
-                            <?php include(dirname(__FILE__) . '/../../capaAjax/listadoDesafios.php');
-                            ?>
+                            <?php include(dirname(__FILE__) . '/../../capaAjax/listadoDesafios.php'); ?>
                         </select></td>
                 </tr>
                 <tr>
@@ -114,6 +113,7 @@
         var idJugador = $('select[name="desafios"]').val().split("-");
         var nombreDelJugador = $('select[name="desafios"] option:selected').text().split("v/s");
 
+
         var jugador1 = '<option value="' + idJugador[0] + '">' + nombreDelJugador[0] + '</option>';
         var jugador2 = '<option value="' + idJugador[1] + '">' + nombreDelJugador[1] + '</option>';
         $('.ganadorGenerado').html('<option label="Seleccione al Ganador"></option>' + jugador1 + jugador2);
@@ -128,9 +128,10 @@
 
         var idJugador = $('select[name="desafios"]').val().split("-");
 
+        var fechaDesafio = $('select[name="desafios"] option:selected').attr('fecha');
         var idJugadores = idJugador[0];
         var idJugadores1 = idJugador[1];
-        var fecha = $('input[name="fecha"]').val();
+        var fechaEncuentro = $('input[name="fecha"]').val();
         var idCanchas = $('select[name="cancha"]').val();
         var idGanador = $('.ganadorGenerado').val();
 
@@ -149,7 +150,8 @@
             data: {
                 "idJugadores": idJugadores,
                 "idJugadores1": idJugadores1,
-                "fecha": fecha,
+                "fechaDesafio": fechaDesafio,
+                "fechaEncuentro": fechaEncuentro,
                 "idCanchas": idCanchas,
                 "idGanador": idGanador,
                 "sets": JSON.stringify(set),
@@ -184,4 +186,9 @@
         $('#estadoIngresoEncuentro').html('');
         $('#nuevoDesafio').show();
     });
+</script>
+<script>
+$('#modalEncuentro').on('hide',function(){
+    $('.refreshEncuentro').click();
+});
 </script>

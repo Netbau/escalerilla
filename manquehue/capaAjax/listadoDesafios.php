@@ -20,13 +20,13 @@ if (isset($_POST['formato'])) {
 if ($formato == 'option') {
 
     foreach ($Desafios as $Desafio) {
-	
-		$nombre1 = Jugadores::getNombrePorID($Desafio['idJugadores']);
-		$nombre2 = Jugadores::getNombrePorID($Desafio['idJugadores1']);
 
+        $nombre1 = Jugadores::getNombrePorID($Desafio['idJugadores']);
+        $nombre2 = Jugadores::getNombrePorID($Desafio['idJugadores1']);
+        $fecha = explode(' ', $Desafio['fecha']);
         echo "
-            <option value='" . $Desafio['idJugadores'] ."-". $Desafio['idJugadores1'] . "'>" . $nombre1[0]['nombre'] . " " .$nombre1[0]['apellido'] .
-			' v/s ' . $nombre2[0]['nombre'] . " " .$nombre2[0]['apellido'] . "</option>";
+            <option fecha='".$fecha[0]."' value='" . $Desafio['idJugadores'] . "-" . $Desafio['idJugadores1'] . "'>" . $nombre1[0]['nombre'] . " " . $nombre1[0]['apellido'] .
+        ' v/s ' . $nombre2[0]['nombre'] . " " . $nombre2[0]['apellido'] . "</option>";
     }
 } elseif ($formato == 'json') {
     echo json_encode($Jugadores);

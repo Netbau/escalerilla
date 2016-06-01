@@ -11,6 +11,7 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
     $login = usuarios::VerificarClave($rut, $password);
     if ($login) {
         $datos = usuarios::Datos($rut);
+        //print_r($datos);
         if ($datos[0]['nombre'] != '') {
             $_SESSION['usuario'] = $datos[0];
             if ($jugador = Jugadores::Datos($rut)) {
